@@ -56,10 +56,11 @@ brand.json
 ├── audience           → segmentos de audiência, personas (avatar, bio, goals, pains)
 ├── brand_core         → posicionamento, taglines, proposta de valor, arquétipos
 ├── communication      → tom de voz (atributos + exemplos), vocabulário, narrativa, manifesto
-├── visual_identity    → logos (variações), paleta (hex/rgb/cmyk), ícones, spacing, usos incorretos, materiais gráficos (com download)
-├── social_media       → linhas editoriais, pilares de conteúdo, referências visuais, templates (com download)
-└── typography         → arquivos de fonte para download (heading_file, body_file) — nomes ficam em brand.fonts; renderizado como sub-tab dentro do módulo Identidade Visual, não como módulo próprio
+├── visual_identity    → logos (variações), paleta (hex/rgb/cmyk), ícones, spacing, usos incorretos, materiais gráficos (com download), typography (heading_file/body_file — nomes ficam em brand.fonts)
+└── social_media       → linhas editoriais, pilares de conteúdo, referências visuais, templates (com download)
 ```
+
+`visual_identity.typography` é renderizado como sub-tab dentro do módulo Identidade Visual, não como módulo próprio — por isso vive aninhado em `visual_identity` (tanto no JSON quanto no CMS), não como chave de topo.
 
 ---
 

@@ -17,7 +17,7 @@ async function init() {
   renderCommunication(data.communication);
   renderVisualIdentity(data.visual_identity, data.brand);
   renderSocialMedia(data.social_media);
-  renderTypography(data.typography, data.brand);
+  renderTypography(data.visual_identity.typography, data.brand);
   initNavigation();
   initMobileMenu();
 }
@@ -635,17 +635,17 @@ function renderTypography(data, brand) {
   const fonts = brand && brand.fonts ? brand.fonts : {};
   const files = data || {};
   const entries = [
-    { role: 'Títulos', name: fonts.heading, file: files.heading_file },
-    { role: 'Corpo de Texto', name: fonts.body, file: files.body_file },
+    { key: 'heading', role: 'Títulos', name: fonts.heading, file: files.heading_file },
+    { key: 'body', role: 'Corpo de Texto', name: fonts.body, file: files.body_file },
   ];
   el.innerHTML = entries.map(f => `
     <div class="font-card">
       <div class="font-preview">
-        <div class="font-preview-glyphs" style="font-family:'${esc(f.name || 'inherit')}'">Aa Bb Cc</div>
+        <div class="font-preview-glyphs" id="font-preview-${f.key}" style="font-family:'${esc(f.name || 'inherit')}'">Aa Bb Cc</div>
         <div class="font-role">${esc(f.role)}</div>
       </div>
       <div class="font-info">
-        <div class="font-name">${esc(f.name || 'Não definida')}</div>
+        <div class="font-name" id="font-name-${f.key}">${esc(f.name || 'Não definida')}</div>
         ${f.file
           ? `<a href="${esc(f.file)}" download class="btn-download">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
@@ -656,6 +656,79 @@ function renderTypography(data, brand) {
       </div>
     </div>
   `).join('');
+
+  entries.forEach(loadUploadedFontPreview);
+}
+
+// Carrega o arquivo de fonte enviado no CMS e usa ele de verdade no preview
+// e no nome exibido, em vez de confiar no nome digitado manualmente em brand.fonts.
+async function loadUploadedFontPreview({ key, file }) {
+  if (!file) return;
+  const ext = (file.split('.').pop() || '').toLowerCase();
+  if (!['ttf', 'otf', 'woff', 'woff2'].includes(ext)) return;
+
+  try {
+    const buffer = await fetch(file).then(r => r.arrayBuffer());
+    const cssFamily = `uploaded-${key}-font`;
+    const fontFace = new FontFace(cssFamily, buffer);
+    await fontFace.load();
+    document.fonts.add(fontFace);
+
+    const preview = document.getElementById(`font-preview-${key}`);
+    if (preview) preview.style.fontFamily = `'${cssFamily}'`;
+
+    // 'name' table só é lido diretamente de sfnt cru (ttf/otf); woff/woff2
+    // comprimem as tabelas e ainda renderizam certo via FontFace, só sem nome lido.
+    if (ext === 'ttf' || ext === 'otf') {
+      const familyName = readFontFamilyName(buffer);
+      const nameEl = document.getElementById(`font-name-${key}`);
+      if (familyName && nameEl) nameEl.textContent = familyName;
+    }
+  } catch (e) {
+    // Arquivo não pôde ser baixado/decodificado — mantém o preview com o nome digitado.
+  }
+}
+
+function readFontFamilyName(buffer) {
+  const view = new DataView(buffer);
+  let offset = 0;
+  if (view.getUint32(0) === 0x74746366) offset = view.getUint32(12); // TrueType Collection: usa a primeira fonte
+
+  const numTables = view.getUint16(offset + 4);
+  let nameTableOffset = null;
+  for (let i = 0; i < numTables; i++) {
+    const recordOffset = offset + 12 + i * 16;
+    const tag = String.fromCharCode(
+      view.getUint8(recordOffset), view.getUint8(recordOffset + 1),
+      view.getUint8(recordOffset + 2), view.getUint8(recordOffset + 3)
+    );
+    if (tag === 'name') { nameTableOffset = view.getUint32(recordOffset + 8); break; }
+  }
+  if (nameTableOffset == null) return null;
+
+  const count = view.getUint16(nameTableOffset + 2);
+  const stringAreaOffset = nameTableOffset + view.getUint16(nameTableOffset + 4);
+
+  let fallback = null;
+  for (let i = 0; i < count; i++) {
+    const recordOffset = nameTableOffset + 6 + i * 12;
+    const platformID = view.getUint16(recordOffset);
+    const nameID = view.getUint16(recordOffset + 6);
+    if (nameID !== 1 && nameID !== 16) continue; // 1 = Family Name, 16 = Typographic Family Name (preferida)
+
+    const length = view.getUint16(recordOffset + 8);
+    const start = stringAreaOffset + view.getUint16(recordOffset + 10);
+    const bytes = new Uint8Array(buffer, start, length);
+    let str = '';
+    if (platformID === 1) {
+      for (let j = 0; j < bytes.length; j++) str += String.fromCharCode(bytes[j]);
+    } else {
+      for (let j = 0; j < bytes.length; j += 2) str += String.fromCharCode((bytes[j] << 8) | bytes[j + 1]);
+    }
+    if (nameID === 16) return str;
+    if (!fallback) fallback = str;
+  }
+  return fallback;
 }
 
 // ── LIGHTBOX ──────────────────────────────────────────────────

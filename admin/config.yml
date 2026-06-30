@@ -240,6 +240,14 @@ collections:
                   - { label: "Imagem / Mockup", name: "image", widget: "image", required: false }
                   - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
 
+              - label: "Tipografia"
+                name: "typography"
+                widget: "object"
+                hint: "Os nomes das fontes ficam em Configurações da Marca → Tipografia; aqui é só o upload dos arquivos."
+                fields:
+                  - { label: "Arquivo da Fonte de Títulos", name: "heading_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip — o nome da fonte é definido em Configurações da Marca → Tipografia" }
+                  - { label: "Arquivo da Fonte do Corpo", name: "body_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip da fonte do corpo de texto" }
+
           # ── REDES SOCIAIS ─────────────────────────
           - label: "06 — Redes Sociais"
             name: "social_media"
@@ -284,12 +292,3 @@ collections:
                   - { label: "Descrição", name: "description", widget: "string", required: false }
                   - { label: "Imagem / Template", name: "image", widget: "image", required: false }
                   - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
-
-          # ── TIPOGRAFIA ────────────────────────────
-          - label: "07 — Tipografia"
-            name: "typography"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Arquivo da Fonte de Títulos", name: "heading_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip — o nome da fonte é definido em Configurações da Marca → Tipografia" }
-              - { label: "Arquivo da Fonte do Corpo", name: "body_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip da fonte do corpo de texto" }

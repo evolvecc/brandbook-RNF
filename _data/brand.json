@@ -398,7 +398,11 @@
         "image": "",
         "file": ""
       }
-    ]
+    ],
+    "typography": {
+      "heading_file": "/assets/images/airbnb-cereal-app-black.ttf",
+      "body_file": ""
+    }
   },
   "social_media": {
     "editorial_lines": [
@@ -507,9 +511,5 @@
         "file": ""
       }
     ]
-  },
-  "typography": {
-    "heading_file": "",
-    "body_file": ""
   }
 }
