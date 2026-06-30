@@ -1,0 +1,284 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Habilita o editor visual em linha (editorial workflow)
+publish_mode: simple
+
+collections:
+  - name: "brand"
+    label: "Brandbook"
+    files:
+
+      # ────────────────────────────────────────────
+      - name: "brand_data"
+        label: "📋 Dados Completos da Marca"
+        file: "_data/brand.json"
+        format: json
+        fields:
+
+          # ── CONFIGURAÇÕES GERAIS ──────────────────
+          - label: "Configurações da Marca"
+            name: "brand"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Nome da Marca", name: "name", widget: "string", hint: "Nome completo da marca" }
+              - { label: "Tagline Principal", name: "tagline", widget: "string" }
+              - { label: "Logo Principal (arquivo)", name: "logo", widget: "image", required: false, hint: "Versão principal do logo — fundo claro" }
+              - { label: "Logo Negativa (arquivo)", name: "logo_white", widget: "image", required: false, hint: "Versão branca do logo — fundo escuro" }
+
+              - label: "Cores da Identidade Visual"
+                name: "colors"
+                widget: "object"
+                hint: "Estas cores definem todo o visual da plataforma."
+                fields:
+                  - { label: "Cor Primária", name: "primary", widget: "color", enableAlpha: false, hint: "Ex: #2C1810" }
+                  - { label: "Cor Secundária", name: "secondary", widget: "color", enableAlpha: false }
+                  - { label: "Cor de Destaque (Accent)", name: "accent", widget: "color", enableAlpha: false }
+                  - { label: "Cor de Fundo", name: "background", widget: "color", enableAlpha: false }
+                  - { label: "Cor do Texto", name: "text", widget: "color", enableAlpha: false }
+
+              - label: "Tipografia"
+                name: "fonts"
+                widget: "object"
+                fields:
+                  - { label: "Fonte dos Títulos", name: "heading", widget: "string", hint: "Ex: Playfair Display" }
+                  - { label: "URL da Fonte dos Títulos (Google Fonts)", name: "heading_url", widget: "string", required: false, hint: "Cole o link embed do Google Fonts" }
+                  - { label: "Fonte do Corpo", name: "body", widget: "string", hint: "Ex: Inter" }
+                  - { label: "URL da Fonte do Corpo (Google Fonts)", name: "body_url", widget: "string", required: false }
+
+          # ── PESQUISA DE MERCADO ───────────────────
+          - label: "01 — Pesquisa de Mercado"
+            name: "research"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Benchmarking (concorrentes)"
+                name: "benchmarking"
+                widget: "list"
+                label_singular: "Concorrente"
+                fields:
+                  - { label: "Nome da Marca", name: "name", widget: "string" }
+                  - { label: "Posicionamento", name: "positioning", widget: "string" }
+                  - { label: "Pontos Fortes", name: "strengths", widget: "text", hint: "Separe com vírgula para criar tags" }
+                  - { label: "Pontos Fracos", name: "weaknesses", widget: "text", hint: "Separe com vírgula para criar tags" }
+                  - { label: "Posição X no Mapa (0–100)", name: "x", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
+                  - { label: "Posição Y no Mapa (0–100)", name: "y", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
+
+              - label: "Mapa de Posicionamento"
+                name: "positioning_map"
+                widget: "object"
+                fields:
+                  - { label: "Eixo X — Esquerda", name: "axis_x_left", widget: "string", hint: "Ex: Acessível" }
+                  - { label: "Eixo X — Direita", name: "axis_x_right", widget: "string", hint: "Ex: Premium" }
+                  - { label: "Eixo Y — Baixo", name: "axis_y_bottom", widget: "string", hint: "Ex: Tradicional" }
+                  - { label: "Eixo Y — Cima", name: "axis_y_top", widget: "string", hint: "Ex: Moderno" }
+                  - { label: "Posição X da Marca (0–100)", name: "brand_x", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
+                  - { label: "Posição Y da Marca (0–100)", name: "brand_y", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
+
+          # ── PÚBLICO-ALVO ──────────────────────────
+          - label: "02 — Público-Alvo"
+            name: "audience"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Segmentos"
+                name: "segments"
+                widget: "list"
+                label_singular: "Segmento"
+                fields:
+                  - { label: "Nome do Segmento", name: "name", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+                  - { label: "Representatividade", name: "size", widget: "string", hint: "Ex: 45%" }
+                  - label: "Características"
+                    name: "characteristics"
+                    widget: "list"
+                    field: { label: "Característica", name: "item", widget: "string" }
+
+              - label: "Personas"
+                name: "personas"
+                widget: "list"
+                label_singular: "Persona"
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Emoji ou Avatar", name: "emoji", widget: "string", default: "👤", hint: "Use um emoji ou deixe para usar foto abaixo" }
+                  - { label: "Foto da Persona", name: "avatar", widget: "image", required: false }
+                  - { label: "Idade", name: "age", widget: "string", hint: "Ex: 34 anos" }
+                  - { label: "Profissão", name: "occupation", widget: "string" }
+                  - { label: "Localização", name: "location", widget: "string" }
+                  - { label: "Citação", name: "quote", widget: "string", required: false }
+                  - { label: "Bio / Descrição", name: "bio", widget: "text" }
+                  - { label: "Objetivos", name: "goals", widget: "list", field: { label: "Objetivo", name: "item", widget: "string" } }
+                  - { label: "Dores", name: "pains", widget: "list", field: { label: "Dor", name: "item", widget: "string" } }
+                  - { label: "Canais", name: "channels", widget: "list", field: { label: "Canal", name: "item", widget: "string" } }
+                  - { label: "Frequência de Visita", name: "frequency", widget: "string", required: false }
+
+          # ── CORE DE MARCA ─────────────────────────
+          - label: "03 — Core de Marca"
+            name: "brand_core"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Posicionamento", name: "positioning", widget: "text" }
+
+              - label: "Taglines"
+                name: "taglines"
+                widget: "list"
+                label_singular: "Tagline"
+                fields:
+                  - { label: "Texto da Tagline", name: "text", widget: "string" }
+                  - { label: "Contexto de Uso", name: "context", widget: "string" }
+
+              - label: "Proposta de Valor"
+                name: "value_proposition"
+                widget: "object"
+                fields:
+                  - { label: "Proposta Principal", name: "main", widget: "text" }
+                  - { label: "Diferenciais", name: "differentiators", widget: "list", field: { label: "Diferencial", name: "item", widget: "string" } }
+
+              - label: "Arquétipos de Marca"
+                name: "archetypes"
+                widget: "list"
+                label_singular: "Arquétipo"
+                fields:
+                  - { label: "Nome do Arquétipo", name: "name", widget: "string" }
+                  - { label: "Papel", name: "role", widget: "select", options: ["Primário", "Secundário"] }
+                  - { label: "Descrição", name: "description", widget: "text" }
+                  - { label: "Traços", name: "traits", widget: "list", field: { label: "Traço", name: "item", widget: "string" } }
+                  - { label: "Como se Expressa", name: "expression", widget: "text" }
+
+          # ── COMUNICAÇÃO ───────────────────────────
+          - label: "04 — Comunicação"
+            name: "communication"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Tom de Voz"
+                name: "tone_of_voice"
+                widget: "list"
+                label_singular: "Atributo"
+                fields:
+                  - { label: "Atributo", name: "attribute", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "text" }
+                  - { label: "Exemplo — Como Usar", name: "do", widget: "text" }
+                  - { label: "Exemplo — Como NÃO Usar", name: "dont", widget: "text" }
+
+              - label: "Vocabulário"
+                name: "vocabulary"
+                widget: "object"
+                fields:
+                  - { label: "Palavras que Usamos", name: "use", widget: "list", field: { label: "Palavra", name: "item", widget: "string" } }
+                  - { label: "Palavras que Evitamos", name: "avoid", widget: "list", field: { label: "Palavra", name: "item", widget: "string" } }
+
+              - { label: "Narrativa de Marca", name: "narrative", widget: "markdown", hint: "A história da marca. Use parágrafos e negrito." }
+              - { label: "Manifesto", name: "manifesto", widget: "markdown", hint: "A declaração de intenção da marca." }
+
+          # ── IDENTIDADE VISUAL ─────────────────────
+          - label: "05 — Identidade Visual"
+            name: "visual_identity"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Variações do Logo"
+                name: "logos"
+                widget: "list"
+                label_singular: "Versão"
+                fields:
+                  - { label: "Nome da Versão", name: "name", widget: "string" }
+                  - { label: "Descrição de Uso", name: "description", widget: "string" }
+                  - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
+                  - { label: "Imagem de Preview", name: "thumbnail", widget: "image", required: false }
+
+              - label: "Paleta de Cores (detalhada)"
+                name: "colors"
+                widget: "list"
+                label_singular: "Cor"
+                fields:
+                  - { label: "Nome da Cor", name: "name", widget: "string" }
+                  - { label: "Papel", name: "role", widget: "string", hint: "Ex: Primária, Secundária, Destaque" }
+                  - { label: "Hexadecimal", name: "hex", widget: "string", hint: "Ex: #2C1810" }
+                  - { label: "RGB", name: "rgb", widget: "string", hint: "Ex: 44, 24, 16" }
+                  - { label: "CMYK", name: "cmyk", widget: "string", hint: "Ex: 0, 45, 64, 83" }
+                  - { label: "Orientação de Uso", name: "usage", widget: "text", required: false }
+
+              - label: "Ícones"
+                name: "icons"
+                widget: "list"
+                label_singular: "Ícone"
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
+                  - { label: "Preview", name: "thumbnail", widget: "image", required: false }
+
+              - label: "Espaço em Branco e Tamanho"
+                name: "spacing"
+                widget: "object"
+                fields:
+                  - { label: "Tamanho Mínimo Impresso", name: "min_size_print", widget: "string", hint: "Ex: 25mm" }
+                  - { label: "Tamanho Mínimo Digital", name: "min_size_digital", widget: "string", hint: "Ex: 80px" }
+                  - { label: "Regra de Área de Proteção", name: "clear_space_rule", widget: "text" }
+                  - { label: "Exemplos", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
+
+              - label: "Uso Incorreto"
+                name: "incorrect_use"
+                widget: "list"
+                label_singular: "Exemplo"
+                fields:
+                  - { label: "Descrição", name: "description", widget: "string" }
+                  - { label: "Imagem de Exemplo", name: "image", widget: "image", required: false }
+
+              - label: "Materiais Gráficos"
+                name: "graphic_materials"
+                widget: "list"
+                label_singular: "Material"
+                fields:
+                  - { label: "Nome do Material", name: "name", widget: "string" }
+                  - { label: "Imagem / Mockup", name: "image", widget: "image", required: false }
+
+          # ── REDES SOCIAIS ─────────────────────────
+          - label: "06 — Redes Sociais"
+            name: "social_media"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Linhas Editoriais"
+                name: "editorial_lines"
+                widget: "list"
+                label_singular: "Linha"
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Cor da Linha", name: "color", widget: "color", required: false }
+                  - { label: "Descrição", name: "description", widget: "text" }
+                  - { label: "Exemplos de Conteúdo", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
+
+              - label: "Pilares de Conteúdo"
+                name: "content_pillars"
+                widget: "list"
+                label_singular: "Pilar"
+                fields:
+                  - { label: "Nome do Pilar", name: "name", widget: "string" }
+                  - { label: "Emoji", name: "emoji", widget: "string", default: "📌" }
+                  - { label: "Objetivo", name: "objective", widget: "text" }
+                  - { label: "Exemplos", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
+
+              - label: "Referências"
+                name: "references"
+                widget: "list"
+                label_singular: "Referência"
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "string", required: false }
+                  - { label: "Imagem", name: "image", widget: "image", required: false }
+
+              - label: "Comunicação Visual nas Redes"
+                name: "visual_communication"
+                widget: "list"
+                label_singular: "Template"
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Descrição", name: "description", widget: "string", required: false }
+                  - { label: "Imagem / Template", name: "image", widget: "image", required: false }

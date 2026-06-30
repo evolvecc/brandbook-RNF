@@ -1,0 +1,411 @@
+{
+  "brand": {
+    "name": "Café Aurora",
+    "tagline": "Desperte o que há de melhor em você",
+    "cover_color": "#2C1810",
+    "logo": "",
+    "logo_white": "",
+    "colors": {
+      "primary": "#2C1810",
+      "secondary": "#6B3F2A",
+      "accent": "#D4A853",
+      "background": "#FAF7F2",
+      "text": "#1A1008"
+    },
+    "fonts": {
+      "heading": "Playfair Display",
+      "heading_url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap",
+      "body": "Inter",
+      "body_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    }
+  },
+
+  "research": {
+    "benchmarking": [
+      {
+        "name": "Starbucks",
+        "positioning": "Café premium global com experiência padronizada",
+        "strengths": "Reconhecimento global, programa de fidelidade sólido, inovação em bebidas",
+        "weaknesses": "Padronização excessiva, pouca identidade local, preço muito elevado",
+        "x": 82,
+        "y": 75
+      },
+      {
+        "name": "Havanna",
+        "positioning": "Café & confeitaria premium argentino",
+        "strengths": "Tradição de marca, alfajores icônicos, experiência diferenciada",
+        "weaknesses": "Associação forte com produtos específicos, menos agilidade",
+        "x": 70,
+        "y": 35
+      },
+      {
+        "name": "Café do Mercado",
+        "positioning": "Café tradicional e acessível no coração da cidade",
+        "strengths": "Preço baixo, clientela fiel, agilidade",
+        "weaknesses": "Pouca inovação, experiência básica, sem identidade de marca forte",
+        "x": 20,
+        "y": 25
+      },
+      {
+        "name": "Pergamino",
+        "positioning": "Specialty coffee com foco em origem e processo",
+        "strengths": "Qualidade de grão, cultura do café, público cult",
+        "weaknesses": "Nicho muito específico, acessível apenas por preço",
+        "x": 75,
+        "y": 85
+      }
+    ],
+    "positioning_map": {
+      "axis_x_left": "Acessível",
+      "axis_x_right": "Premium",
+      "axis_y_bottom": "Tradicional",
+      "axis_y_top": "Moderno",
+      "brand_x": 62,
+      "brand_y": 70
+    }
+  },
+
+  "audience": {
+    "segments": [
+      {
+        "name": "Profissional Urbano",
+        "description": "Adultos entre 28 e 45 anos que usam o café como ritual de produtividade e encontro social no cotidiano de trabalho.",
+        "size": "45%",
+        "characteristics": ["Busca qualidade e consistência", "Valoriza agilidade no atendimento", "Visita de 3 a 5 vezes por semana", "Usa o espaço para trabalho remoto"]
+      },
+      {
+        "name": "Descobridor de Experiências",
+        "description": "Jovens adultos entre 22 e 32 anos apaixonados por gastronomia, que buscam novas experiências e compartilham nas redes.",
+        "size": "30%",
+        "characteristics": ["Altamente conectado nas redes sociais", "Disposição para pagar mais por experiências únicas", "Influencia outras pessoas na rede", "Experimenta itens novos do menu"]
+      },
+      {
+        "name": "Encontro & Descanso",
+        "description": "Pessoas que usam o café como ponto de encontro para conversas, datas ou momentos de pausa no dia.",
+        "size": "25%",
+        "characteristics": ["Prefere fins de semana e tarde", "Valoriza o ambiente e a decoração", "Ticket médio mais alto", "Fidelidade alta quando bem atendido"]
+      }
+    ],
+    "personas": [
+      {
+        "name": "Mariana Costa",
+        "emoji": "👩‍💼",
+        "age": "34 anos",
+        "occupation": "Designer UX / Freelancer",
+        "location": "Pinheiros, São Paulo",
+        "quote": "Meu dia só começa de verdade com um bom café. É onde eu penso, crio e me reconecto.",
+        "bio": "Mariana trabalha de casa 4 dias por semana e sai para o café como seu escritório alternativo. É exigente com a qualidade do café e aprecia espaços que a façam sentir produtiva e inspirada.",
+        "goals": ["Encontrar um café aconchegante para trabalhar sem interrupções", "Ter acesso rápido a wifi de qualidade e tomadas", "Descobrir combinações de bebidas e petiscos que sejam saudáveis e saborosas"],
+        "pains": ["Cafés barulhentos que atrapalham a concentração", "Atendimento lento nos horários de pico", "Falta de opções de alimentação saudável e consistente"],
+        "channels": ["Instagram", "Google Maps", "Indicação de amigos"],
+        "frequency": "4x por semana"
+      },
+      {
+        "name": "Rafael Teixeira",
+        "emoji": "👨‍🍳",
+        "age": "27 anos",
+        "occupation": "Criador de conteúdo gastronômico",
+        "location": "Vila Madalena, São Paulo",
+        "quote": "Cada xícara tem uma história. Gosto de cafés que me surpreendem e que sejam visualmente bonitos.",
+        "bio": "Rafael tem 120k de seguidores no Instagram e TikTok focados em gastronomia. Visita novos cafés constantemente, documenta sua experiência e influencia sua comunidade. Busca estética e originalidade.",
+        "goals": ["Encontrar cafés fotogênicos para produzir conteúdo de qualidade", "Experimentar drinks e itens exclusivos", "Descobrir histórias por trás dos produtos"],
+        "pains": ["Lugares genéricos sem personalidade ou história", "Cardápios que não têm criatividade", "Falta de transparência sobre origem dos produtos"],
+        "channels": ["TikTok", "Instagram", "YouTube"],
+        "frequency": "2x por semana (sempre novos lugares)"
+      }
+    ]
+  },
+
+  "brand_core": {
+    "positioning": "O Café Aurora é o lar das pessoas que buscam mais do que uma bebida: buscam um momento de intenção, beleza e conexão genuína no meio da rotina acelerada.",
+    "taglines": [
+      {
+        "text": "Desperte o que há de melhor em você",
+        "context": "Tagline principal — usada em campanhas, assinatura da marca e materiais institucionais"
+      },
+      {
+        "text": "Cada xícara, uma pausa de propósito",
+        "context": "Variação para comunicação de produtos e redes sociais"
+      },
+      {
+        "text": "Onde o dia encontra seu ritmo",
+        "context": "Variação para comunicação de espaço e experiência"
+      }
+    ],
+    "value_proposition": {
+      "main": "Oferecemos uma experiência de café de especialidade em um ambiente que equilibra acolhimento e estética, para pessoas que valorizam momentos de qualidade no cotidiano.",
+      "differentiators": [
+        "Grãos de origem rastreável, com blend exclusivo desenvolvido com torrefadores independentes",
+        "Ambiente projetado para estimular criatividade, foco e conexão humana",
+        "Cardápio sazonal com itens artesanais que variam de acordo com os ingredientes do período",
+        "Equipe treinada para contar histórias por trás de cada produto"
+      ]
+    },
+    "archetypes": [
+      {
+        "name": "O Criador",
+        "role": "Primário",
+        "description": "A marca expressa criatividade, estética e originalidade. Acredita que tudo pode ser belo e significativo, desde a xícara de café até o espaço.",
+        "traits": ["Imaginativo", "Expressivo", "Visionário", "Comprometido com a excelência estética"],
+        "expression": "Produz conteúdo visual inspirador, cria experiências únicas e personalizadas, valoriza a curadoria em cada detalhe."
+      },
+      {
+        "name": "O Cuidador",
+        "role": "Secundário",
+        "description": "A marca cuida das pessoas através de momentos de pausa, atenção e hospitalidade genuína, como um anfitrião que conhece o nome dos clientes.",
+        "traits": ["Empático", "Acolhedor", "Presente", "Generoso"],
+        "expression": "Linguagem calorosa, atendimento personalizado, comunicação que reconhece e valoriza o cliente."
+      }
+    ]
+  },
+
+  "communication": {
+    "tone_of_voice": [
+      {
+        "attribute": "Caloroso",
+        "description": "Falamos como um amigo próximo que te conhece e se importa com você. Nossa linguagem é próxima, nunca fria ou corporativa.",
+        "do": "Bom dia! Que tal começar a semana com algo especial? Temos um novo blend para você descobrir.",
+        "dont": "Prezado cliente, informamos que novos produtos estão disponíveis para adquirir."
+      },
+      {
+        "attribute": "Inspirador",
+        "description": "Cada palavra que escolhemos convida o leitor a sentir algo, a imaginar e a querer viver aquela experiência.",
+        "do": "Feche os olhos. Imagine aquele primeiro gole que aquece por dentro. Você merece isso hoje.",
+        "dont": "Temos café novo. Venha tomar."
+      },
+      {
+        "attribute": "Autêntico",
+        "description": "Somos transparentes sobre nossa origem, nossos ingredientes e nossos processos. Não performamos — somos.",
+        "do": "Esse blend vem de duas fazendas no Cerrado Mineiro. Torra média, notas de chocolate amargo e caramelo.",
+        "dont": "Nosso produto é o melhor do mercado e supera todos os concorrentes."
+      },
+      {
+        "attribute": "Poético (sem ser hermético)",
+        "description": "Usamos imagens e metáforas que criam beleza, mas nunca de forma inacessível. O poético serve ao entendimento, não ao contrário.",
+        "do": "Tem dias que o café é o único ritual que ainda pertence só a você.",
+        "dont": "A efervescência etérea das notas olfativas transcedem a ordinária experiência sensorial."
+      }
+    ],
+    "vocabulary": {
+      "use": ["momento", "ritual", "pausa", "despertar", "descobrir", "artesanal", "origem", "cuidado", "gole", "intenção", "acolhimento", "curadoria"],
+      "avoid": ["promoção imperdível", "produto", "consumidor", "adquirir", "oferta", "desconto especial", "combo", "leve mais pague menos"]
+    },
+    "narrative": "<p>O Café Aurora nasceu de uma crença simples: que as melhores coisas da vida não precisam ser rápidas.</p><p>Em 2019, duas amigas — uma designer e uma barista — cansadas da agitação sem propósito da vida contemporânea, decidiram criar um espaço que fosse o oposto de tudo isso. Um lugar onde cada detalhe contasse. O grão escolhido com cuidado. A luz calculada para aquecer. A música escolhida para não atrapalhar o pensamento.</p><p>O Aurora não é só um café. É uma pausa com intenção. É o lugar onde o dia encontra seu ritmo.</p>",
+    "manifesto": "<p>Num mundo que glorifica a velocidade, nós escolhemos a pausa.</p><p>Num mercado que padroniza tudo, nós escolhemos a história.</p><p>Enquanto o mundo diz para você fazer mais, correr mais, render mais — nós te convidamos para sentar, respirar e lembrar que você já é suficiente.</p><p>O café é o pretexto. O encontro é o ponto.</p><p>Bem-vindo ao Aurora. Você chegou no lugar certo.</p>"
+  },
+
+  "visual_identity": {
+    "logos": [
+      {
+        "name": "Logo Principal — Versão Positiva",
+        "description": "Uso principal em fundos claros. Versão completa com símbolo + logotipo.",
+        "file": "",
+        "thumbnail": ""
+      },
+      {
+        "name": "Logo Negativa — Fundo Escuro",
+        "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
+        "file": "",
+        "thumbnail": ""
+      },
+      {
+        "name": "Símbolo Isolado",
+        "description": "Para uso em ícone de app, favicon e situações onde o espaço é reduzido.",
+        "file": "",
+        "thumbnail": ""
+      },
+      {
+        "name": "Logo Horizontal",
+        "description": "Variação para uso em headers, assinaturas de email e banners horizontais.",
+        "file": "",
+        "thumbnail": ""
+      }
+    ],
+    "colors": [
+      {
+        "name": "Aurora Brown",
+        "role": "Primária",
+        "hex": "#2C1810",
+        "rgb": "44, 24, 16",
+        "cmyk": "0, 45, 64, 83",
+        "usage": "Cor principal da marca. Use para textos principais, fundos de destaque e elementos âncora da identidade."
+      },
+      {
+        "name": "Terracota",
+        "role": "Secundária",
+        "hex": "#6B3F2A",
+        "rgb": "107, 63, 42",
+        "cmyk": "0, 41, 61, 58",
+        "usage": "Cor de suporte para hierarquias visuais, backgrounds de seção e elementos gráficos secundários."
+      },
+      {
+        "name": "Dourado Aurora",
+        "role": "Destaque",
+        "hex": "#D4A853",
+        "rgb": "212, 168, 83",
+        "cmyk": "0, 21, 61, 17",
+        "usage": "Cor de ênfase para CTAs, destaques, ícones e elementos que precisam de destaque visual."
+      },
+      {
+        "name": "Creme",
+        "role": "Fundo",
+        "hex": "#FAF7F2",
+        "rgb": "250, 247, 242",
+        "cmyk": "0, 1, 3, 2",
+        "usage": "Fundo principal da página e de materiais impressos. Nunca use branco puro — esta é a cor neutra da Aurora."
+      },
+      {
+        "name": "Espresso",
+        "role": "Texto",
+        "hex": "#1A1008",
+        "rgb": "26, 16, 8",
+        "cmyk": "0, 38, 69, 90",
+        "usage": "Cor para textos longos e body copy. Mais suave que o preto puro, mantém a sensação orgânica da marca."
+      }
+    ],
+    "icons": [
+      {
+        "name": "Ícone Xícara",
+        "file": "",
+        "thumbnail": ""
+      },
+      {
+        "name": "Ícone Grão de Café",
+        "file": "",
+        "thumbnail": ""
+      },
+      {
+        "name": "Ícone Mapa Pin",
+        "file": "",
+        "thumbnail": ""
+      }
+    ],
+    "spacing": {
+      "min_size_print": "25mm",
+      "min_size_digital": "80px",
+      "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da letra 'A' do logotipo em todos os quatro lados.",
+      "examples": [
+        "Nunca posicione o logo a menos de 1x sua altura de qualquer borda de página ou elemento",
+        "Em materiais impressos, mantenha uma margem mínima de 5mm em todos os lados"
+      ]
+    },
+    "incorrect_use": [
+      {
+        "description": "Não distorça ou estique o logo em nenhuma direção",
+        "image": ""
+      },
+      {
+        "description": "Não use o logo em fundos que criem conflito visual ou baixo contraste",
+        "image": ""
+      },
+      {
+        "description": "Não altere as cores do logo para cores fora da paleta aprovada",
+        "image": ""
+      },
+      {
+        "description": "Não adicione sombras, contornos ou efeitos ao logo",
+        "image": ""
+      },
+      {
+        "description": "Não use o logo em tamanho menor que o mínimo permitido",
+        "image": ""
+      }
+    ],
+    "graphic_materials": [
+      {
+        "name": "Embalagem de Blend",
+        "image": ""
+      },
+      {
+        "name": "Copo Descartável",
+        "image": ""
+      },
+      {
+        "name": "Papelaria",
+        "image": ""
+      },
+      {
+        "name": "Uniforme de Equipe",
+        "image": ""
+      }
+    ]
+  },
+
+  "social_media": {
+    "editorial_lines": [
+      {
+        "name": "Ritual & Rotina",
+        "description": "Conteúdos que integram o café ao cotidiano das pessoas, valorizando a pausa e o momento presente.",
+        "color": "#2C1810",
+        "examples": ["Séries 'meu café da manhã'", "Conteúdo de ritual de início de dia", "Posts de segunda-feira com intenção da semana"]
+      },
+      {
+        "name": "Bastidores & Artesanato",
+        "description": "Mostrar o processo, as pessoas por trás da marca e a história dos produtos. Conteúdo autêntico e transparente.",
+        "color": "#6B3F2A",
+        "examples": ["Processo de torra do blend", "Visita à fazenda parceira", "Perfil de barista da equipe"]
+      },
+      {
+        "name": "Experiência & Espaço",
+        "description": "Conteúdo que vende a experiência do espaço físico: o ambiente, os detalhes, os momentos vividos ali.",
+        "color": "#D4A853",
+        "examples": ["Detalhes da decoração sazonal", "Clientes em momentos de conexão", "Vídeos ASMR do ambiente"]
+      }
+    ],
+    "content_pillars": [
+      {
+        "name": "Educar",
+        "emoji": "📚",
+        "objective": "Posicionar a Aurora como especialista em café, construindo credibilidade e gerando valor real para o seguidor.",
+        "examples": ["Como escolher o método de extração ideal", "Diferença entre processos de café", "História do grão que usamos"]
+      },
+      {
+        "name": "Inspirar",
+        "emoji": "✨",
+        "objective": "Conectar a marca a um estilo de vida intencional, minimalista e bonito, gerando desejo e identificação.",
+        "examples": ["Fotografias de ambientes e rituais", "Citações sobre pausa e presença", "Momentos de beleza cotidiana"]
+      },
+      {
+        "name": "Engajar",
+        "emoji": "💬",
+        "objective": "Criar conversa, gerar proximidade e fortalecer a comunidade em torno da marca.",
+        "examples": ["Perguntas sobre preferências de café", "Votações entre duas opções do cardápio", "Pedindo recomendações de músicas para o espaço"]
+      },
+      {
+        "name": "Converter",
+        "emoji": "☕",
+        "objective": "Conteúdo com intenção direta de visita ou compra, sempre com linguagem da marca (nunca agressivo).",
+        "examples": ["Novo item do cardápio com storytelling", "Horário especial do fim de semana", "Evento no espaço"]
+      }
+    ],
+    "references": [
+      {
+        "name": "Referência Visual 1",
+        "description": "Fotografia de café com luz natural e composição minimalista",
+        "image": ""
+      },
+      {
+        "name": "Referência Visual 2",
+        "description": "Layout de feed com grid coerente de tons quentes e neutros",
+        "image": ""
+      }
+    ],
+    "visual_communication": [
+      {
+        "name": "Post Feed Quadrado",
+        "description": "Template principal para posts de feed. Fundo em creme, tipografia serif, elemento gráfico sutil.",
+        "image": ""
+      },
+      {
+        "name": "Stories",
+        "description": "Template de stories com área de texto inferior e foto/imagem na parte superior.",
+        "image": ""
+      },
+      {
+        "name": "Capa de Destaque",
+        "description": "Ícone + fundo na cor primária. Tipografia pequena e elegante abaixo do ícone.",
+        "image": ""
+      }
+    ]
+  }
+}

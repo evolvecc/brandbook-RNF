@@ -1,0 +1,25 @@
+[build]
+  # Sem processo de build — arquivos estáticos servidos diretamente
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Cache-control para brand.json — sem cache para o cliente sempre ver dados atualizados
+[[headers]]
+  for = "/_data/brand.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Identidade Netlify — necessário para autenticação do CMS
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+# Redirect: /admin sem barra final → /admin/
+[[redirects]]
+  from = "/admin"
+  to   = "/admin/"
+  status = 301

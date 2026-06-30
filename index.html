@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandbook</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link id="font-heading-link" rel="stylesheet" href="" />
+  <link id="font-body-link" rel="stylesheet" href="" />
+</head>
+<body>
+
+  <!-- ── SIDEBAR ────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo" id="sidebar-logo">
+        <span class="sidebar-logo-initials" id="sidebar-logo-initials">CA</span>
+      </div>
+      <div>
+        <div class="sidebar-brand-name" id="sidebar-brand-name">Café Aurora</div>
+        <div class="sidebar-brand-sub">Brandbook</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-module="research" href="#research">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M15 15l-2.5-2.5"/></svg>
+        <span>Pesquisa de Mercado</span>
+      </a>
+      <a class="nav-item" data-module="audience" href="#audience">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><path d="M1 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="15" cy="7" r="2.5"/><path d="M19 18c0-2.5-1.8-4.5-4-5"/></svg>
+        <span>Público-Alvo</span>
+      </a>
+      <a class="nav-item" data-module="brand-core" href="#brand-core">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="10 2 12.5 7.5 18.5 8.5 14 13 15.5 19 10 16 4.5 19 6 13 1.5 8.5 7.5 7.5"/></svg>
+        <span>Core de Marca</span>
+      </a>
+      <a class="nav-item" data-module="communication" href="#communication">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4h16v11H2z" rx="2"/><path d="M6 15v3l4-3"/></svg>
+        <span>Comunicação</span>
+      </a>
+      <a class="nav-item" data-module="visual-identity" href="#visual-identity">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="8"/><path d="M6 10a4 4 0 008 0"/><circle cx="10" cy="7" r="1.5" fill="currentColor" stroke="none"/></svg>
+        <span>Identidade Visual</span>
+      </a>
+      <a class="nav-item" data-module="social-media" href="#social-media">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5"/></svg>
+        <span>Redes Sociais</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Desenvolvido por</span>
+      <span class="sidebar-agency" id="sidebar-agency">Sua Agência</span>
+    </div>
+  </aside>
+
+  <!-- ── HAMBURGER (mobile) ─────────────────────────────────── -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- ═══ MODULE 1: PESQUISA DE MERCADO ═══════════════════ -->
+    <section class="module" id="research">
+      <div class="module-hero">
+        <div class="module-number">01</div>
+        <div>
+          <h1 class="module-title">Pesquisa de Mercado</h1>
+          <p class="module-desc">Entendimento do contexto competitivo e posicionamento da marca no setor.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="benchmarking">Benchmarking</button>
+        <button class="sub-tab" data-section="positioning-map">Mapa de Posicionamento</button>
+      </div>
+
+      <div class="subsection active" id="benchmarking">
+        <h2 class="section-title">Benchmarking</h2>
+        <p class="section-desc">Análise comparativa dos principais concorrentes diretos e indiretos da marca.</p>
+        <div class="table-wrapper">
+          <table class="bench-table" id="bench-table">
+            <thead>
+              <tr>
+                <th>Marca</th>
+                <th>Posicionamento</th>
+                <th>Pontos Fortes</th>
+                <th>Pontos Fracos</th>
+              </tr>
+            </thead>
+            <tbody id="bench-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="positioning-map">
+        <h2 class="section-title">Mapa de Posicionamento</h2>
+        <p class="section-desc">Visualização de onde a marca se posiciona em relação aos concorrentes nos eixos estratégicos.</p>
+        <div class="map-container">
+          <svg id="pos-map" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div id="map-legend" class="map-legend"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MODULE 2: PÚBLICO-ALVO ════════════════════════════ -->
+    <section class="module hidden" id="audience">
+      <div class="module-hero">
+        <div class="module-number">02</div>
+        <div>
+          <h1 class="module-title">Público-Alvo</h1>
+          <p class="module-desc">Quem são as pessoas que a marca quer alcançar, conectar e servir.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="segments">Públicos</button>
+        <button class="sub-tab" data-section="personas">Personas</button>
+      </div>
+
+      <div class="subsection active" id="segments">
+        <h2 class="section-title">Segmentos de Audiência</h2>
+        <p class="section-desc">Grupos estratégicos que representam a audiência da marca.</p>
+        <div class="cards-grid" id="segments-grid"></div>
+      </div>
+
+      <div class="subsection" id="personas">
+        <h2 class="section-title">Personas</h2>
+        <p class="section-desc">Representações semifictícias dos clientes ideais, baseadas em dados reais.</p>
+        <div class="personas-list" id="personas-list"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MODULE 3: CORE DE MARCA ═══════════════════════════ -->
+    <section class="module hidden" id="brand-core">
+      <div class="module-hero">
+        <div class="module-number">03</div>
+        <div>
+          <h1 class="module-title">Core de Marca</h1>
+          <p class="module-desc">A essência estratégica da marca: o que ela é, para quem é e por que existe.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="positioning">Posicionamento</button>
+        <button class="sub-tab" data-section="tagline">Tagline</button>
+        <button class="sub-tab" data-section="value-proposition">Proposta de Valor</button>
+        <button class="sub-tab" data-section="archetypes">Arquétipos</button>
+      </div>
+
+      <div class="subsection active" id="positioning">
+        <h2 class="section-title">Posicionamento</h2>
+        <p class="section-desc">A declaração que define com clareza onde a marca ocupa espaço na mente e no coração do público.</p>
+        <div class="quote-block" id="positioning-text"></div>
+      </div>
+
+      <div class="subsection" id="tagline">
+        <h2 class="section-title">Tagline</h2>
+        <p class="section-desc">A síntese verbal da marca — as palavras que ficam.</p>
+        <div class="taglines-list" id="taglines-list"></div>
+      </div>
+
+      <div class="subsection" id="value-proposition">
+        <h2 class="section-title">Proposta de Valor</h2>
+        <p class="section-desc">O que a marca entrega de único e como isso beneficia seu público.</p>
+        <div class="value-prop-block" id="value-prop-block"></div>
+      </div>
+
+      <div class="subsection" id="archetypes">
+        <h2 class="section-title">Arquétipos de Marca</h2>
+        <p class="section-desc">Os perfis arquetípicos que fundamentam a personalidade e expressão da marca.</p>
+        <div class="archetypes-list" id="archetypes-list"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MODULE 4: COMUNICAÇÃO ═════════════════════════════ -->
+    <section class="module hidden" id="communication">
+      <div class="module-hero">
+        <div class="module-number">04</div>
+        <div>
+          <h1 class="module-title">Comunicação</h1>
+          <p class="module-desc">Como a marca fala, escreve e se expressa verbalmente com o mundo.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="tone-of-voice">Tom de Voz</button>
+        <button class="sub-tab" data-section="vocabulary">Vocabulário</button>
+        <button class="sub-tab" data-section="narrative">Narrativa de Marca</button>
+        <button class="sub-tab" data-section="manifesto">Manifesto</button>
+      </div>
+
+      <div class="subsection active" id="tone-of-voice">
+        <h2 class="section-title">Tom de Voz</h2>
+        <p class="section-desc">Os atributos que definem como a marca se comunica em todo ponto de contato.</p>
+        <div class="tov-list" id="tov-list"></div>
+      </div>
+
+      <div class="subsection" id="vocabulary">
+        <h2 class="section-title">Vocabulário</h2>
+        <p class="section-desc">Palavras que pertencem (e que não pertencem) à voz da marca.</p>
+        <div class="vocab-block" id="vocab-block"></div>
+      </div>
+
+      <div class="subsection" id="narrative">
+        <h2 class="section-title">Narrativa de Marca</h2>
+        <p class="section-desc">A história que a marca conta sobre si mesma — sua origem, sua crença e seu propósito.</p>
+        <div class="prose-block" id="narrative-text"></div>
+      </div>
+
+      <div class="subsection" id="manifesto">
+        <h2 class="section-title">Manifesto</h2>
+        <p class="section-desc">A declaração de intenção da marca — o que ela acredita e defende.</p>
+        <div class="manifesto-block" id="manifesto-text"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MODULE 5: IDENTIDADE VISUAL ══════════════════════ -->
+    <section class="module hidden" id="visual-identity">
+      <div class="module-hero">
+        <div class="module-number">05</div>
+        <div>
+          <h1 class="module-title">Identidade Visual</h1>
+          <p class="module-desc">Os elementos visuais que tornam a marca reconhecível e consistente.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="logos">Logotipo</button>
+        <button class="sub-tab" data-section="palette">Paleta de Cores</button>
+        <button class="sub-tab" data-section="icons">Ícones</button>
+        <button class="sub-tab" data-section="spacing">Espaço & Tamanho</button>
+        <button class="sub-tab" data-section="incorrect">Uso Incorreto</button>
+        <button class="sub-tab" data-section="materials">Materiais</button>
+      </div>
+
+      <div class="subsection active" id="logos">
+        <h2 class="section-title">Logotipo e Variações</h2>
+        <p class="section-desc">Todas as versões aprovadas do logotipo e suas especificações de uso.</p>
+        <div class="logos-grid" id="logos-grid"></div>
+      </div>
+
+      <div class="subsection" id="palette">
+        <h2 class="section-title">Paleta de Cores</h2>
+        <p class="section-desc">As cores oficiais da marca com seus valores e orientações de uso.</p>
+        <div class="colors-grid" id="colors-grid"></div>
+      </div>
+
+      <div class="subsection" id="icons">
+        <h2 class="section-title">Ícones</h2>
+        <p class="section-desc">Sistema de ícones da marca para uso em materiais digitais e impressos.</p>
+        <div class="icons-grid" id="icons-grid"></div>
+      </div>
+
+      <div class="subsection" id="spacing">
+        <h2 class="section-title">Espaço em Branco e Tamanho</h2>
+        <p class="section-desc">Regras de área de proteção, tamanho mínimo e máximo para uso do logotipo.</p>
+        <div class="spacing-block" id="spacing-block"></div>
+      </div>
+
+      <div class="subsection" id="incorrect">
+        <h2 class="section-title">Uso Incorreto da Marca</h2>
+        <p class="section-desc">O que nunca deve ser feito com os elementos visuais da marca.</p>
+        <div class="incorrect-grid" id="incorrect-grid"></div>
+      </div>
+
+      <div class="subsection" id="materials">
+        <h2 class="section-title">Materiais Gráficos</h2>
+        <p class="section-desc">Aplicações da identidade visual em materiais reais da marca.</p>
+        <div class="materials-grid" id="materials-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MODULE 6: REDES SOCIAIS ═══════════════════════════ -->
+    <section class="module hidden" id="social-media">
+      <div class="module-hero">
+        <div class="module-number">06</div>
+        <div>
+          <h1 class="module-title">Redes Sociais</h1>
+          <p class="module-desc">A estratégia de presença digital da marca — o que comunicar, como e com que visual.</p>
+        </div>
+      </div>
+
+      <div class="sub-tabs-bar">
+        <button class="sub-tab active" data-section="editorial-lines">Linhas Editoriais</button>
+        <button class="sub-tab" data-section="content-pillars">Pilares de Conteúdo</button>
+        <button class="sub-tab" data-section="references">Referências</button>
+        <button class="sub-tab" data-section="visual-comm">Comunicação Visual</button>
+      </div>
+
+      <div class="subsection active" id="editorial-lines">
+        <h2 class="section-title">Linhas Editoriais</h2>
+        <p class="section-desc">Os temas recorrentes que organizam o conteúdo da marca nas redes.</p>
+        <div class="editorial-list" id="editorial-list"></div>
+      </div>
+
+      <div class="subsection" id="content-pillars">
+        <h2 class="section-title">Pilares de Conteúdo</h2>
+        <p class="section-desc">As categorias estratégicas de conteúdo que equilibram objetivos e interesse do público.</p>
+        <div class="pillars-grid" id="pillars-grid"></div>
+      </div>
+
+      <div class="subsection" id="references">
+        <h2 class="section-title">Referências</h2>
+        <p class="section-desc">Inspirações visuais e de conteúdo que orientam a estética da marca nas redes.</p>
+        <div class="ref-grid" id="ref-grid"></div>
+      </div>
+
+      <div class="subsection" id="visual-comm">
+        <h2 class="section-title">Comunicação Visual nas Redes</h2>
+        <p class="section-desc">Templates e orientações visuais para os formatos das redes sociais.</p>
+        <div class="viscomm-grid" id="viscomm-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── LIGHTBOX ────────────────────────────────────────────── -->
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l12 12M16 4L4 16"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- ── TOAST ──────────────────────────────────────────────── -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
