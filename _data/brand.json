@@ -3,7 +3,7 @@
     "name": "Café Aurora",
     "tagline": "Desperte o que há de melhor em você",
     "cover_color": "#2C1810",
-    "logo": "",
+    "logo": "/assets/images/ícones-site.png",
     "logo_white": "",
     "colors": {
       "primary": "#f55003",
