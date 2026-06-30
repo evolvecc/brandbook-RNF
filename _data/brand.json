@@ -6,9 +6,9 @@
     "logo": "",
     "logo_white": "",
     "colors": {
-      "primary": "#2C1810",
-      "secondary": "#6B3F2A",
-      "accent": "#D4A853",
+      "primary": "#f55003",
+      "secondary": "#270cac",
+      "accent": "#63d0c2",
       "background": "#FAF7F2",
       "text": "#1A1008"
     },
@@ -19,7 +19,6 @@
       "body_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
     }
   },
-
   "research": {
     "benchmarking": [
       {
@@ -64,58 +63,95 @@
       "brand_y": 70
     }
   },
-
   "audience": {
     "segments": [
       {
         "name": "Profissional Urbano",
         "description": "Adultos entre 28 e 45 anos que usam o café como ritual de produtividade e encontro social no cotidiano de trabalho.",
         "size": "45%",
-        "characteristics": ["Busca qualidade e consistência", "Valoriza agilidade no atendimento", "Visita de 3 a 5 vezes por semana", "Usa o espaço para trabalho remoto"]
+        "characteristics": [
+          "Busca qualidade e consistência",
+          "Valoriza agilidade no atendimento",
+          "Visita de 3 a 5 vezes por semana",
+          "Usa o espaço para trabalho remoto"
+        ]
       },
       {
         "name": "Descobridor de Experiências",
         "description": "Jovens adultos entre 22 e 32 anos apaixonados por gastronomia, que buscam novas experiências e compartilham nas redes.",
         "size": "30%",
-        "characteristics": ["Altamente conectado nas redes sociais", "Disposição para pagar mais por experiências únicas", "Influencia outras pessoas na rede", "Experimenta itens novos do menu"]
+        "characteristics": [
+          "Altamente conectado nas redes sociais",
+          "Disposição para pagar mais por experiências únicas",
+          "Influencia outras pessoas na rede",
+          "Experimenta itens novos do menu"
+        ]
       },
       {
         "name": "Encontro & Descanso",
         "description": "Pessoas que usam o café como ponto de encontro para conversas, datas ou momentos de pausa no dia.",
         "size": "25%",
-        "characteristics": ["Prefere fins de semana e tarde", "Valoriza o ambiente e a decoração", "Ticket médio mais alto", "Fidelidade alta quando bem atendido"]
+        "characteristics": [
+          "Prefere fins de semana e tarde",
+          "Valoriza o ambiente e a decoração",
+          "Ticket médio mais alto",
+          "Fidelidade alta quando bem atendido"
+        ]
       }
     ],
     "personas": [
       {
-        "name": "Mariana Costa",
+        "goals": [
+          "Encontrar um café aconchegante para trabalhar sem interrupções",
+          "Ter acesso rápido a wifi de qualidade e tomadas",
+          "Descobrir combinações de bebidas e petiscos que sejam saudáveis e saborosas"
+        ],
         "emoji": "👩‍💼",
-        "age": "34 anos",
-        "occupation": "Designer UX / Freelancer",
-        "location": "Pinheiros, São Paulo",
-        "quote": "Meu dia só começa de verdade com um bom café. É onde eu penso, crio e me reconecto.",
         "bio": "Mariana trabalha de casa 4 dias por semana e sai para o café como seu escritório alternativo. É exigente com a qualidade do café e aprecia espaços que a façam sentir produtiva e inspirada.",
-        "goals": ["Encontrar um café aconchegante para trabalhar sem interrupções", "Ter acesso rápido a wifi de qualidade e tomadas", "Descobrir combinações de bebidas e petiscos que sejam saudáveis e saborosas"],
-        "pains": ["Cafés barulhentos que atrapalham a concentração", "Atendimento lento nos horários de pico", "Falta de opções de alimentação saudável e consistente"],
-        "channels": ["Instagram", "Google Maps", "Indicação de amigos"],
-        "frequency": "4x por semana"
+        "occupation": "Designer UX / Freelancer",
+        "name": "Mariana Costa",
+        "channels": [
+          "Instagram",
+          "Google Maps",
+          "Indicação de amigos"
+        ],
+        "location": "Pinheiros, São Paulo",
+        "frequency": "4x por semana",
+        "quote": "Meu dia só começa de verdade com um bom café. É onde eu penso, crio e me reconecto.",
+        "pains": [
+          "Cafés barulhentos que atrapalham a concentração",
+          "Atendimento lento nos horários de pico",
+          "Falta de opções de alimentação saudável e consistente"
+        ],
+        "age": "34 anos"
       },
       {
-        "name": "Rafael Teixeira",
+        "goals": [
+          "Encontrar cafés fotogênicos para produzir conteúdo de qualidade",
+          "Experimentar drinks e itens exclusivos",
+          "Descobrir histórias por trás dos produtos"
+        ],
         "emoji": "👨‍🍳",
-        "age": "27 anos",
-        "occupation": "Criador de conteúdo gastronômico",
-        "location": "Vila Madalena, São Paulo",
-        "quote": "Cada xícara tem uma história. Gosto de cafés que me surpreendem e que sejam visualmente bonitos.",
         "bio": "Rafael tem 120k de seguidores no Instagram e TikTok focados em gastronomia. Visita novos cafés constantemente, documenta sua experiência e influencia sua comunidade. Busca estética e originalidade.",
-        "goals": ["Encontrar cafés fotogênicos para produzir conteúdo de qualidade", "Experimentar drinks e itens exclusivos", "Descobrir histórias por trás dos produtos"],
-        "pains": ["Lugares genéricos sem personalidade ou história", "Cardápios que não têm criatividade", "Falta de transparência sobre origem dos produtos"],
-        "channels": ["TikTok", "Instagram", "YouTube"],
-        "frequency": "2x por semana (sempre novos lugares)"
+        "occupation": "Criador de conteúdo gastronômico",
+        "name": "Rafael Teixeira",
+        "channels": [
+          "TikTok",
+          "Instagram",
+          "YouTube"
+        ],
+        "location": "Vila Madalena, São Paulo",
+        "frequency": "2x por semana (sempre novos lugares)",
+        "quote": "Cada xícara tem uma história. Gosto de cafés que me surpreendem e que sejam visualmente bonitos.",
+        "pains": [
+          "Lugares genéricos sem personalidade ou história",
+          "Cardápios que não têm criatividade",
+          "Falta de transparência sobre origem dos produtos"
+        ],
+        "age": "27 anos"
       }
     ]
   },
-
   "brand_core": {
     "positioning": "O Café Aurora é o lar das pessoas que buscam mais do que uma bebida: buscam um momento de intenção, beleza e conexão genuína no meio da rotina acelerada.",
     "taglines": [
@@ -146,19 +182,28 @@
         "name": "O Criador",
         "role": "Primário",
         "description": "A marca expressa criatividade, estética e originalidade. Acredita que tudo pode ser belo e significativo, desde a xícara de café até o espaço.",
-        "traits": ["Imaginativo", "Expressivo", "Visionário", "Comprometido com a excelência estética"],
+        "traits": [
+          "Imaginativo",
+          "Expressivo",
+          "Visionário",
+          "Comprometido com a excelência estética"
+        ],
         "expression": "Produz conteúdo visual inspirador, cria experiências únicas e personalizadas, valoriza a curadoria em cada detalhe."
       },
       {
         "name": "O Cuidador",
         "role": "Secundário",
         "description": "A marca cuida das pessoas através de momentos de pausa, atenção e hospitalidade genuína, como um anfitrião que conhece o nome dos clientes.",
-        "traits": ["Empático", "Acolhedor", "Presente", "Generoso"],
+        "traits": [
+          "Empático",
+          "Acolhedor",
+          "Presente",
+          "Generoso"
+        ],
         "expression": "Linguagem calorosa, atendimento personalizado, comunicação que reconhece e valoriza o cliente."
       }
     ]
   },
-
   "communication": {
     "tone_of_voice": [
       {
@@ -187,13 +232,34 @@
       }
     ],
     "vocabulary": {
-      "use": ["momento", "ritual", "pausa", "despertar", "descobrir", "artesanal", "origem", "cuidado", "gole", "intenção", "acolhimento", "curadoria"],
-      "avoid": ["promoção imperdível", "produto", "consumidor", "adquirir", "oferta", "desconto especial", "combo", "leve mais pague menos"]
+      "use": [
+        "momento",
+        "ritual",
+        "pausa",
+        "despertar",
+        "descobrir",
+        "artesanal",
+        "origem",
+        "cuidado",
+        "gole",
+        "intenção",
+        "acolhimento",
+        "curadoria"
+      ],
+      "avoid": [
+        "promoção imperdível",
+        "produto",
+        "consumidor",
+        "adquirir",
+        "oferta",
+        "desconto especial",
+        "combo",
+        "leve mais pague menos"
+      ]
     },
     "narrative": "<p>O Café Aurora nasceu de uma crença simples: que as melhores coisas da vida não precisam ser rápidas.</p><p>Em 2019, duas amigas — uma designer e uma barista — cansadas da agitação sem propósito da vida contemporânea, decidiram criar um espaço que fosse o oposto de tudo isso. Um lugar onde cada detalhe contasse. O grão escolhido com cuidado. A luz calculada para aquecer. A música escolhida para não atrapalhar o pensamento.</p><p>O Aurora não é só um café. É uma pausa com intenção. É o lugar onde o dia encontra seu ritmo.</p>",
     "manifesto": "<p>Num mundo que glorifica a velocidade, nós escolhemos a pausa.</p><p>Num mercado que padroniza tudo, nós escolhemos a história.</p><p>Enquanto o mundo diz para você fazer mais, correr mais, render mais — nós te convidamos para sentar, respirar e lembrar que você já é suficiente.</p><p>O café é o pretexto. O encontro é o ponto.</p><p>Bem-vindo ao Aurora. Você chegou no lugar certo.</p>"
   },
-
   "visual_identity": {
     "logos": [
       {
@@ -330,26 +396,37 @@
       }
     ]
   },
-
   "social_media": {
     "editorial_lines": [
       {
         "name": "Ritual & Rotina",
         "description": "Conteúdos que integram o café ao cotidiano das pessoas, valorizando a pausa e o momento presente.",
         "color": "#2C1810",
-        "examples": ["Séries 'meu café da manhã'", "Conteúdo de ritual de início de dia", "Posts de segunda-feira com intenção da semana"]
+        "examples": [
+          "Séries 'meu café da manhã'",
+          "Conteúdo de ritual de início de dia",
+          "Posts de segunda-feira com intenção da semana"
+        ]
       },
       {
         "name": "Bastidores & Artesanato",
         "description": "Mostrar o processo, as pessoas por trás da marca e a história dos produtos. Conteúdo autêntico e transparente.",
         "color": "#6B3F2A",
-        "examples": ["Processo de torra do blend", "Visita à fazenda parceira", "Perfil de barista da equipe"]
+        "examples": [
+          "Processo de torra do blend",
+          "Visita à fazenda parceira",
+          "Perfil de barista da equipe"
+        ]
       },
       {
         "name": "Experiência & Espaço",
         "description": "Conteúdo que vende a experiência do espaço físico: o ambiente, os detalhes, os momentos vividos ali.",
         "color": "#D4A853",
-        "examples": ["Detalhes da decoração sazonal", "Clientes em momentos de conexão", "Vídeos ASMR do ambiente"]
+        "examples": [
+          "Detalhes da decoração sazonal",
+          "Clientes em momentos de conexão",
+          "Vídeos ASMR do ambiente"
+        ]
       }
     ],
     "content_pillars": [
@@ -357,25 +434,41 @@
         "name": "Educar",
         "emoji": "📚",
         "objective": "Posicionar a Aurora como especialista em café, construindo credibilidade e gerando valor real para o seguidor.",
-        "examples": ["Como escolher o método de extração ideal", "Diferença entre processos de café", "História do grão que usamos"]
+        "examples": [
+          "Como escolher o método de extração ideal",
+          "Diferença entre processos de café",
+          "História do grão que usamos"
+        ]
       },
       {
         "name": "Inspirar",
         "emoji": "✨",
         "objective": "Conectar a marca a um estilo de vida intencional, minimalista e bonito, gerando desejo e identificação.",
-        "examples": ["Fotografias de ambientes e rituais", "Citações sobre pausa e presença", "Momentos de beleza cotidiana"]
+        "examples": [
+          "Fotografias de ambientes e rituais",
+          "Citações sobre pausa e presença",
+          "Momentos de beleza cotidiana"
+        ]
       },
       {
         "name": "Engajar",
         "emoji": "💬",
         "objective": "Criar conversa, gerar proximidade e fortalecer a comunidade em torno da marca.",
-        "examples": ["Perguntas sobre preferências de café", "Votações entre duas opções do cardápio", "Pedindo recomendações de músicas para o espaço"]
+        "examples": [
+          "Perguntas sobre preferências de café",
+          "Votações entre duas opções do cardápio",
+          "Pedindo recomendações de músicas para o espaço"
+        ]
       },
       {
         "name": "Converter",
         "emoji": "☕",
         "objective": "Conteúdo com intenção direta de visita ou compra, sempre com linguagem da marca (nunca agressivo).",
-        "examples": ["Novo item do cardápio com storytelling", "Horário especial do fim de semana", "Evento no espaço"]
+        "examples": [
+          "Novo item do cardápio com storytelling",
+          "Horário especial do fim de semana",
+          "Evento no espaço"
+        ]
       }
     ],
     "references": [
