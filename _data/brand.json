@@ -6,17 +6,17 @@
     "logo": "/assets/images/ícones-site.png",
     "logo_white": "",
     "colors": {
-      "primary": "#f55003",
-      "secondary": "#270cac",
-      "accent": "#63d0c2",
-      "background": "#FAF7F2",
+      "primary": "#176b42",
+      "secondary": "#0d9736",
+      "accent": "#70d063",
+      "background": "#ffffff",
       "text": "#1A1008"
     },
     "fonts": {
-      "heading": "Playfair Display",
-      "heading_url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap",
-      "body": "Inter",
-      "body_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      "heading": "Stack Sans",
+      "heading_url": "https://fonts.google.com/specimen/Stack+Sans+Headline?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn",
+      "body": "Google Sans",
+      "body_url": "https://fonts.google.com/specimen/Google+Sans?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn"
     }
   },
   "research": {
@@ -400,8 +400,8 @@
       }
     ],
     "typography": {
-      "heading_file": "/assets/images/airbnb-cereal-app-black.ttf",
-      "body_file": ""
+      "heading_file": "/assets/images/airbnbcerealblack.ttf",
+      "body_file": "/assets/images/airbnbcerealextrabold-1-.ttf"
     }
   },
   "social_media": {
