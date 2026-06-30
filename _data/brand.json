@@ -6,10 +6,10 @@
     "logo": "/assets/images/ícones-site.png",
     "logo_white": "",
     "colors": {
-      "primary": "#f55003",
-      "secondary": "#270cac",
-      "accent": "#63d0c2",
-      "background": "#FAF7F2",
+      "primary": "#176b42",
+      "secondary": "#0d9736",
+      "accent": "#70d063",
+      "background": "#ffffff",
       "text": "#1A1008"
     },
     "fonts": {
@@ -380,23 +380,19 @@
     "graphic_materials": [
       {
         "name": "Embalagem de Blend",
-        "image": "",
-        "file": ""
+        "image": ""
       },
       {
         "name": "Copo Descartável",
-        "image": "",
-        "file": ""
+        "image": ""
       },
       {
         "name": "Papelaria",
-        "image": "",
-        "file": ""
+        "image": ""
       },
       {
         "name": "Uniforme de Equipe",
-        "image": "",
-        "file": ""
+        "image": ""
       }
     ]
   },
@@ -491,25 +487,18 @@
       {
         "name": "Post Feed Quadrado",
         "description": "Template principal para posts de feed. Fundo em creme, tipografia serif, elemento gráfico sutil.",
-        "image": "",
-        "file": ""
+        "image": ""
       },
       {
         "name": "Stories",
         "description": "Template de stories com área de texto inferior e foto/imagem na parte superior.",
-        "image": "",
-        "file": ""
+        "image": ""
       },
       {
         "name": "Capa de Destaque",
         "description": "Ícone + fundo na cor primária. Tipografia pequena e elegante abaixo do ícone.",
-        "image": "",
-        "file": ""
+        "image": ""
       }
     ]
-  },
-  "typography": {
-    "heading_file": "",
-    "body_file": ""
   }
 }
