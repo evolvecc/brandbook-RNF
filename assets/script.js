@@ -17,6 +17,7 @@ async function init() {
   renderCommunication(data.communication);
   renderVisualIdentity(data.visual_identity, data.brand);
   renderSocialMedia(data.social_media);
+  renderTypography(data.typography, data.brand);
   initNavigation();
   initMobileMenu();
 }
@@ -114,18 +115,18 @@ function activateSubSection(module, sectionId) {
 // ── MOBILE MENU ───────────────────────────────────────────────
 function initMobileMenu() {
   const ham     = document.getElementById('hamburger');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
+  const nav     = document.getElementById('topnav-nav');
+  const overlay = document.getElementById('topnav-overlay');
   if (!ham) return;
   ham.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
+    nav.classList.toggle('open');
     overlay.classList.toggle('active');
   });
   overlay.addEventListener('click', closeMobileMenu);
 }
 function closeMobileMenu() {
-  document.getElementById('sidebar')?.classList.remove('open');
-  document.getElementById('sidebar-overlay')?.classList.remove('active');
+  document.getElementById('topnav-nav')?.classList.remove('open');
+  document.getElementById('topnav-overlay')?.classList.remove('active');
 }
 
 // ── MODULE 1: RESEARCH ────────────────────────────────────────
@@ -546,14 +547,22 @@ function renderMaterials(items) {
   const el = document.getElementById('materials-grid');
   if (!el || !items) return;
   el.innerHTML = items.map(m => `
-    <div class="material-card" ${m.image ? `onclick="openLightbox('${esc(m.image)}','${esc(m.name)}')"` : ''}>
-      <div class="material-preview">
+    <div class="material-card">
+      <div class="material-preview" ${m.image ? `onclick="openLightbox('${esc(m.image)}','${esc(m.name)}')"` : ''}>
         ${m.image
           ? `<img src="${esc(m.image)}" alt="${esc(m.name)}" />`
           : `<div class="material-placeholder">◆</div>`
         }
       </div>
       <div class="material-name">${esc(m.name)}</div>
+      ${m.file ? `
+        <div style="padding:0 18px 16px">
+          <a href="${esc(m.file)}" download class="btn-download">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
+            Download
+          </a>
+        </div>
+      ` : ''}
     </div>
   `).join('');
 }
@@ -589,17 +598,17 @@ function renderSocialMedia(data) {
     `).join('');
   }
 
-  renderImageGrid('ref-grid', data.references, 'ref-card', 'ref-img', 'ref-placeholder', 'ref-info', 'ref-name', 'ref-desc');
-  renderImageGrid('viscomm-grid', data.visual_communication, 'viscomm-card', 'viscomm-img', 'viscomm-placeholder', 'viscomm-info', 'viscomm-name', 'viscomm-desc');
+  renderImageGrid('ref-grid', data.references, ['ref-card', 'ref-img', 'ref-placeholder', 'ref-info', 'ref-name', 'ref-desc'], false);
+  renderImageGrid('viscomm-grid', data.visual_communication, ['viscomm-card', 'viscomm-img', 'viscomm-placeholder', 'viscomm-info', 'viscomm-name', 'viscomm-desc'], true);
 }
 
-function renderImageGrid(gridId, items, ...classes) {
+function renderImageGrid(gridId, items, classes, showDownload = false) {
   const el = document.getElementById(gridId);
   if (!el || !items) return;
   const [cardCls, imgCls, phCls, infoCls, nameCls, descCls] = classes;
   el.innerHTML = items.map(item => `
-    <div class="${cardCls}" ${item.image ? `onclick="openLightbox('${esc(item.image)}','${esc(item.name)}')"` : ''}>
-      <div class="${imgCls}">
+    <div class="${cardCls}">
+      <div class="${imgCls}" ${item.image ? `onclick="openLightbox('${esc(item.image)}','${esc(item.name)}')"` : ''}>
         ${item.image
           ? `<img src="${esc(item.image)}" alt="${esc(item.name)}" />`
           : `<span class="${phCls}">◆</span>`
@@ -608,6 +617,42 @@ function renderImageGrid(gridId, items, ...classes) {
       <div class="${infoCls}">
         <div class="${nameCls}">${esc(item.name)}</div>
         ${item.description ? `<div class="${descCls}">${esc(item.description)}</div>` : ''}
+        ${showDownload && item.file ? `
+          <a href="${esc(item.file)}" download class="btn-download" style="margin-top:10px">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
+            Download
+          </a>
+        ` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── MODULE 7: TYPOGRAPHY ──────────────────────────────────────
+function renderTypography(data, brand) {
+  const el = document.getElementById('fonts-grid');
+  if (!el) return;
+  const fonts = brand && brand.fonts ? brand.fonts : {};
+  const files = data || {};
+  const entries = [
+    { role: 'Títulos', name: fonts.heading, file: files.heading_file },
+    { role: 'Corpo de Texto', name: fonts.body, file: files.body_file },
+  ];
+  el.innerHTML = entries.map(f => `
+    <div class="font-card">
+      <div class="font-preview">
+        <div class="font-preview-glyphs" style="font-family:'${esc(f.name || 'inherit')}'">Aa Bb Cc</div>
+        <div class="font-role">${esc(f.role)}</div>
+      </div>
+      <div class="font-info">
+        <div class="font-name">${esc(f.name || 'Não definida')}</div>
+        ${f.file
+          ? `<a href="${esc(f.file)}" download class="btn-download">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
+              Download
+            </a>`
+          : '<span style="font-size:12px;color:#bbb">Arquivo não carregado</span>'
+        }
       </div>
     </div>
   `).join('');

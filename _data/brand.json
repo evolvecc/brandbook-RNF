@@ -380,19 +380,23 @@
     "graphic_materials": [
       {
         "name": "Embalagem de Blend",
-        "image": ""
+        "image": "",
+        "file": ""
       },
       {
         "name": "Copo Descartável",
-        "image": ""
+        "image": "",
+        "file": ""
       },
       {
         "name": "Papelaria",
-        "image": ""
+        "image": "",
+        "file": ""
       },
       {
         "name": "Uniforme de Equipe",
-        "image": ""
+        "image": "",
+        "file": ""
       }
     ]
   },
@@ -487,18 +491,25 @@
       {
         "name": "Post Feed Quadrado",
         "description": "Template principal para posts de feed. Fundo em creme, tipografia serif, elemento gráfico sutil.",
-        "image": ""
+        "image": "",
+        "file": ""
       },
       {
         "name": "Stories",
         "description": "Template de stories com área de texto inferior e foto/imagem na parte superior.",
-        "image": ""
+        "image": "",
+        "file": ""
       },
       {
         "name": "Capa de Destaque",
         "description": "Ícone + fundo na cor primária. Tipografia pequena e elegante abaixo do ícone.",
-        "image": ""
+        "image": "",
+        "file": ""
       }
     ]
+  },
+  "typography": {
+    "heading_file": "",
+    "body_file": ""
   }
 }

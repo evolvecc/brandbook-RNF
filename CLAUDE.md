@@ -37,9 +37,9 @@ Decap CMS (editor visual) ──► Git Gateway ──► GitHub repo do cliente
 | Arquivo | Função |
 |---|---|
 | `_data/brand.json` | Única fonte de verdade de conteúdo. Todo texto, cor, imagem vem daqui. |
-| `assets/script.js` | Carrega o JSON e renderiza os 6 módulos. ~719 linhas. |
-| `assets/style.css` | Design system completo com CSS custom properties. ~1237 linhas. |
-| `index.html` | SPA de uma página. Sidebar + 6 seções com sub-tabs. |
+| `assets/script.js` | Carrega o JSON e renderiza os 6 módulos. |
+| `assets/style.css` | Design system completo com CSS custom properties. |
+| `index.html` | SPA de uma página. Top nav + 6 seções com sub-tabs. |
 | `admin/config.yml` | Schema do CMS: define todos os campos editáveis. |
 | `admin/index.html` | Carrega o Decap CMS do CDN. Não editar. |
 | `netlify.toml` | Configuração de deploy + headers de segurança + no-cache no JSON. |
@@ -56,8 +56,9 @@ brand.json
 ├── audience           → segmentos de audiência, personas (avatar, bio, goals, pains)
 ├── brand_core         → posicionamento, taglines, proposta de valor, arquétipos
 ├── communication      → tom de voz (atributos + exemplos), vocabulário, narrativa, manifesto
-├── visual_identity    → logos (variações), paleta (hex/rgb/cmyk), ícones, spacing, usos incorretos
-└── social_media       → linhas editoriais, pilares de conteúdo, referências visuais, templates
+├── visual_identity    → logos (variações), paleta (hex/rgb/cmyk), ícones, spacing, usos incorretos, materiais gráficos (com download)
+├── social_media       → linhas editoriais, pilares de conteúdo, referências visuais, templates (com download)
+└── typography         → arquivos de fonte para download (heading_file, body_file) — nomes ficam em brand.fonts; renderizado como sub-tab dentro do módulo Identidade Visual, não como módulo próprio
 ```
 
 ---
@@ -96,24 +97,32 @@ Dentro de `fields:`, adicionar novo bloco com os campos do módulo. Padrão exis
 
 ### 3. `index.html`
 ```html
-<!-- Sidebar nav -->
+<!-- Top nav -->
 <a class="nav-item" data-module="novo-modulo" href="#novo-modulo">
-  <svg>...</svg>
   <span>Nome do Módulo</span>
 </a>
 
 <!-- Seção -->
 <section class="module hidden" id="novo-modulo">
   <div class="module-hero">
-    <div class="module-number">07</div>
-    <div>
-      <h1 class="module-title">Nome do Módulo</h1>
-      <p class="module-desc">Descrição breve.</p>
+    <div class="module-hero-inner">
+      <div class="module-number">07</div>
+      <div>
+        <h1 class="module-title">Nome do Módulo</h1>
+        <p class="module-desc">Descrição breve.</p>
+      </div>
     </div>
   </div>
-  <!-- sub-tabs e subsections aqui -->
+  <div class="sub-tabs-bar">
+    <div class="sub-tabs-bar-inner">
+      <!-- botões .sub-tab aqui -->
+    </div>
+  </div>
+  <!-- subsections aqui -->
 </section>
 ```
+
+**Importante:** `.module-hero` e `.sub-tabs-bar` são faixas de fundo full-bleed (ocupam a tela toda); o conteúdo real fica dentro de `.module-hero-inner` e `.sub-tabs-bar-inner`, que centralizam e alinham com a largura do menu (`--content-max`). Nunca colocar texto direto dentro de `.module-hero` ou botões direto dentro de `.sub-tabs-bar` — sempre usar o wrapper `-inner`.
 
 ### 4. `assets/script.js`
 ```js
@@ -166,7 +175,7 @@ Para adicionar uma nova cor editável:
 ## Exportar PDF
 
 O brandbook tem botão "Exportar PDF" que usa `window.print()` + CSS `@media print`.
-Na impressão: sidebar e navegação ficam ocultos, todos os módulos e tabs aparecem.
+Na impressão: top nav e navegação ficam ocultos, todos os módulos e tabs aparecem.
 
 ---
 
