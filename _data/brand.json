@@ -13,10 +13,10 @@
       "text": "#1A1008"
     },
     "fonts": {
-      "heading": "Playfair Display",
-      "heading_url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap",
-      "body": "Inter",
-      "body_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      "heading": "Stack Sans",
+      "heading_url": "https://fonts.google.com/specimen/Stack+Sans+Headline?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn",
+      "body": "Google Sans",
+      "body_url": "https://fonts.google.com/specimen/Google+Sans?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn"
     }
   },
   "research": {
@@ -500,5 +500,8 @@
         "image": ""
       }
     ]
+  },
+  "typography": {
+    "heading_file": "/assets/images/airbnbcerealblack.ttf"
   }
 }
