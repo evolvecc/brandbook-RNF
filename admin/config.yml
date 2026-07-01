@@ -68,6 +68,25 @@ collections:
                   - { label: "Pontos Fracos", name: "weaknesses", widget: "text", hint: "Separe com vírgula para criar tags" }
                   - { label: "Posição X no Mapa (0–100)", name: "x", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
                   - { label: "Posição Y no Mapa (0–100)", name: "y", widget: "number", value_type: "int", min: 0, max: 100, default: 50 }
+                  - label: "Redes Sociais e Site"
+                    name: "social_links"
+                    widget: "list"
+                    label_singular: "Link"
+                    required: false
+                    fields:
+                      - label: "Rede / Canal"
+                        name: "network"
+                        widget: "select"
+                        options:
+                          - { label: "Website", value: "website" }
+                          - { label: "Instagram", value: "instagram" }
+                          - { label: "Facebook", value: "facebook" }
+                          - { label: "LinkedIn", value: "linkedin" }
+                          - { label: "YouTube", value: "youtube" }
+                          - { label: "TikTok", value: "tiktok" }
+                          - { label: "X (Twitter)", value: "twitter" }
+                          - { label: "Pinterest", value: "pinterest" }
+                      - { label: "URL", name: "url", widget: "string", hint: "Ex: https://instagram.com/marca" }
 
               - label: "Mapa de Posicionamento"
                 name: "positioning_map"

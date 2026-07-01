@@ -66,285 +66,243 @@
 
     <!-- ═══ MODULE 1: PESQUISA DE MERCADO ═══════════════════ -->
     <section class="module" id="research">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">01</div>
-          <div>
-            <h1 class="module-title">Pesquisa de Mercado</h1>
-            <p class="module-desc">Entendimento do contexto competitivo e posicionamento da marca no setor.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="benchmarking">Benchmarking</button>
+            <button class="sub-tab" data-section="positioning-map">Mapa de Posicionamento</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="benchmarking">
+            <h2 class="section-title">Benchmarking</h2>
+            <p class="section-desc">Análise comparativa dos principais concorrentes diretos e indiretos da marca.</p>
+            <div class="table-wrapper">
+              <table class="bench-table" id="bench-table">
+                <thead>
+                  <tr>
+                    <th>Marca</th>
+                    <th>Posicionamento</th>
+                    <th>Pontos Fortes</th>
+                    <th>Pontos Fracos</th>
+                  </tr>
+                </thead>
+                <tbody id="bench-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="subsection" id="positioning-map">
+            <h2 class="section-title">Mapa de Posicionamento</h2>
+            <p class="section-desc">Visualização de onde a marca se posiciona em relação aos concorrentes nos eixos estratégicos.</p>
+            <div class="map-container">
+              <svg id="pos-map" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg"></svg>
+            </div>
+            <div id="map-legend" class="map-legend"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="benchmarking">Benchmarking</button>
-          <button class="sub-tab" data-section="positioning-map">Mapa de Posicionamento</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="benchmarking">
-        <h2 class="section-title">Benchmarking</h2>
-        <p class="section-desc">Análise comparativa dos principais concorrentes diretos e indiretos da marca.</p>
-        <div class="table-wrapper">
-          <table class="bench-table" id="bench-table">
-            <thead>
-              <tr>
-                <th>Marca</th>
-                <th>Posicionamento</th>
-                <th>Pontos Fortes</th>
-                <th>Pontos Fracos</th>
-              </tr>
-            </thead>
-            <tbody id="bench-tbody"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection" id="positioning-map">
-        <h2 class="section-title">Mapa de Posicionamento</h2>
-        <p class="section-desc">Visualização de onde a marca se posiciona em relação aos concorrentes nos eixos estratégicos.</p>
-        <div class="map-container">
-          <svg id="pos-map" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg"></svg>
-        </div>
-        <div id="map-legend" class="map-legend"></div>
       </div>
     </section>
 
     <!-- ═══ MODULE 2: PÚBLICO-ALVO ════════════════════════════ -->
     <section class="module hidden" id="audience">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">02</div>
-          <div>
-            <h1 class="module-title">Público-Alvo</h1>
-            <p class="module-desc">Quem são as pessoas que a marca quer alcançar, conectar e servir.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="segments">Públicos</button>
+            <button class="sub-tab" data-section="personas">Personas</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="segments">
+            <h2 class="section-title">Segmentos de Audiência</h2>
+            <p class="section-desc">Grupos estratégicos que representam a audiência da marca.</p>
+            <div class="cards-grid" id="segments-grid"></div>
+          </div>
+
+          <div class="subsection" id="personas">
+            <h2 class="section-title">Personas</h2>
+            <p class="section-desc">Representações semifictícias dos clientes ideais, baseadas em dados reais.</p>
+            <div class="personas-list" id="personas-list"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="segments">Públicos</button>
-          <button class="sub-tab" data-section="personas">Personas</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="segments">
-        <h2 class="section-title">Segmentos de Audiência</h2>
-        <p class="section-desc">Grupos estratégicos que representam a audiência da marca.</p>
-        <div class="cards-grid" id="segments-grid"></div>
-      </div>
-
-      <div class="subsection" id="personas">
-        <h2 class="section-title">Personas</h2>
-        <p class="section-desc">Representações semifictícias dos clientes ideais, baseadas em dados reais.</p>
-        <div class="personas-list" id="personas-list"></div>
       </div>
     </section>
 
     <!-- ═══ MODULE 3: CORE DE MARCA ═══════════════════════════ -->
     <section class="module hidden" id="brand-core">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">03</div>
-          <div>
-            <h1 class="module-title">Core de Marca</h1>
-            <p class="module-desc">A essência estratégica da marca: o que ela é, para quem é e por que existe.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="positioning">Posicionamento</button>
+            <button class="sub-tab" data-section="tagline">Tagline</button>
+            <button class="sub-tab" data-section="value-proposition">Proposta de Valor</button>
+            <button class="sub-tab" data-section="archetypes">Arquétipos</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="positioning">
+            <h2 class="section-title">Posicionamento</h2>
+            <p class="section-desc">A declaração que define com clareza onde a marca ocupa espaço na mente e no coração do público.</p>
+            <div class="quote-block" id="positioning-text"></div>
+          </div>
+
+          <div class="subsection" id="tagline">
+            <h2 class="section-title">Tagline</h2>
+            <p class="section-desc">A síntese verbal da marca — as palavras que ficam.</p>
+            <div class="taglines-list" id="taglines-list"></div>
+          </div>
+
+          <div class="subsection" id="value-proposition">
+            <h2 class="section-title">Proposta de Valor</h2>
+            <p class="section-desc">O que a marca entrega de único e como isso beneficia seu público.</p>
+            <div class="value-prop-block" id="value-prop-block"></div>
+          </div>
+
+          <div class="subsection" id="archetypes">
+            <h2 class="section-title">Arquétipos de Marca</h2>
+            <p class="section-desc">Os perfis arquetípicos que fundamentam a personalidade e expressão da marca.</p>
+            <div class="archetypes-list" id="archetypes-list"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="positioning">Posicionamento</button>
-          <button class="sub-tab" data-section="tagline">Tagline</button>
-          <button class="sub-tab" data-section="value-proposition">Proposta de Valor</button>
-          <button class="sub-tab" data-section="archetypes">Arquétipos</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="positioning">
-        <h2 class="section-title">Posicionamento</h2>
-        <p class="section-desc">A declaração que define com clareza onde a marca ocupa espaço na mente e no coração do público.</p>
-        <div class="quote-block" id="positioning-text"></div>
-      </div>
-
-      <div class="subsection" id="tagline">
-        <h2 class="section-title">Tagline</h2>
-        <p class="section-desc">A síntese verbal da marca — as palavras que ficam.</p>
-        <div class="taglines-list" id="taglines-list"></div>
-      </div>
-
-      <div class="subsection" id="value-proposition">
-        <h2 class="section-title">Proposta de Valor</h2>
-        <p class="section-desc">O que a marca entrega de único e como isso beneficia seu público.</p>
-        <div class="value-prop-block" id="value-prop-block"></div>
-      </div>
-
-      <div class="subsection" id="archetypes">
-        <h2 class="section-title">Arquétipos de Marca</h2>
-        <p class="section-desc">Os perfis arquetípicos que fundamentam a personalidade e expressão da marca.</p>
-        <div class="archetypes-list" id="archetypes-list"></div>
       </div>
     </section>
 
     <!-- ═══ MODULE 4: COMUNICAÇÃO ═════════════════════════════ -->
     <section class="module hidden" id="communication">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">04</div>
-          <div>
-            <h1 class="module-title">Comunicação</h1>
-            <p class="module-desc">Como a marca fala, escreve e se expressa verbalmente com o mundo.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="tone-of-voice">Tom de Voz</button>
+            <button class="sub-tab" data-section="vocabulary">Vocabulário</button>
+            <button class="sub-tab" data-section="narrative">Narrativa de Marca</button>
+            <button class="sub-tab" data-section="manifesto">Manifesto</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="tone-of-voice">
+            <h2 class="section-title">Tom de Voz</h2>
+            <p class="section-desc">Os atributos que definem como a marca se comunica em todo ponto de contato.</p>
+            <div class="tov-list" id="tov-list"></div>
+          </div>
+
+          <div class="subsection" id="vocabulary">
+            <h2 class="section-title">Vocabulário</h2>
+            <p class="section-desc">Palavras que pertencem (e que não pertencem) à voz da marca.</p>
+            <div class="vocab-block" id="vocab-block"></div>
+          </div>
+
+          <div class="subsection" id="narrative">
+            <h2 class="section-title">Narrativa de Marca</h2>
+            <p class="section-desc">A história que a marca conta sobre si mesma — sua origem, sua crença e seu propósito.</p>
+            <div class="prose-block" id="narrative-text"></div>
+          </div>
+
+          <div class="subsection" id="manifesto">
+            <h2 class="section-title">Manifesto</h2>
+            <p class="section-desc">A declaração de intenção da marca — o que ela acredita e defende.</p>
+            <div class="manifesto-block" id="manifesto-text"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="tone-of-voice">Tom de Voz</button>
-          <button class="sub-tab" data-section="vocabulary">Vocabulário</button>
-          <button class="sub-tab" data-section="narrative">Narrativa de Marca</button>
-          <button class="sub-tab" data-section="manifesto">Manifesto</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="tone-of-voice">
-        <h2 class="section-title">Tom de Voz</h2>
-        <p class="section-desc">Os atributos que definem como a marca se comunica em todo ponto de contato.</p>
-        <div class="tov-list" id="tov-list"></div>
-      </div>
-
-      <div class="subsection" id="vocabulary">
-        <h2 class="section-title">Vocabulário</h2>
-        <p class="section-desc">Palavras que pertencem (e que não pertencem) à voz da marca.</p>
-        <div class="vocab-block" id="vocab-block"></div>
-      </div>
-
-      <div class="subsection" id="narrative">
-        <h2 class="section-title">Narrativa de Marca</h2>
-        <p class="section-desc">A história que a marca conta sobre si mesma — sua origem, sua crença e seu propósito.</p>
-        <div class="prose-block" id="narrative-text"></div>
-      </div>
-
-      <div class="subsection" id="manifesto">
-        <h2 class="section-title">Manifesto</h2>
-        <p class="section-desc">A declaração de intenção da marca — o que ela acredita e defende.</p>
-        <div class="manifesto-block" id="manifesto-text"></div>
       </div>
     </section>
 
     <!-- ═══ MODULE 5: IDENTIDADE VISUAL ══════════════════════ -->
     <section class="module hidden" id="visual-identity">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">05</div>
-          <div>
-            <h1 class="module-title">Identidade Visual</h1>
-            <p class="module-desc">Os elementos visuais que tornam a marca reconhecível e consistente.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="logos">Logotipo</button>
+            <button class="sub-tab" data-section="palette">Paleta de Cores</button>
+            <button class="sub-tab" data-section="typography-files">Tipografia</button>
+            <button class="sub-tab" data-section="icons">Ícones</button>
+            <button class="sub-tab" data-section="spacing">Espaço & Tamanho</button>
+            <button class="sub-tab" data-section="incorrect">Uso Incorreto</button>
+            <button class="sub-tab" data-section="materials">Materiais</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="logos">
+            <h2 class="section-title">Logotipo e Variações</h2>
+            <p class="section-desc">Todas as versões aprovadas do logotipo e suas especificações de uso.</p>
+            <div class="logos-grid" id="logos-grid"></div>
+          </div>
+
+          <div class="subsection" id="palette">
+            <h2 class="section-title">Paleta de Cores</h2>
+            <p class="section-desc">As cores oficiais da marca com seus valores e orientações de uso.</p>
+            <div class="colors-grid" id="colors-grid"></div>
+          </div>
+
+          <div class="subsection" id="typography-files">
+            <h2 class="section-title">Tipografia</h2>
+            <p class="section-desc">Fontes oficiais da marca, com preview e arquivo para download.</p>
+            <div class="fonts-grid" id="fonts-grid"></div>
+          </div>
+
+          <div class="subsection" id="icons">
+            <h2 class="section-title">Ícones</h2>
+            <p class="section-desc">Sistema de ícones da marca para uso em materiais digitais e impressos.</p>
+            <div class="icons-grid" id="icons-grid"></div>
+          </div>
+
+          <div class="subsection" id="spacing">
+            <h2 class="section-title">Espaço em Branco e Tamanho</h2>
+            <p class="section-desc">Regras de área de proteção, tamanho mínimo e máximo para uso do logotipo.</p>
+            <div class="spacing-block" id="spacing-block"></div>
+          </div>
+
+          <div class="subsection" id="incorrect">
+            <h2 class="section-title">Uso Incorreto da Marca</h2>
+            <p class="section-desc">O que nunca deve ser feito com os elementos visuais da marca.</p>
+            <div class="incorrect-grid" id="incorrect-grid"></div>
+          </div>
+
+          <div class="subsection" id="materials">
+            <h2 class="section-title">Materiais Gráficos</h2>
+            <p class="section-desc">Aplicações da identidade visual em materiais reais da marca.</p>
+            <div class="materials-grid" id="materials-grid"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="logos">Logotipo</button>
-          <button class="sub-tab" data-section="palette">Paleta de Cores</button>
-          <button class="sub-tab" data-section="typography-files">Tipografia</button>
-          <button class="sub-tab" data-section="icons">Ícones</button>
-          <button class="sub-tab" data-section="spacing">Espaço & Tamanho</button>
-          <button class="sub-tab" data-section="incorrect">Uso Incorreto</button>
-          <button class="sub-tab" data-section="materials">Materiais</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="logos">
-        <h2 class="section-title">Logotipo e Variações</h2>
-        <p class="section-desc">Todas as versões aprovadas do logotipo e suas especificações de uso.</p>
-        <div class="logos-grid" id="logos-grid"></div>
-      </div>
-
-      <div class="subsection" id="palette">
-        <h2 class="section-title">Paleta de Cores</h2>
-        <p class="section-desc">As cores oficiais da marca com seus valores e orientações de uso.</p>
-        <div class="colors-grid" id="colors-grid"></div>
-      </div>
-
-      <div class="subsection" id="typography-files">
-        <h2 class="section-title">Tipografia</h2>
-        <p class="section-desc">Fontes oficiais da marca, com preview e arquivo para download.</p>
-        <div class="fonts-grid" id="fonts-grid"></div>
-      </div>
-
-      <div class="subsection" id="icons">
-        <h2 class="section-title">Ícones</h2>
-        <p class="section-desc">Sistema de ícones da marca para uso em materiais digitais e impressos.</p>
-        <div class="icons-grid" id="icons-grid"></div>
-      </div>
-
-      <div class="subsection" id="spacing">
-        <h2 class="section-title">Espaço em Branco e Tamanho</h2>
-        <p class="section-desc">Regras de área de proteção, tamanho mínimo e máximo para uso do logotipo.</p>
-        <div class="spacing-block" id="spacing-block"></div>
-      </div>
-
-      <div class="subsection" id="incorrect">
-        <h2 class="section-title">Uso Incorreto da Marca</h2>
-        <p class="section-desc">O que nunca deve ser feito com os elementos visuais da marca.</p>
-        <div class="incorrect-grid" id="incorrect-grid"></div>
-      </div>
-
-      <div class="subsection" id="materials">
-        <h2 class="section-title">Materiais Gráficos</h2>
-        <p class="section-desc">Aplicações da identidade visual em materiais reais da marca.</p>
-        <div class="materials-grid" id="materials-grid"></div>
       </div>
     </section>
 
     <!-- ═══ MODULE 6: REDES SOCIAIS ═══════════════════════════ -->
     <section class="module hidden" id="social-media">
-      <div class="module-hero">
-        <div class="module-hero-inner">
-          <div class="module-number">06</div>
-          <div>
-            <h1 class="module-title">Redes Sociais</h1>
-            <p class="module-desc">A estratégia de presença digital da marca — o que comunicar, como e com que visual.</p>
+      <div class="module-body">
+        <aside class="module-sidenav">
+          <nav class="sub-tabs-bar">
+            <button class="sub-tab active" data-section="editorial-lines">Linhas Editoriais</button>
+            <button class="sub-tab" data-section="content-pillars">Pilares de Conteúdo</button>
+            <button class="sub-tab" data-section="references">Referências</button>
+            <button class="sub-tab" data-section="visual-comm">Comunicação Visual</button>
+          </nav>
+        </aside>
+        <div class="module-sections">
+          <div class="subsection" id="editorial-lines">
+            <h2 class="section-title">Linhas Editoriais</h2>
+            <p class="section-desc">Os temas recorrentes que organizam o conteúdo da marca nas redes.</p>
+            <div class="editorial-list" id="editorial-list"></div>
+          </div>
+
+          <div class="subsection" id="content-pillars">
+            <h2 class="section-title">Pilares de Conteúdo</h2>
+            <p class="section-desc">As categorias estratégicas de conteúdo que equilibram objetivos e interesse do público.</p>
+            <div class="pillars-grid" id="pillars-grid"></div>
+          </div>
+
+          <div class="subsection" id="references">
+            <h2 class="section-title">Referências</h2>
+            <p class="section-desc">Inspirações visuais e de conteúdo que orientam a estética da marca nas redes.</p>
+            <div class="ref-grid" id="ref-grid"></div>
+          </div>
+
+          <div class="subsection" id="visual-comm">
+            <h2 class="section-title">Comunicação Visual nas Redes</h2>
+            <p class="section-desc">Templates e orientações visuais para os formatos das redes sociais.</p>
+            <div class="viscomm-grid" id="viscomm-grid"></div>
           </div>
         </div>
-      </div>
-
-      <div class="sub-tabs-bar">
-        <div class="sub-tabs-bar-inner">
-          <button class="sub-tab active" data-section="editorial-lines">Linhas Editoriais</button>
-          <button class="sub-tab" data-section="content-pillars">Pilares de Conteúdo</button>
-          <button class="sub-tab" data-section="references">Referências</button>
-          <button class="sub-tab" data-section="visual-comm">Comunicação Visual</button>
-        </div>
-      </div>
-
-      <div class="subsection active" id="editorial-lines">
-        <h2 class="section-title">Linhas Editoriais</h2>
-        <p class="section-desc">Os temas recorrentes que organizam o conteúdo da marca nas redes.</p>
-        <div class="editorial-list" id="editorial-list"></div>
-      </div>
-
-      <div class="subsection" id="content-pillars">
-        <h2 class="section-title">Pilares de Conteúdo</h2>
-        <p class="section-desc">As categorias estratégicas de conteúdo que equilibram objetivos e interesse do público.</p>
-        <div class="pillars-grid" id="pillars-grid"></div>
-      </div>
-
-      <div class="subsection" id="references">
-        <h2 class="section-title">Referências</h2>
-        <p class="section-desc">Inspirações visuais e de conteúdo que orientam a estética da marca nas redes.</p>
-        <div class="ref-grid" id="ref-grid"></div>
-      </div>
-
-      <div class="subsection" id="visual-comm">
-        <h2 class="section-title">Comunicação Visual nas Redes</h2>
-        <p class="section-desc">Templates e orientações visuais para os formatos das redes sociais.</p>
-        <div class="viscomm-grid" id="viscomm-grid"></div>
       </div>
     </section>
 

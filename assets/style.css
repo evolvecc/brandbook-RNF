@@ -218,83 +218,69 @@ ul, ol { list-style: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.module-hero {
-  background: var(--brand-primary);
-  padding: 96px 0 64px;
-}
-.module-hero-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--content-pad);
+/* ─── MODULE TWO-COLUMN LAYOUT ───────────────────────────────── */
+.module-body {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
-}
-.module-number {
-  font-family: var(--font-heading);
-  font-size: 52px;
-  font-weight: 700;
-  color: rgba(255,255,255,.18);
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: -4px;
-}
-.module-title {
-  font-family: var(--font-heading);
-  font-size: 56px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
-  letter-spacing: -.01em;
-}
-.module-desc {
-  font-size: 16px;
-  color: rgba(255,255,255,.6);
-  margin-top: 12px;
-  line-height: 1.5;
-  max-width: 600px;
+  width: 100%;
 }
 
-/* ─── SUB-TABS ───────────────────────────────────────────────── */
-.sub-tabs-bar {
-  background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,.07);
+.module-sidenav {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--header-height);
+  padding: 48px 28px 48px 32px;
+  align-self: flex-start;
+  min-height: calc(100vh - var(--header-height));
 }
-.sub-tabs-bar-inner {
+
+.module-sections {
+  flex: 1;
+  min-width: 0;
+  max-width: 1020px;
+  padding: 48px var(--content-pad) 48px 56px;
+  border-left: 1px solid rgba(0,0,0,.07);
+}
+
+/* ─── SUB-TABS (vertical sidenav) ────────────────────────────── */
+.sub-tabs-bar {
   display: flex;
-  gap: 28px;
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--content-pad);
-  overflow-x: auto;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 .sub-tab {
-  padding: 16px 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 14px;
   border: none;
-  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
   background: transparent;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
-  color: #777;
+  color: #888;
   transition: all var(--transition);
   white-space: nowrap;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
-.sub-tab:hover { color: var(--brand-text); }
+.sub-tab:hover { color: var(--brand-text); background: rgba(0,0,0,.03); }
 .sub-tab.active {
-  border-bottom-color: var(--brand-primary);
+  border-left-color: var(--brand-primary);
   color: var(--brand-text);
   font-weight: 600;
+  background: var(--brand-primary-10);
 }
 
 /* ─── SUBSECTION ─────────────────────────────────────────────── */
 .subsection {
-  display: none;
-  padding: 44px var(--content-pad);
-  max-width: var(--content-max);
-  margin: 0 auto;
+  display: block;
+  padding: 48px 0 48px 48px;
 }
-.subsection.active { display: block; animation: fadeIn .3s ease; }
+.subsection + .subsection {
+  border-top: 1px solid rgba(0,0,0,.07);
+  padding-top: 56px;
+}
 
 .section-title {
   font-family: var(--font-heading);
@@ -377,6 +363,32 @@ ul, ol { list-style: none; }
   padding: 2px 8px;
   margin: 2px 2px 2px 0;
 }
+
+/* ─── BENCH SOCIAL LINKS ────────────────────────────────────── */
+.bench-brand-name { font-weight: 600; }
+.bench-social-links {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.bench-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.06);
+  color: #666;
+  flex-shrink: 0;
+  transition: background var(--transition), color var(--transition);
+}
+.bench-social-btn:hover {
+  background: var(--brand-primary);
+  color: #fff;
+}
+.bench-social-btn svg { width: 13px; height: 13px; }
 
 /* ─── POSITIONING MAP ───────────────────────────────────────── */
 .map-container {
@@ -1344,13 +1356,43 @@ ul, ol { list-style: none; }
   .hamburger { display: flex; }
   .topnav-overlay.active { display: block; }
 
-  .module-hero { padding: 80px 0 28px; }
-  .module-hero-inner { padding: 0 24px; }
-  .module-number { font-size: 36px; }
-  .module-title { font-size: 28px; }
-
-  .sub-tabs-bar-inner { padding: 0 20px; }
-  .subsection { padding: 28px 20px; }
+  /* Two-column → single column on mobile */
+  .module-body {
+    flex-direction: column;
+    padding: 0;
+  }
+  .module-sidenav {
+    width: 100%;
+    position: static;
+    padding: 16px 20px 0;
+    min-height: auto;
+  }
+  .sub-tabs-bar {
+    flex-direction: row;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    padding-bottom: 0;
+  }
+  .sub-tab {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 14px;
+    white-space: nowrap;
+    border-radius: 0;
+  }
+  .sub-tab.active {
+    border-bottom-color: var(--brand-primary);
+    border-left-color: transparent;
+    background: transparent;
+  }
+  .module-sections {
+    border-left: none;
+    padding: 32px 20px;
+    border-top: 1px solid rgba(0,0,0,.07);
+  }
+  .subsection { padding: 32px 0; }
+  .subsection + .subsection { padding-top: 32px; }
 
   .persona-card { grid-template-columns: 1fr; }
   .tov-examples { grid-template-columns: 1fr; }
@@ -1366,7 +1408,7 @@ ul, ol { list-style: none; }
   .hamburger,
   .topnav-overlay,
   .btn-export-pdf,
-  .sub-tabs-bar {
+  .module-sidenav {
     display: none !important;
   }
 
@@ -1398,40 +1440,25 @@ ul, ol { list-style: none; }
     break-before: avoid;
   }
 
-  /* Mostrar todas as subsections (não só a tab ativa) */
+  .module-body {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .module-sections {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* Todas as subsections visíveis */
   .subsection {
     display: block !important;
     opacity: 1 !important;
     margin-bottom: 32px;
     max-width: none;
-  }
-
-  /* Cabeçalho de módulo */
-  .module-hero-inner {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-  }
-  .module-hero {
     padding: 24px 0;
-    border-bottom: 2px solid #000;
-    margin-bottom: 24px;
   }
-
-  .module-number {
-    color: #999;
-    font-size: 28pt;
-  }
-
-  .module-title {
-    font-size: 20pt;
-    color: #000;
-  }
-
-  .module-desc {
-    font-size: 10pt;
-    color: #444;
-  }
+  .subsection + .subsection { border-top: 1px solid #ddd; padding-top: 24px; }
 
   /* Títulos de seção */
   .section-title {

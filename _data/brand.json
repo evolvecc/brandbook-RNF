@@ -27,7 +27,11 @@
         "strengths": "Reconhecimento global, programa de fidelidade sólido, inovação em bebidas",
         "weaknesses": "Padronização excessiva, pouca identidade local, preço muito elevado",
         "x": 82,
-        "y": 75
+        "y": 75,
+        "social_links": [
+          { "network": "website", "url": "https://www.starbucks.com" },
+          { "network": "instagram", "url": "https://www.instagram.com/starbucks" }
+        ]
       },
       {
         "name": "Havanna",
@@ -35,7 +39,8 @@
         "strengths": "Tradição de marca, alfajores icônicos, experiência diferenciada",
         "weaknesses": "Associação forte com produtos específicos, menos agilidade",
         "x": 70,
-        "y": 35
+        "y": 35,
+        "social_links": []
       },
       {
         "name": "Café do Mercado",
@@ -43,7 +48,8 @@
         "strengths": "Preço baixo, clientela fiel, agilidade",
         "weaknesses": "Pouca inovação, experiência básica, sem identidade de marca forte",
         "x": 20,
-        "y": 25
+        "y": 25,
+        "social_links": []
       },
       {
         "name": "Pergamino",
@@ -51,7 +57,8 @@
         "strengths": "Qualidade de grão, cultura do café, público cult",
         "weaknesses": "Nicho muito específico, acessível apenas por preço",
         "x": 75,
-        "y": 85
+        "y": 85,
+        "social_links": []
       }
     ],
     "positioning_map": {
