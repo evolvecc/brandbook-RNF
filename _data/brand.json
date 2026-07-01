@@ -29,8 +29,14 @@
         "x": 82,
         "y": 75,
         "social_links": [
-          { "network": "website", "url": "https://www.starbucks.com" },
-          { "network": "instagram", "url": "https://www.instagram.com/starbucks" }
+          {
+            "network": "youtube",
+            "url": "https://www.starbucks.com"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/starbucks"
+          }
         ]
       },
       {
