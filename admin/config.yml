@@ -144,6 +144,16 @@ collections:
             fields:
               - { label: "Posicionamento", name: "positioning", widget: "text" }
 
+              - label: "Pilares do Posicionamento"
+                name: "positioning_pillars"
+                widget: "list"
+                label_singular: "Pilar"
+                required: false
+                hint: "3 a 4 pilares exibidos em colunas abaixo do posicionamento"
+                fields:
+                  - { label: "Título", name: "title", widget: "string", hint: "Ex: Especialidade" }
+                  - { label: "Descrição", name: "description", widget: "text", hint: "Uma linha explicando o pilar" }
+
               - label: "Taglines"
                 name: "taglines"
                 widget: "list"

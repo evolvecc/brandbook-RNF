@@ -21,6 +21,11 @@ async function init() {
   initNavigation();
   initSubTabAnchors();
   initMobileMenu();
+  setTimeout(() => {
+    addRevealClasses();
+    initScrollAnimations();
+    initMouseParallax();
+  }, 120);
 }
 
 async function loadData() {
@@ -91,6 +96,7 @@ function activateModule(moduleId) {
     mod.classList.remove('hidden');
     window.scrollTo(0, 0);
     if (mod._updateActiveTab) mod._updateActiveTab();
+    requestAnimationFrame(() => triggerRevealInModule(mod));
   }
   const link = document.querySelector(`.nav-item[data-module="${moduleId}"]`);
   if (link) link.classList.add('active');
@@ -206,47 +212,42 @@ function renderPositioningMap(mapCfg, competitors) {
   const toSvgX = x => PAD + (x / 100) * (W - PAD * 2);
   const toSvgY = y => H - PAD - (y / 100) * (H - PAD * 2);
 
-  const axisColor = '#c8c8c8';
+  const axisColor = 'rgba(255,255,255,0.12)';
+  const labelColor = 'rgba(255,255,255,0.45)';
   const brandColor = getComputedStyle(document.documentElement)
-    .getPropertyValue('--brand-accent').trim() || '#D4A853';
+    .getPropertyValue('--brand-accent').trim() || '#9EFF3E';
 
-  // Build SVG content
   let html = '';
-
-  // Grid lines
   html += `<line x1="${W/2}" y1="${PAD}" x2="${W/2}" y2="${H-PAD}" stroke="${axisColor}" stroke-width="1.5"/>`;
   html += `<line x1="${PAD}" y1="${H/2}" x2="${W-PAD}" y2="${H/2}" stroke="${axisColor}" stroke-width="1.5"/>`;
-
-  // Border
   html += `<rect x="${PAD}" y="${PAD}" width="${W-PAD*2}" height="${H-PAD*2}" fill="none" stroke="${axisColor}" stroke-width="1" rx="4"/>`;
 
-  // Axis labels
-  html += label(W/2, PAD-16, mapCfg.axis_y_top, 13, '#555', 'middle');
-  html += label(W/2, H-PAD+22, mapCfg.axis_y_bottom, 13, '#555', 'middle');
-  html += label(PAD-10, H/2+5, mapCfg.axis_x_left, 13, '#555', 'end');
-  html += label(W-PAD+10, H/2+5, mapCfg.axis_x_right, 13, '#555', 'start');
+  html += label(W/2, PAD-16, mapCfg.axis_y_top, 13, labelColor, 'middle');
+  html += label(W/2, H-PAD+22, mapCfg.axis_y_bottom, 13, labelColor, 'middle');
+  html += label(PAD-10, H/2+5, mapCfg.axis_x_left, 13, labelColor, 'end');
+  html += label(W-PAD+10, H/2+5, mapCfg.axis_x_right, 13, labelColor, 'start');
 
-  // Competitors
-  const colors = ['#888','#aaa','#bbb','#999','#777'];
+  const dotColors = [
+    'rgba(255,255,255,0.45)', 'rgba(255,255,255,0.38)', 'rgba(255,255,255,0.32)',
+    'rgba(255,255,255,0.42)', 'rgba(255,255,255,0.28)', 'rgba(255,255,255,0.35)'
+  ];
   (competitors || []).forEach((c, i) => {
     const cx = toSvgX(c.x);
     const cy = toSvgY(c.y);
-    html += `<circle cx="${cx}" cy="${cy}" r="8" fill="${colors[i % colors.length]}" opacity=".7"/>`;
-    html += label(cx, cy - 14, c.name, 11.5, '#666', 'middle');
+    html += `<circle cx="${cx}" cy="${cy}" r="9" fill="${dotColors[i % dotColors.length]}" class="map-dot" style="animation-delay:${i * 0.12}s"><title>${esc(c.name)}</title></circle>`;
+    html += label(cx, cy - 16, c.name, 11.5, 'rgba(255,255,255,0.6)', 'middle');
   });
 
-  // Brand dot
   const bx = toSvgX(mapCfg.brand_x);
   const by = toSvgY(mapCfg.brand_y);
-  html += `<circle cx="${bx}" cy="${by}" r="14" fill="${brandColor}" opacity=".9"/>`;
-  html += `<circle cx="${bx}" cy="${by}" r="20" fill="${brandColor}" opacity=".2"/>`;
-  html += label(bx, by - 26, 'MARCA', 11, brandColor, 'middle', true);
+  html += `<circle cx="${bx}" cy="${by}" r="26" fill="${brandColor}" opacity=".15" class="map-brand-pulse"/>`;
+  html += `<circle cx="${bx}" cy="${by}" r="16" fill="${brandColor}" class="map-dot" style="animation-delay:${(competitors||[]).length * 0.12 + 0.1}s"><title>RNF Imóveis</title></circle>`;
+  html += label(bx, by - 30, 'RNF', 12, brandColor, 'middle', true);
 
   svg.innerHTML = html;
 
-  // Legend
   const legItems = (competitors || []).map((c, i) =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${colors[i % colors.length]}"></div><span>${esc(c.name)}</span></div>`
+    `<div class="legend-item"><div class="legend-dot" style="background:${dotColors[i % dotColors.length]}"></div><span>${esc(c.name)}</span></div>`
   ).join('');
   legend.innerHTML = `
     <div class="legend-item"><div class="legend-dot" style="background:${brandColor}"></div><strong>Marca</strong></div>
@@ -327,57 +328,109 @@ function personaSection(title, items) {
 }
 
 // ── MODULE 3: BRAND CORE ──────────────────────────────────────
+const ARCHETYPE_COLORS = [
+  { bg: '#161616', text: '#fff', accent: '#9EFF3E' },
+  { bg: '#2A2A2A', text: '#fff', accent: '#9EFF3E' },
+  { bg: '#9EFF3E', text: '#161616', accent: '#161616' },
+];
+
 function renderBrandCore(data) {
   if (!data) return;
 
+  // Positioning — animated lines + full-width pillars
   const posEl = document.getElementById('positioning-text');
-  if (posEl) posEl.textContent = data.positioning || '';
-
-  const tagsEl = document.getElementById('taglines-list');
-  if (tagsEl && data.taglines) {
-    tagsEl.innerHTML = data.taglines.map((t, i) => `
-      <div class="tagline-card">
-        ${i === 0 ? '<div class="tagline-primary-badge">✦ Principal</div>' : ''}
-        <div class="tagline-text">${esc(t.text)}</div>
-        <div class="tagline-context">${esc(t.context)}</div>
-      </div>
-    `).join('');
-  }
-
-  const vpEl = document.getElementById('value-prop-block');
-  if (vpEl && data.value_proposition) {
-    const vp = data.value_proposition;
-    vpEl.innerHTML = `
-      <div class="value-main">${esc(vp.main)}</div>
-      <div>
-        <div class="value-diffs-title">Diferenciais</div>
-        <div class="value-diffs">
-          ${toStringArray(vp.differentiators).map(d => `
-            <div class="value-diff-item">
-              <div class="value-diff-icon"></div>
-              <span>${esc(d)}</span>
+  if (posEl && data.positioning) {
+    const pillars = data.positioning_pillars || [];
+    const sentences = data.positioning.match(/[^.!?]+[.!?]+/g) || [data.positioning];
+    const linesHtml = sentences.map((line, i) =>
+      `<span class="pos-line" style="--delay:${0.15 + i * 0.28}s">${esc(line.trim())}</span>`
+    ).join(' ');
+    const pillarsHtml = pillars.length
+      ? `<div class="positioning-pillars">
+          ${pillars.map(p => `
+            <div class="positioning-pillar">
+              <div class="positioning-pillar-title">${esc(p.title)}</div>
+              <div class="positioning-pillar-desc">${esc(p.description)}</div>
             </div>
           `).join('')}
+        </div>`
+      : '';
+    posEl.innerHTML = `
+      <div class="positioning-hero">
+        <div class="positioning-hero-statement">
+          <p class="positioning-eyebrow">Declaração de Posicionamento</p>
+          <p class="positioning-statement">${linesHtml}</p>
         </div>
+        ${pillarsHtml}
       </div>
     `;
   }
 
-  const archEl = document.getElementById('archetypes-list');
-  if (archEl && data.archetypes) {
-    archEl.innerHTML = data.archetypes.map(a => `
-      <div class="archetype-card">
-        <div class="archetype-header">
-          <div class="archetype-name">${esc(a.name)}</div>
-          <div class="archetype-role">${esc(a.role)}</div>
-        </div>
-        <div class="archetype-desc">${esc(a.description)}</div>
-        <div class="archetype-traits">
-          ${toStringArray(a.traits).map(t => `<span class="trait-tag">${esc(t)}</span>`).join('')}
-        </div>
-        <div class="archetype-expression">${esc(a.expression)}</div>
+  // Tagline — only first, big animated display
+  const tagsEl = document.getElementById('taglines-list');
+  if (tagsEl && data.taglines && data.taglines.length) {
+    const t = data.taglines[0];
+    const words = esc(t.text).split(' ');
+    const wordsHtml = words.map((w, i) =>
+      `<span class="tagline-word" style="--delay:${0.1 + i * 0.07}s">${w}</span>`
+    ).join(' ');
+    tagsEl.innerHTML = `
+      <div class="tagline-hero">
+        <p class="tagline-hero-eyebrow">Tagline</p>
+        <p class="tagline-display">${wordsHtml}</p>
+        ${t.context ? `<p class="tagline-hero-context">${esc(t.context)}</p>` : ''}
+      </div>
+    `;
+  }
+
+  // Value proposition — headline quote + per-audience cards
+  const vpEl = document.getElementById('value-prop-block');
+  if (vpEl && data.value_proposition) {
+    const vp = data.value_proposition;
+    const audienceCards = (vp.audience_props || []).map(ap => `
+      <div class="vp-audience-card">
+        <div class="vp-audience-label">${esc(ap.audience)}</div>
+        <div class="vp-audience-text">${esc(ap.text)}</div>
       </div>
     `).join('');
+    vpEl.innerHTML = `
+      <div class="value-main vp-main-quote">${esc(vp.main)}</div>
+      ${audienceCards ? `<div class="vp-audience-grid">${audienceCards}</div>` : ''}
+    `;
+  }
+
+  // Archetypes — 3 equal columns, each with its brand color
+  const archEl = document.getElementById('archetypes-list');
+  if (archEl && data.archetypes) {
+    archEl.innerHTML = data.archetypes.map((a, i) => {
+      const col = ARCHETYPE_COLORS[i % ARCHETYPE_COLORS.length];
+      return `
+        <div class="archetype-flip"
+             onclick="this.classList.toggle('open')"
+             role="button"
+             tabindex="0"
+             aria-label="Ver detalhes: ${esc(a.name)}"
+             onkeydown="if(event.key==='Enter'||event.key===' ')this.classList.toggle('open')">
+          <div class="archetype-flip-inner">
+            <div class="archetype-front" style="background:${col.bg};color:${col.text}">
+              <div class="archetype-front-number" style="color:${col.accent}">0${i + 1}</div>
+              <div class="archetype-front-name">${esc(a.name)}</div>
+              <div class="archetype-front-role" style="color:${col.accent};background:transparent;border:1px solid ${col.accent}40">${esc(a.role)}</div>
+              <div class="archetype-front-hint" style="opacity:.45">↻ clique para ver mais</div>
+            </div>
+            <div class="archetype-back">
+              <div class="archetype-back-role">${esc(a.role)}</div>
+              <div class="archetype-back-name">${esc(a.name)}</div>
+              <div class="archetype-back-desc">${esc(a.description)}</div>
+              <div class="archetype-back-traits">
+                ${toStringArray(a.traits).map(t => `<span class="archetype-back-trait">${esc(t)}</span>`).join('')}
+              </div>
+              <div class="archetype-back-expression">${esc(a.expression)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
   }
 }
 
@@ -427,14 +480,72 @@ function renderCommunication(data) {
 
   const narrativeEl = document.getElementById('narrative-text');
   if (narrativeEl && data.narrative) {
-    narrativeEl.innerHTML = sanitizeHtml(data.narrative);
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = sanitizeHtml(data.narrative);
+    const paras = Array.from(tempDiv.querySelectorAll('p'));
+    if (paras.length > 1) {
+      _narrativeTotal = paras.length;
+      _narrativeIndex = 0;
+      const slidesHtml = paras.map((p, i) => `
+        <div class="narrative-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
+          <div class="narrative-chapter-num">${String(i + 1).padStart(2, '0')} / ${String(paras.length).padStart(2, '0')}</div>
+          <div class="narrative-chapter-text">${p.innerHTML}</div>
+        </div>
+      `).join('');
+      narrativeEl.innerHTML = `
+        <div class="narrative-carousel" id="narrative-carousel">
+          <div class="narrative-slides">${slidesHtml}</div>
+          <div class="narrative-controls">
+            <button class="narrative-btn" onclick="narrativeNav(-1)" aria-label="Capítulo anterior">←</button>
+            <span class="narrative-progress" id="narrative-progress">01 / ${String(paras.length).padStart(2, '0')}</span>
+            <button class="narrative-btn" onclick="narrativeNav(1)" aria-label="Próximo capítulo">→</button>
+          </div>
+        </div>
+      `;
+    } else {
+      narrativeEl.innerHTML = `<div class="prose-block">${sanitizeHtml(data.narrative)}</div>`;
+    }
   }
 
   const manifestoEl = document.getElementById('manifesto-text');
   if (manifestoEl && data.manifesto) {
-    manifestoEl.innerHTML = sanitizeHtml(data.manifesto);
+    const tempDiv2 = document.createElement('div');
+    tempDiv2.innerHTML = sanitizeHtml(data.manifesto);
+    const paras2 = Array.from(tempDiv2.querySelectorAll('p, li, blockquote'));
+    if (paras2.length > 1) {
+      const html = paras2.map((p, i) => {
+        p.classList.add('manifesto-para', 'reveal');
+        p.style.transitionDelay = `${i * 85}ms`;
+        return p.outerHTML;
+      }).join('');
+      manifestoEl.innerHTML = `
+        <div class="manifesto-quote">
+          <span class="manifesto-quote-mark" aria-hidden="true">❝</span>
+          <div class="manifesto-quote-body">${html}</div>
+        </div>
+      `;
+    } else {
+      manifestoEl.innerHTML = sanitizeHtml(data.manifesto);
+    }
   }
 }
+
+// ── NARRATIVE CAROUSEL ────────────────────────────────────────
+let _narrativeIndex = 0;
+let _narrativeTotal = 0;
+
+window.narrativeNav = function(dir) {
+  const carousel = document.getElementById('narrative-carousel');
+  if (!carousel) return;
+  const slides = carousel.querySelectorAll('.narrative-slide');
+  if (!slides.length) return;
+  const total = slides.length;
+  slides[_narrativeIndex].classList.remove('active');
+  _narrativeIndex = (_narrativeIndex + dir + total) % total;
+  slides[_narrativeIndex].classList.add('active');
+  const progress = document.getElementById('narrative-progress');
+  if (progress) progress.textContent = `${String(_narrativeIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+};
 
 // ── MODULE 5: VISUAL IDENTITY ─────────────────────────────────
 function renderVisualIdentity(data, brand) {
@@ -847,6 +958,85 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   init();
 });
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────
+const REVEAL_SELECTORS = [
+  '.card', '.persona-card', '.tov-card', '.tagline-card',
+  '.pillar-card', '.editorial-card', '.logo-card', '.color-card',
+  '.font-card', '.material-card', '.ref-card', '.viscomm-card',
+  '.archetype-flip', '.moodboard-hero', '.moodboard-gallery-item',
+  '.spacing-rule', '.incorrect-card', '.prose-block', '.manifesto-block',
+  '.vocab-column', '.value-main', '.value-diff-item',
+  '.positioning-pillar', '.positioning-hero',
+  '.tagline-hero', '.vp-audience-card', '.narrative-carousel',
+].join(',');
+
+function addRevealClasses() {
+  document.querySelectorAll(REVEAL_SELECTORS).forEach(el => {
+    if (el.classList.contains('reveal')) return;
+    el.classList.add('reveal');
+    // Stagger por posição entre irmãos diretos no mesmo container
+    const parent = el.parentElement;
+    if (!parent) return;
+    const siblings = [...parent.children].filter(c => c.classList.contains('reveal'));
+    const idx = siblings.indexOf(el);
+    if (idx > 0) el.style.transitionDelay = `${Math.min(idx * 45, 180)}ms`;
+  });
+}
+
+let _revealObserver = null;
+
+function initScrollAnimations() {
+  _revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => _revealObserver.observe(el));
+}
+
+function initMouseParallax() {
+  let tX = 0, tY = 0, cX = 0, cY = 0, rafId = null;
+  const LAYERS = [
+    { sel: '.positioning-hero-statement', mx: 5,  my: 2.5 },
+    { sel: '.tagline-display',            mx: 9,  my: 4   },
+    { sel: '.narrative-slides',           mx: 4,  my: 2   },
+    { sel: '.manifesto-quote-body',       mx: 4,  my: 2   },
+  ];
+
+  function tick() {
+    cX += (tX - cX) * 0.07;
+    cY += (tY - cY) * 0.07;
+    LAYERS.forEach(({ sel, mx, my }) => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.style.transform = `translate(${(cX * mx).toFixed(2)}px,${(cY * my).toFixed(2)}px)`;
+      });
+    });
+    if (Math.abs(tX - cX) > 0.001 || Math.abs(tY - cY) > 0.001) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  document.addEventListener('mousemove', e => {
+    tX = e.clientX / window.innerWidth  - 0.5;
+    tY = e.clientY / window.innerHeight - 0.5;
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  });
+}
+
+function triggerRevealInModule(mod) {
+  if (!_revealObserver) return;
+  mod.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    _revealObserver.observe(el);
+  });
+}
 
 // ── CLIPBOARD ─────────────────────────────────────────────────
 function copyToClipboard(text, btn) {
