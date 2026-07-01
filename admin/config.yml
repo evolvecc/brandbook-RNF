@@ -259,6 +259,22 @@ collections:
                   - { label: "Imagem / Mockup", name: "image", widget: "image", required: false }
                   - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
 
+              - label: "Moodboard"
+                name: "moodboard"
+                widget: "object"
+                hint: "Conceito visual e referências visuais da identidade"
+                fields:
+                  - { label: "Texto Conceitual", name: "concept", widget: "markdown", required: false, hint: "Descreva a proposta visual e o conceito da identidade — aparece entre o moodboard e o logotipo" }
+                  - { label: "Imagem Principal do Moodboard", name: "image", widget: "image", required: false, hint: "Imagem grande e imponente — recomendado mínimo 1600px de largura" }
+                  - label: "Galeria de Referências"
+                    name: "gallery"
+                    widget: "list"
+                    label_singular: "Imagem"
+                    required: false
+                    fields:
+                      - { label: "Imagem", name: "image", widget: "image", required: false }
+                      - { label: "Legenda", name: "caption", widget: "string", required: false }
+
               - label: "Tipografia"
                 name: "typography"
                 widget: "object"

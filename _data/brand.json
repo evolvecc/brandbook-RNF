@@ -406,6 +406,11 @@
         "file": ""
       }
     ],
+    "moodboard": {
+      "concept": "",
+      "image": "",
+      "gallery": []
+    },
     "typography": {
       "heading_file": "/assets/images/airbnbcerealblack.ttf",
       "body_file": "/assets/images/airbnbcerealextrabold-1-.ttf"

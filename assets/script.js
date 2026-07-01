@@ -439,6 +439,7 @@ function renderCommunication(data) {
 // ── MODULE 5: VISUAL IDENTITY ─────────────────────────────────
 function renderVisualIdentity(data, brand) {
   if (!data) return;
+  renderMoodboard(data.moodboard);
   renderLogos(data.logos, brand);
   renderColors(data.colors);
   renderIcons(data.icons);
@@ -447,12 +448,43 @@ function renderVisualIdentity(data, brand) {
   renderMaterials(data.graphic_materials);
 }
 
+function renderMoodboard(data) {
+  const el = document.getElementById('moodboard-content');
+  if (!el) return;
+  if (!data || (!data.concept && !data.image && !(data.gallery && data.gallery.length))) {
+    el.innerHTML = '<div class="placeholder-box">Adicione o moodboard e o conceito visual no painel do CMS.</div>';
+    return;
+  }
+  const conceptHtml = data.concept
+    ? `<div class="moodboard-concept prose-block">${marked.parse(data.concept)}</div>`
+    : '';
+  const mainImageHtml = data.image
+    ? `<div class="moodboard-hero" onclick="openLightbox('${esc(data.image)}','Moodboard')">
+        <img src="${esc(data.image)}" alt="Moodboard" />
+        <div class="moodboard-hero-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>`
+    : '';
+  const galleryHtml = data.gallery && data.gallery.length
+    ? `<div class="moodboard-gallery">
+        ${data.gallery.map(g => g.image ? `
+          <div class="moodboard-gallery-item" onclick="openLightbox('${esc(g.image)}','${esc(g.caption || '')}')">
+            <img src="${esc(g.image)}" alt="${esc(g.caption || '')}" />
+            ${g.caption ? `<div class="moodboard-gallery-caption">${esc(g.caption)}</div>` : ''}
+          </div>` : '').join('')}
+      </div>`
+    : '';
+  el.innerHTML = conceptHtml + mainImageHtml + galleryHtml;
+}
+
 function renderLogos(logos, brand) {
   const el = document.getElementById('logos-grid');
   if (!el || !logos) return;
   el.innerHTML = logos.map((l, i) => `
     <div class="logo-card">
-      <div class="logo-preview${i % 2 === 1 ? ' dark' : ''}">
+      <div class="logo-preview${i % 2 === 1 ? ' dark' : ''}"
+           ${l.thumbnail ? `onclick="openLightbox('${esc(l.thumbnail)}','${esc(l.name)}')" style="cursor:pointer"` : ''}>
         ${l.thumbnail
           ? `<img src="${esc(l.thumbnail)}" alt="${esc(l.name)}" />`
           : `<div class="logo-placeholder">${esc((brand && brand.name) ? brand.name.slice(0, 2) : 'AB')}</div>`
@@ -533,7 +565,8 @@ function renderIcons(icons) {
   }
   el.innerHTML = icons.map(icon => `
     <div class="icon-card">
-      <div class="icon-preview">
+      <div class="icon-preview"
+           ${icon.thumbnail ? `onclick="openLightbox('${esc(icon.thumbnail)}','${esc(icon.name)}')" style="cursor:pointer"` : ''}>
         ${icon.thumbnail
           ? `<img src="${esc(icon.thumbnail)}" alt="${esc(icon.name)}" />`
           : `<span class="icon-placeholder">◆</span>`
@@ -572,7 +605,8 @@ function renderIncorrectUse(items, brand) {
   if (!el || !items) return;
   el.innerHTML = items.map(item => `
     <div class="incorrect-card">
-      <div class="incorrect-preview">
+      <div class="incorrect-preview"
+           ${item.image ? `onclick="openLightbox('${esc(item.image)}','${esc(item.description)}')" style="cursor:pointer"` : ''}>
         ${item.image
           ? `<img src="${esc(item.image)}" alt="" />`
           : `<div class="incorrect-placeholder">${brand && brand.name ? brand.name.slice(0, 2) : 'AB'}</div>`
