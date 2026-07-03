@@ -1,368 +1,512 @@
 {
   "brand": {
-    "name": "Brandbook Evolve",
-    "tagline": "Desperte o que há de melhor em você",
-    "cover_color": "#2C1810",
-    "logo": "/assets/images/ícones-site.png",
+    "name": "RNF Imóveis",
+    "tagline": "Cada imóvel tem uma história. Nós cuidamos para que ela continue.",
+    "cover_color": "#161616",
+    "logo": "",
     "logo_white": "",
     "colors": {
-      "primary": "#176b42",
-      "secondary": "#0d9736",
-      "accent": "#70d063",
-      "background": "#ffffff",
-      "text": "#1A1008"
+      "primary": "#161616",
+      "secondary": "#2A2A2A",
+      "accent": "#9EFF3E",
+      "background": "#F8F8F5",
+      "text": "#161616"
     },
     "fonts": {
-      "heading": "Stack Sans",
-      "heading_url": "https://fonts.google.com/specimen/Stack+Sans+Headline?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn",
-      "body": "Google Sans",
-      "body_url": "https://fonts.google.com/specimen/Google+Sans?categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.script=Latn"
+      "heading": "Poppins",
+      "heading_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap",
+      "body": "Poppins",
+      "body_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    },
+    "hero": {
+      "headline": "Cada imóvel tem uma história.",
+      "background_image": "/assets/images/placeholder-moodboard.svg",
+      "background_video": ""
     }
   },
   "research": {
     "benchmarking": [
       {
-        "name": "Starbucks",
-        "positioning": "Café premium global com experiência padronizada",
-        "strengths": "Reconhecimento global, programa de fidelidade sólido, inovação em bebidas",
-        "weaknesses": "Padronização excessiva, pouca identidade local, preço muito elevado",
-        "x": 82,
-        "y": 75,
-        "social_links": [
-          {
-            "network": "youtube",
-            "url": "https://www.starbucks.com"
-          },
-          {
-            "network": "instagram",
-            "url": "https://www.instagram.com/starbucks"
-          }
-        ]
-      },
-      {
-        "name": "Havanna",
-        "positioning": "Café & confeitaria premium argentino",
-        "strengths": "Cores, site, posicionamento",
-        "weaknesses": "Associação forte com produtos específicos, menos agilidade",
-        "x": 70,
-        "y": 35,
+        "name": "Immobile",
+        "positioning": "Imobiliária premium do litoral com foco em alto padrão (R$ 3,7M–6,5M+). Vendem valorização de patrimônio e lifestyle em Camboriú.",
+        "strengths": "Site moderno e design refinado, blog com conteúdo de valor, branding mais evoluído que os concorrentes locais",
+        "weaknesses": "Foco exclusivo no litoral SC, ticket muito alto limita público, pouca ênfase em gestão patrimonial contínua",
+        "x": 78,
+        "y": 68,
         "social_links": []
       },
       {
-        "name": "Café do Mercado",
-        "positioning": "Café tradicional e acessível no coração da cidade",
-        "strengths": "Preço baixo, clientela fiel, agilidade",
-        "weaknesses": "Pouca inovação, experiência básica, sem identidade de marca forte",
-        "x": 20,
-        "y": 25,
-        "social_links": []
-      },
-      {
-        "name": "Pergamino",
-        "positioning": "Specialty coffee com foco em origem e processo",
-        "strengths": "Qualidade de grão, cultura do café, público cult",
-        "weaknesses": "Nicho muito específico, acessível apenas por preço",
+        "name": "Citalli",
+        "positioning": "Curadoria Imobiliária — transforma a empresa de vendedora de imóveis em curadora de patrimônio, vendendo prosperidade e o extraordinário.",
+        "strengths": "Posicionamento conceitual forte, linguagem diferenciada, foco em lifestyle e patrimônio",
+        "weaknesses": "Atuação geográfica limitada ao litoral, menos foco em gestão patrimonial contínua",
         "x": 75,
-        "y": 85,
+        "y": 65,
+        "social_links": []
+      },
+      {
+        "name": "Coelho da Fonseca",
+        "positioning": "Ecossistema imobiliário de alto luxo há mais de 50 anos. Patrocinadora da SP-Arte, associa imóveis com arte, arquitetura e memória cultural.",
+        "strengths": "50 anos de história, referência nacional no luxo, associação com arte e cultura, conteúdo que vai além do imobiliário",
+        "weaknesses": "Foco em São Paulo, ticket muito elevado, sem destaque para administração de condomínios",
+        "x": 85,
+        "y": 55,
+        "social_links": []
+      },
+      {
+        "name": "Monarim",
+        "positioning": "Imobiliária local de Lages com portfólio diversificado e presença consolidada no mercado serrano.",
+        "strengths": "Cartela ampla de produtos, plataforma estruturada para pesquisa de imóveis",
+        "weaknesses": "Posicionamento genérico, comunicação antiquada, pouca especialização",
+        "x": 48,
+        "y": 42,
+        "social_links": []
+      },
+      {
+        "name": "Re/Max",
+        "positioning": "Franquia imobiliária global com presença em Lages. Modelo de corretagem independente com suporte de marca reconhecida.",
+        "strengths": "Reconhecimento de marca global, rede de corretores, cartela diversificada",
+        "weaknesses": "Posicionamento generalista, comunicação padronizada e fria, sem diferencial local",
+        "x": 22,
+        "y": 30,
+        "social_links": []
+      },
+      {
+        "name": "Center Home",
+        "positioning": "Imobiliária local com foco em transações residenciais e comerciais no mercado de Lages.",
+        "strengths": "Presença local estabelecida, cartela de imóveis variada",
+        "weaknesses": "Branding pouco desenvolvido, posicionamento e comunicação genéricos",
+        "x": 18,
+        "y": 20,
         "social_links": []
       }
     ],
     "positioning_map": {
-      "axis_x_left": "Acessível",
-      "axis_x_right": "Premium",
-      "axis_y_bottom": "Tradicional",
-      "axis_y_top": "Moderno",
-      "brand_x": 62,
-      "brand_y": 70
+      "axis_x_left": "Generalista",
+      "axis_x_right": "Especialista",
+      "axis_y_bottom": "Fria",
+      "axis_y_top": "Humana",
+      "brand_x": 88,
+      "brand_y": 85
     }
   },
   "audience": {
     "segments": [
       {
-        "name": "Profissional Urbano",
-        "description": "Adultos entre 28 e 45 anos que usam o café como ritual de produtividade e encontro social no cotidiano de trabalho.",
-        "size": "45%",
-        "characteristics": [
-          "Busca qualidade e consistência",
-          "Valoriza agilidade no atendimento",
-          "Visita de 3 a 5 vezes por semana",
-          "Usa o espaço para trabalho remoto"
-        ]
-      },
-      {
-        "name": "Descobridor de Experiências",
-        "description": "Jovens adultos entre 22 e 32 anos apaixonados por gastronomia, que buscam novas experiências e compartilham nas redes.",
-        "size": "30%",
-        "characteristics": [
-          "Altamente conectado nas redes sociais",
-          "Disposição para pagar mais por experiências únicas",
-          "Influencia outras pessoas na rede",
-          "Experimenta itens novos do menu"
-        ]
-      },
-      {
-        "name": "Encontro & Descanso",
-        "description": "Pessoas que usam o café como ponto de encontro para conversas, datas ou momentos de pausa no dia.",
+        "name": "Locatários Comerciais",
+        "description": "Pequenos empreendedores em busca do ponto certo para legitimar o negócio. O endereço nobre com custo menor que loja de rua e segurança jurídica inclusa é o diferencial decisivo da RNF para esse público.",
         "size": "25%",
         "characteristics": [
-          "Prefere fins de semana e tarde",
-          "Valoriza o ambiente e a decoração",
-          "Ticket médio mais alto",
-          "Fidelidade alta quando bem atendido"
+          "25–60 anos, Classe B e A",
+          "Clínicas, escritórios, cafés, varejo de nicho",
+          "O endereço legitima o negócio e valida publicamente a conquista",
+          "Contrato inseguro e gestora ausente são as maiores dores",
+          "Decide por depoimentos de outros empreendedores"
+        ]
+      },
+      {
+        "name": "Compradores do Primeiro Imóvel",
+        "description": "Quem quer sair do aluguel com uma escolha inteligente. Buscam arquitetura e charme que imóveis novos não entregam, e precisam de orientação para enxergar o potencial do espaço.",
+        "size": "25%",
+        "characteristics": [
+          "30–40 anos, funcionários públicos e profissionais liberais",
+          "R$ 400k–700k de capacidade de compra",
+          "Decisão fortemente visual — descobre imóveis pelo Instagram",
+          "Não consegue visualizar o potencial de imóveis vazios",
+          "Quer a primeira compra como escolha esperta, não qualquer coisa"
+        ]
+      },
+      {
+        "name": "Investidores Familiares",
+        "description": "Guardiões do patrimônio construído por gerações. Honrar o legado familiar é mais importante que rentabilidade imediata — precisam de gestão profissional com relação humana.",
+        "size": "30%",
+        "characteristics": [
+          "30–55 anos + geração sênior 60+",
+          "Famílias tradicionais de Lages com prédios e salas herdadas",
+          "Inadimplência e burocracia jurídica sem suporte são as maiores dores",
+          "A indicação abre a porta; o digital (Instagram/Facebook) valida",
+          "Querem gestão completa sem abrir mão da relação humana"
+        ]
+      },
+      {
+        "name": "Incorporadores Corporativos",
+        "description": "Construtores que precisam de quem faça o pós-entrega funcionar. Decidem por reputação e não aceitam gestoras amadoras que manchem o empreendimento que levaram anos para construir.",
+        "size": "20%",
+        "characteristics": [
+          "35–60 anos, predominantemente masculino",
+          "Construtoras de Lages, litoral SC e Curitiba/PR",
+          "Decidem por reputação, indicação de pares e dados concretos",
+          "LinkedIn é o canal principal de pesquisa e validação",
+          "Uma reunião mal preparada encerra a conversa"
         ]
       }
     ],
     "personas": [
       {
+        "name": "Gabriela",
+        "emoji": "💼",
+        "bio": "Empreendedora local em crescimento. Negócio em casa adaptada em bairro periférico — perde clientes por causa da localização. Sabe que o centro vai mudar o status do negócio. Descobriu que salas em galerias entregam endereço nobre com custo menor. Maior medo: fechar contrato com cláusulas que não entende.",
+        "occupation": "Proprietária de Clínica de Estética",
+        "age": "29 anos",
+        "location": "Lages/SC",
+        "frequency": "Primeiro contato por busca ativa + indicação de outros empreendedores",
+        "quote": "Quer ser vista como empreendedora séria. O endereço legitima o negócio e valida publicamente a conquista.",
         "goals": [
-          "Encontrar um café aconchegante para trabalhar sem interrupções",
-          "Ter acesso rápido a wifi de qualidade e tomadas",
-          "Descobrir combinações de bebidas e petiscos que sejam saudáveis e saborosas"
+          "Encontrar ponto comercial nobre com custo acessível",
+          "Ter segurança jurídica no contrato, entendendo cada cláusula",
+          "Usar o endereço como ferramenta de posicionamento do negócio"
         ],
-        "emoji": "👩‍💼",
-        "bio": "Mariana trabalha de casa 4 dias por semana e sai para o café como seu escritório alternativo. É exigente com a qualidade do café e aprecia espaços que a façam sentir produtiva e inspirada.",
-        "occupation": "Designer UX / Freelancer",
-        "name": "Mariana Costa",
+        "pains": [
+          "Contrato inseguro com cláusulas que não compreende",
+          "Gestora que some após a assinatura, sem suporte quando surge problema",
+          "Lojas de rua fora do orçamento disponível"
+        ],
         "channels": [
           "Instagram",
-          "Google Maps",
-          "Indicação de amigos"
-        ],
-        "location": "Pinheiros, São Paulo",
-        "frequency": "4x por semana",
-        "quote": "Meu dia só começa de verdade com um bom café. É onde eu penso, crio e me reconecto.",
-        "pains": [
-          "Cafés barulhentos que atrapalham a concentração",
-          "Atendimento lento nos horários de pico",
-          "Falta de opções de alimentação saudável e consistente"
-        ],
-        "age": "34 anos"
+          "Reels",
+          "WhatsApp"
+        ]
       },
       {
+        "name": "Ana",
+        "emoji": "🏠",
+        "bio": "Compradora do primeiro lar. Tem capacidade real de compra mas imóveis novos na faixa dela entregam pouco: metragem pequena, sem personalidade. Descobriu no Instagram apartamentos antigos reformados com pé-direito alto, tijolo à vista. Ao visitar imóveis vazios, não consegue imaginar o potencial. Teme comprar um problema.",
+        "occupation": "Psicóloga",
+        "age": "31 anos",
+        "location": "Lages/SC",
+        "frequency": "Decide visita com base em fotos bem produzidas e conteúdo visual",
+        "quote": "Quer sair do aluguel com uma escolha inteligente e esteticamente bonita, não qualquer coisa dentro do orçamento.",
         "goals": [
-          "Encontrar cafés fotogênicos para produzir conteúdo de qualidade",
-          "Experimentar drinks e itens exclusivos",
-          "Descobrir histórias por trás dos produtos"
+          "Encontrar imóvel com personalidade arquitetônica e charme único",
+          "Ter orientação técnica sobre o estado real e potencial do espaço",
+          "Fazer a compra certa dentro do orçamento disponível"
         ],
-        "emoji": "👨‍🍳",
-        "bio": "Rafael tem 120k de seguidores no Instagram e TikTok focados em gastronomia. Visita novos cafés constantemente, documenta sua experiência e influencia sua comunidade. Busca estética e originalidade.",
-        "occupation": "Criador de conteúdo gastronômico",
-        "name": "Rafael Teixeira",
-        "channels": [
-          "TikTok",
-          "Instagram",
-          "YouTube"
-        ],
-        "location": "Vila Madalena, São Paulo",
-        "frequency": "2x por semana (sempre novos lugares)",
-        "quote": "Cada xícara tem uma história. Gosto de cafés que me surpreendem e que sejam visualmente bonitos.",
         "pains": [
-          "Lugares genéricos sem personalidade ou história",
-          "Cardápios que não têm criatividade",
-          "Falta de transparência sobre origem dos produtos"
+          "Não consegue visualizar o potencial de imóveis vazios",
+          "Falta de orientação técnica sobre o estado real do imóvel",
+          "Imóveis novos caros, pequenos e sem personalidade"
         ],
-        "age": "27 anos"
+        "channels": [
+          "Instagram",
+          "Pinterest",
+          "Reels"
+        ]
+      },
+      {
+        "name": "Marta",
+        "emoji": "🏛️",
+        "bio": "Guardiã do patrimônio familiar. Co-gestiona apartamentos e salas no centro de Lages, quer profissionalizar sem perder o controle. Mulher antenada, ativa nas redes sociais e com agenda social. Pesquisa antes de confiar: olha o Instagram da empresa, vê quem são as pessoas. A indicação abre a porta; o digital valida.",
+        "occupation": "Servidora Aposentada",
+        "age": "62 anos",
+        "location": "Lages/SC",
+        "frequency": "Gestão de múltiplos imóveis no centro de Lages",
+        "quote": "A indicação abre a porta, o digital valida. Conquiste minha confiança e fico para sempre.",
+        "goals": [
+          "Profissionalizar a gestão do patrimônio familiar sem perder o controle",
+          "Garantir que os imóveis sejam valorizados para a próxima geração",
+          "Ter relação humana e contato direto com a equipe gestora"
+        ],
+        "pains": [
+          "Inadimplência, conflito com inquilinos e burocracia jurídica sem suporte",
+          "Problemas que consomem tempo e energia desnecessários",
+          "Gestoras impessoais que desaparecem após a contratação"
+        ],
+        "channels": [
+          "Instagram",
+          "Facebook",
+          "Indicação"
+        ]
+      },
+      {
+        "name": "Felipe",
+        "emoji": "⚖️",
+        "bio": "Herdeiro moderno, assumindo gradualmente a gestão do patrimônio familiar — prédios e salas no centro de Lages. Decisão analítica: quer cases, números e processo antes de confiar. Conquistar Felipe é conquistar a família: é ele quem convence os pais a modernizarem a gestão.",
+        "occupation": "Advogado",
+        "age": "34 anos",
+        "location": "Lages/SC",
+        "frequency": "Decisão analítica baseada em cases documentados e dados de gestão",
+        "quote": "Modernize a gestão. Preserve o legado.",
+        "goals": [
+          "Modernizar a gestão patrimonial familiar com processos e relatórios claros",
+          "Obter transparência financeira e segurança jurídica estruturada",
+          "Convencer os pais a profissionalizarem a gestão do patrimônio"
+        ],
+        "pains": [
+          "Gestão informal, sem relatórios, sem segurança jurídica estruturada",
+          "Peso da responsabilidade de não dilapidar o patrimônio da família",
+          "Necessidade de convencer a geração mais velha a mudar"
+        ],
+        "channels": [
+          "LinkedIn",
+          "Instagram",
+          "Google"
+        ]
+      },
+      {
+        "name": "Roberto",
+        "emoji": "🏗️",
+        "bio": "Incorporador pragmático com projetos em expansão para litoral SC e Planalto Serrano. Decide por reputação, indicação de pares e dados concretos. LinkedIn é o canal principal — precisa encontrar a RNF com perfil sólido antes de qualquer abordagem comercial. Uma reunião mal preparada encerra a conversa.",
+        "occupation": "Sócio de Construtora",
+        "age": "48 anos",
+        "location": "Curitiba/PR",
+        "frequency": "Pesquisa ativamente no LinkedIn antes de qualquer contato comercial",
+        "quote": "Gestão que protege a reputação que você levou anos para construir.",
+        "goals": [
+          "Ter parceiro de gestão confiável para o pós-entrega de empreendimentos",
+          "Proteger a reputação do empreendimento após a entrega",
+          "Processos claros e escaláveis para acompanhar a expansão dos projetos"
+        ],
+        "pains": [
+          "Gestoras amadoras que mancham o empreendimento com má gestão",
+          "Problemas pós-entrega que voltam para sua mesa e prejudicam a reputação",
+          "Ser visto como incorporador que entregou e sumiu"
+        ],
+        "channels": [
+          "LinkedIn",
+          "E-mail e PDF",
+          "Google"
+        ]
       }
     ]
   },
   "brand_core": {
-    "positioning": "O Café Aurora é o lar das pessoas que buscam mais do que uma bebida: buscam um momento de intenção, beleza e conexão genuína no meio da rotina acelerada.",
+    "positioning": "Não somos uma imobiliária que também administra. Somos uma administradora de patrimônio.",
+    "positioning_pillars": [
+      {
+        "title": "Gestão Profissional",
+        "description": "Processos, segurança jurídica incluída em tudo, transparência financeira e tecnologia a serviço do proprietário."
+      },
+      {
+        "title": "Legado Familiar",
+        "description": "Imóveis da família no centro de Lages desde os anos 1950. Uma relação intergeracional com o patrimônio que vira método de gestão."
+      },
+      {
+        "title": "Arte & Arquitetura",
+        "description": "Cada espaço tem uma história. O olhar certo revela um potencial que outros simplesmente não enxergam."
+      }
+    ],
     "taglines": [
       {
-        "text": "Desperte o que há de melhor em você",
+        "text": "Cada imóvel tem uma história. Nós cuidamos para que ela continue.",
         "context": "Tagline principal — usada em campanhas, assinatura da marca e materiais institucionais"
       },
       {
-        "text": "Cada xícara, uma pausa de propósito",
-        "context": "Variação para comunicação de produtos e redes sociais"
+        "text": "Cuidamos como se fosse nosso.",
+        "context": "Variação curta para social media e comunicação cotidiana"
       },
       {
-        "text": "Onde o dia encontra seu ritmo",
-        "context": "Variação para comunicação de espaço e experiência"
+        "text": "Patrimônio é história. Nós sabemos guardar as duas.",
+        "context": "Variação para conteúdo institucional e LinkedIn"
+      },
+      {
+        "text": "Não administramos imóveis. Administramos o que você construiu.",
+        "context": "Variação de impacto para apresentações e materiais de venda"
       }
     ],
     "value_proposition": {
-      "main": "Oferecemos uma experiência de café de especialidade em um ambiente que equilibra acolhimento e estética, para pessoas que valorizam momentos de qualidade no cotidiano.",
-      "differentiators": [
-        "Grãos de origem rastreável, com blend exclusivo desenvolvido com torrefadores independentes",
-        "Ambiente projetado para estimular criatividade, foco e conexão humana",
-        "Cardápio sazonal com itens artesanais que variam de acordo com os ingredientes do período",
-        "Equipe treinada para contar histórias por trás de cada produto"
+      "main": "Cuidamos do seu patrimônio como quem entende de legado, com gestão profissional, segurança jurídica e o olhar de quem enxerga beleza e história em cada imóvel.",
+      "audience_props": [
+        {
+          "audience": "Investidor Familiar",
+          "text": "Seu patrimônio administrado por quem tem a mesma história que você: gerações construindo algo que dura."
+        },
+        {
+          "audience": "Incorporador",
+          "text": "Seu empreendimento continuando com excelência depois que as chaves mudam de mão. Gestão que protege a reputação que você levou anos para construir."
+        },
+        {
+          "audience": "Locatário Comercial",
+          "text": "Endereço nobre no centro, custo menor que loja de rua, assessoria jurídica inclusa e uma gestora que não desaparece depois da assinatura."
+        },
+        {
+          "audience": "Comprador Jovem",
+          "text": "Imóveis com arquitetura e história que imóveis novos não têm, e o olhar de quem sabe enxergar o que um espaço pode se tornar."
+        }
       ]
     },
     "archetypes": [
       {
-        "name": "O Criador",
+        "name": "O Governante",
         "role": "Primário",
-        "description": "A marca expressa criatividade, estética e originalidade. Acredita que tudo pode ser belo e significativo, desde a xícara de café até o espaço.",
+        "description": "O Governante não é arrogante — é o arquétipo de quem se responsabiliza pelo que está sob seus cuidados. É o oposto exato do que os clientes mais temem: a imobiliária que assina o contrato e desaparece.",
         "traits": [
-          "Imaginativo",
-          "Expressivo",
-          "Visionário",
-          "Comprometido com a excelência estética"
+          "Controle",
+          "Liderança",
+          "Responsabilidade",
+          "Ordem",
+          "Proteção do que é valioso"
         ],
-        "expression": "Produz conteúdo visual inspirador, cria experiências únicas e personalizadas, valoriza a curadoria em cada detalhe."
+        "expression": "Comunicação segura e direta, sem floreios desnecessários. Paleta sóbria, tipografia limpa, fotografia de qualidade. Atendimento comprometido, organizado, que presta contas."
       },
       {
-        "name": "O Cuidador",
+        "name": "O Prestativo",
         "role": "Secundário",
-        "description": "A marca cuida das pessoas através de momentos de pausa, atenção e hospitalidade genuína, como um anfitrião que conhece o nome dos clientes.",
+        "description": "O Prestativo é a alma de empresa familiar que a RNF carrega. Transforma o Governante de autoridade fria em autoridade afetuosa — firme e presente ao mesmo tempo. É o arquétipo das histórias, das famílias, das gerações.",
         "traits": [
-          "Empático",
-          "Acolhedor",
-          "Presente",
-          "Generoso"
+          "Cuidado",
+          "Acolhimento",
+          "Proteção do próximo",
+          "Presença que conforta",
+          "Relação que humaniza"
         ],
-        "expression": "Linguagem calorosa, atendimento personalizado, comunicação que reconhece e valoriza o cliente."
+        "expression": "Palavras-chave: cuidar, preservar, confiar, estar presente. Imagens de pessoas reais, espaços com vida e história. As histórias dos imóveis, das famílias, das gerações."
+      },
+      {
+        "name": "O Criador",
+        "role": "Traço Complementar",
+        "description": "Ancora a conexão com arte e arquitetura — a crença de que um imóvel não é apenas uma estrutura, mas uma expressão com história e estética. Fundamenta o diferencial de revelar o potencial onde outros veem apenas metragem.",
+        "traits": [
+          "Visão",
+          "Imaginação",
+          "Transformação",
+          "Expressão",
+          "O que ainda não existe mas pode existir"
+        ],
+        "expression": "Conteúdo de transformação de espaços (antes/depois). Linguagem sobre o potencial dos imóveis históricos. Associação com arquitetos e artistas locais."
       }
     ]
   },
   "communication": {
     "tone_of_voice": [
       {
-        "attribute": "Caloroso",
-        "description": "Falamos como um amigo próximo que te conhece e se importa com você. Nossa linguagem é próxima, nunca fria ou corporativa.",
-        "do": "Bom dia! Que tal começar a semana com algo especial? Temos um novo blend para você descobrir.",
-        "dont": "Prezado cliente, informamos que novos produtos estão disponíveis para adquirir."
+        "attribute": "Sofisticada",
+        "description": "Falamos com elegância sem esforço. Não precisamos falar alto para sermos ouvidos. A sofisticação está na precisão das palavras e na clareza das ideias — nunca na arrogância.",
+        "do": "Cada imóvel carrega uma história. Nossa função é garantir que ela continue sendo bem contada.",
+        "dont": "Somos líderes em gestão imobiliária premium com soluções de alto valor agregado."
       },
       {
-        "attribute": "Inspirador",
-        "description": "Cada palavra que escolhemos convida o leitor a sentir algo, a imaginar e a querer viver aquela experiência.",
-        "do": "Feche os olhos. Imagine aquele primeiro gole que aquece por dentro. Você merece isso hoje.",
-        "dont": "Temos café novo. Venha tomar."
+        "attribute": "Acolhedora",
+        "description": "Somos a empresa familiar que você sente que cuida. A linguagem cria proximidade sem perder a elegância — como uma relação de confiança construída ao longo do tempo.",
+        "do": "Confiar o seu patrimônio a alguém exige mais do que um bom contrato. Exige uma relação.",
+        "dont": "A gente tá aqui pra te ajudar! Manda um oi no Whats! 😊"
       },
       {
-        "attribute": "Autêntico",
-        "description": "Somos transparentes sobre nossa origem, nossos ingredientes e nossos processos. Não performamos — somos.",
-        "do": "Esse blend vem de duas fazendas no Cerrado Mineiro. Torra média, notas de chocolate amargo e caramelo.",
-        "dont": "Nosso produto é o melhor do mercado e supera todos os concorrentes."
+        "attribute": "Segura",
+        "description": "Nossa voz transmite autoridade sem arrogância. Dados, histórico e processo falam mais do que superlativo vazio. Quinze anos de gestão profissional falam por si.",
+        "do": "Quinze anos de gestão. Mais de 100 imóveis. A mesma atenção que tínhamos no primeiro contrato.",
+        "dont": "A RNF Imóveis conta com 15 anos de atuação no mercado imobiliário de Lages/SC."
       },
       {
-        "attribute": "Poético (sem ser hermético)",
-        "description": "Usamos imagens e metáforas que criam beleza, mas nunca de forma inacessível. O poético serve ao entendimento, não ao contrário.",
-        "do": "Tem dias que o café é o único ritual que ainda pertence só a você.",
-        "dont": "A efervescência etérea das notas olfativas transcedem a ordinária experiência sensorial."
+        "attribute": "Narrativa",
+        "description": "Contamos histórias concretas, com começo, meio e fim. O dado ganha vida quando vem com contexto. O poético serve ao entendimento — nunca ao contrário.",
+        "do": "Este apartamento ficou vazio três anos. Em seis meses: inquilino, reforma e aluguel 18% acima.",
+        "dont": "Como as páginas de um livro adormecido, cada imóvel aguarda o toque de quem sabe..."
       }
     ],
     "vocabulary": {
       "use": [
-        "momento",
-        "ritual",
-        "pausa",
-        "despertar",
-        "descobrir",
-        "artesanal",
-        "origem",
+        "patrimônio",
+        "administrar",
+        "gerir",
+        "preservar",
+        "legado",
+        "curadoria",
+        "revelar o potencial",
+        "gerações",
         "cuidado",
-        "gole",
-        "intenção",
-        "acolhimento",
-        "curadoria"
+        "confiança",
+        "histórico",
+        "assessoria jurídica"
       ],
       "avoid": [
-        "promoção imperdível",
-        "produto",
-        "consumidor",
-        "adquirir",
-        "oferta",
-        "desconto especial",
-        "combo",
-        "leve mais pague menos"
+        "a melhor imobiliária",
+        "a maior",
+        "realize seus sonhos",
+        "corra, últimas unidades",
+        "não perca",
+        "herança",
+        "imóvel dos sonhos",
+        "dicas para comprar imóvel"
       ]
     },
-    "narrative": "<p>O Café Aurora nasceu de uma crença simples: que as melhores coisas da vida não precisam ser rápidas.</p><p>Em 2019, duas amigas — uma designer e uma barista — cansadas da agitação sem propósito da vida contemporânea, decidiram criar um espaço que fosse o oposto de tudo isso. Um lugar onde cada detalhe contasse. O grão escolhido com cuidado. A luz calculada para aquecer. A música escolhida para não atrapalhar o pensamento.</p><p>O Aurora não é só um café. É uma pausa com intenção. É o lugar onde o dia encontra seu ritmo.</p>",
-    "manifesto": "<p>Num mundo que glorifica a velocidade, nós escolhemos a pausa.</p><p>Num mercado que padroniza tudo, nós escolhemos a história.</p><p>Enquanto o mundo diz para você fazer mais, correr mais, render mais — nós te convidamos para sentar, respirar e lembrar que você já é suficiente.</p><p>O café é o pretexto. O encontro é o ponto.</p><p>Bem-vindo ao Aurora. Você chegou no lugar certo.</p>"
+    "narrative": "<p><strong>Era uma vez...</strong> Uma família serrana que, desde a década de 1950, foi construindo e guardando imóveis no coração de Lages — prédios de tijolo à vista, arquitetura de outra época, endereços que o tempo só valorizou.</p><p><strong>Todo dia...</strong> Esses imóveis foram passando de geração em geração. Com eles crescia o entendimento: um imóvel não é apenas um bem. É a sala onde alguém abriu o primeiro negócio. É o apartamento que uma família guardou por décadas.</p><p><strong>Até que então...</strong> Lages tinha proprietários sem gestão confiável, incorporadores sem parceiros para o pós-entrega, e imóveis com arquitetura única esperando pelo olhar certo para revelar o que realmente valem.</p><p><strong>E por causa disso...</strong> Nasceu a RNF, não como mais uma imobiliária, mas como uma administradora de patrimônio com alma. 15 anos de gestão profissional. Assessoria jurídica inclusa. O cuidado de quem cresceu entendendo o que está guardando.</p><p><strong>Até que finalmente...</strong> A marca encontrou seu diferencial mais profundo: enxergar beleza e potencial onde outros veem apenas metragem e preço. A Galeria Dr. Acácio que virou referência. A gestão que virou narrativa de marca.</p><p><strong>E desde então...</strong> A RNF segue preservando, valorizando e transformando os patrimônios que passam por suas mãos, com a convicção de que um imóvel com história, bem administrado, é sempre o melhor investimento.</p>",
+    "manifesto": "<p>Acreditamos que patrimônio não é só dinheiro.</p><p>É a sala que o seu pai alugou para abrir o primeiro escritório. É o apartamento com pé-direito alto, tijolo à vista e arquitetura que a cidade não constrói mais.</p><p><strong>Administrar imóveis é, antes de tudo, guardar histórias.</strong></p><p>Por isso não somos uma imobiliária. Somos uma administradora de patrimônio, com 15 anos de gestão, assessoria jurídica inclusa e o olhar de quem cresceu entre imóveis do centro de Lages que resistiram ao tempo porque sempre houve alguém cuidando.</p><p>Sabemos o que um imóvel pode se tornar quando alguém cuida de verdade. E esse alguém somos nós.</p>"
   },
   "visual_identity": {
     "logos": [
       {
         "name": "Logo Principal — Versão Positiva",
         "description": "Uso principal em fundos claros. Versão completa com símbolo + logotipo.",
-        "file": "",
-        "thumbnail": ""
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       },
       {
         "name": "Logo Negativa — Fundo Escuro",
         "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
-        "file": "",
-        "thumbnail": ""
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       },
       {
         "name": "Símbolo Isolado",
         "description": "Para uso em ícone de app, favicon e situações onde o espaço é reduzido.",
-        "file": "",
-        "thumbnail": ""
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       },
       {
         "name": "Logo Horizontal",
         "description": "Variação para uso em headers, assinaturas de email e banners horizontais.",
-        "file": "",
-        "thumbnail": ""
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       }
     ],
     "colors": [
       {
-        "name": "Aurora Brown",
+        "name": "Preto RNF",
         "role": "Primária",
-        "hex": "#2C1810",
-        "rgb": "44, 24, 16",
-        "cmyk": "0, 45, 64, 83",
-        "usage": "Cor principal da marca. Use para textos principais, fundos de destaque e elementos âncora da identidade."
+        "hex": "#161616",
+        "rgb": "22, 22, 22",
+        "cmyk": "0, 0, 0, 91",
+        "usage": "Cor principal da marca. Use para fundos de destaque, elementos âncora e textos principais em fundo claro."
       },
       {
-        "name": "Terracota",
+        "name": "Grafite",
         "role": "Secundária",
-        "hex": "#6B3F2A",
-        "rgb": "107, 63, 42",
-        "cmyk": "0, 41, 61, 58",
+        "hex": "#2A2A2A",
+        "rgb": "42, 42, 42",
+        "cmyk": "0, 0, 0, 84",
         "usage": "Cor de suporte para hierarquias visuais, backgrounds de seção e elementos gráficos secundários."
       },
       {
-        "name": "Dourado Aurora",
+        "name": "Verde Lima RNF",
         "role": "Destaque",
-        "hex": "#D4A853",
-        "rgb": "212, 168, 83",
-        "cmyk": "0, 21, 61, 17",
-        "usage": "Cor de ênfase para CTAs, destaques, ícones e elementos que precisam de destaque visual."
+        "hex": "#9EFF3E",
+        "rgb": "158, 255, 62",
+        "cmyk": "38, 0, 76, 0",
+        "usage": "Cor de ênfase para CTAs, destaques tipográficos, ícones e elementos que precisam de destaque visual imediato."
       },
       {
-        "name": "Creme",
+        "name": "Off-White",
         "role": "Fundo",
-        "hex": "#FAF7F2",
-        "rgb": "250, 247, 242",
-        "cmyk": "0, 1, 3, 2",
-        "usage": "Fundo principal da página e de materiais impressos. Nunca use branco puro — esta é a cor neutra da Aurora."
+        "hex": "#F8F8F5",
+        "rgb": "248, 248, 245",
+        "cmyk": "0, 0, 1, 3",
+        "usage": "Fundo principal da página e de materiais impressos. Mais suave que o branco puro."
       },
       {
-        "name": "Espresso",
+        "name": "Quase Preto",
         "role": "Texto",
-        "hex": "#1A1008",
-        "rgb": "26, 16, 8",
-        "cmyk": "0, 38, 69, 90",
-        "usage": "Cor para textos longos e body copy. Mais suave que o preto puro, mantém a sensação orgânica da marca."
+        "hex": "#161616",
+        "rgb": "22, 22, 22",
+        "cmyk": "0, 0, 0, 91",
+        "usage": "Cor para textos longos e body copy."
       }
     ],
     "icons": [
       {
-        "name": "Ícone Xícara",
-        "file": "",
-        "thumbnail": ""
+        "name": "Ícone Principal",
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       },
       {
-        "name": "Ícone Grão de Café",
-        "file": "",
-        "thumbnail": ""
-      },
-      {
-        "name": "Ícone Mapa Pin",
-        "file": "",
-        "thumbnail": ""
+        "name": "Ícone Secundário",
+        "file": "/assets/images/placeholder-logo.svg",
+        "thumbnail": "/assets/images/placeholder-logo.svg"
       }
     ],
     "spacing": {
-      "min_size_print": "25mm",
-      "min_size_digital": "80px",
-      "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da letra 'A' do logotipo em todos os quatro lados.",
+      "min_size_print": "20mm",
+      "min_size_digital": "60px",
+      "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da letra 'R' do logotipo em todos os quatro lados.",
       "examples": [
         "Nunca posicione o logo a menos de 1x sua altura de qualquer borda de página ou elemento",
         "Em materiais impressos, mantenha uma margem mínima de 5mm em todos os lados"
@@ -371,160 +515,200 @@
     "incorrect_use": [
       {
         "description": "Não distorça ou estique o logo em nenhuma direção",
-        "image": ""
+        "image": "/assets/images/placeholder-logo.svg"
       },
       {
         "description": "Não use o logo em fundos que criem conflito visual ou baixo contraste",
-        "image": ""
+        "image": "/assets/images/placeholder-logo.svg"
       },
       {
         "description": "Não altere as cores do logo para cores fora da paleta aprovada",
-        "image": ""
+        "image": "/assets/images/placeholder-logo.svg"
       },
       {
         "description": "Não adicione sombras, contornos ou efeitos ao logo",
-        "image": ""
+        "image": "/assets/images/placeholder-logo.svg"
       },
       {
         "description": "Não use o logo em tamanho menor que o mínimo permitido",
-        "image": ""
+        "image": "/assets/images/placeholder-logo.svg"
       }
     ],
     "graphic_materials": [
       {
-        "name": "Embalagem de Blend",
-        "image": "",
-        "file": ""
+        "name": "Pasta Institucional",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Copo Descartável",
-        "image": "",
-        "file": ""
+        "name": "Cartão de Visita",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Papelaria",
-        "image": "",
-        "file": ""
+        "name": "Placa de Imóvel",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Uniforme de Equipe",
-        "image": "",
-        "file": ""
+        "name": "Envelope Timbrado",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
+      },
+      {
+        "name": "Proposta Comercial",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
+      },
+      {
+        "name": "Banner / Outdoor",
+        "image": "/assets/images/placeholder-material.svg",
+        "file": "/assets/images/placeholder-material.svg"
       }
     ],
     "moodboard": {
       "concept": "",
-      "image": "",
+      "image": "/assets/images/placeholder-moodboard.svg",
       "gallery": []
     },
     "typography": {
-      "heading_file": "/assets/images/airbnbcerealblack.ttf",
-      "body_file": "/assets/images/airbnbcerealextrabold-1-.ttf"
+      "heading_file": "",
+      "body_file": ""
     }
   },
   "social_media": {
     "editorial_lines": [
       {
-        "name": "Ritual & Rotina",
-        "description": "Conteúdos que integram o café ao cotidiano das pessoas, valorizando a pausa e o momento presente.",
-        "color": "#2C1810",
+        "name": "Prova Social & Bastidores",
+        "description": "Depoimentos, stories de visita/vistoria, cases de gestão e a dor de tempo resolvida — horas devolvidas ao proprietário. Mostra o processo real por trás da gestão profissional.",
+        "color": "#161616",
         "examples": [
-          "Séries 'meu café da manhã'",
-          "Conteúdo de ritual de início de dia",
-          "Posts de segunda-feira com intenção da semana"
+          "Post: Quantas horas por mês o cliente deixou de perder desde que a RNF assumiu a gestão? Fizemos as contas.",
+          "Story: acompanhamento de vistoria ao vivo",
+          "Depoimento em vídeo de proprietário ou locatário satisfeito"
         ]
       },
       {
-        "name": "Bastidores & Artesanato",
-        "description": "Mostrar o processo, as pessoas por trás da marca e a história dos produtos. Conteúdo autêntico e transparente.",
-        "color": "#6B3F2A",
+        "name": "Educação & Arte",
+        "description": "Mercado imobiliário de SC, zonas em valorização, empreendimentos arquitetônicos notáveis, a relação entre real estate e arte/design. Posiciona a RNF como especialista e curadora.",
+        "color": "#2A2A2A",
         "examples": [
-          "Processo de torra do blend",
-          "Visita à fazenda parceira",
-          "Perfil de barista da equipe"
+          "Post: Por que o Planalto Serrano está virando destino de investimento imobiliário",
+          "Carrossel sobre um edifício histórico restaurado em outra cidade",
+          "Série: arquitetura que permanece — imóveis históricos de Lages"
         ]
       },
       {
-        "name": "Experiência & Espaço",
-        "description": "Conteúdo que vende a experiência do espaço físico: o ambiente, os detalhes, os momentos vividos ali.",
-        "color": "#D4A853",
+        "name": "Transformação",
+        "description": "Antes e depois de imóveis administrados — reformas, renders de potencial. Materializa o diferencial de revelar o que outros não enxergam em cada espaço.",
+        "color": "#4A4A4A",
         "examples": [
-          "Detalhes da decoração sazonal",
-          "Clientes em momentos de conexão",
-          "Vídeos ASMR do ambiente"
+          "Reel: sala vazia → render decorado com arquiteto parceiro",
+          "Carrossel: apartamento antes da gestão RNF vs. 6 meses depois",
+          "Post: o olhar que transforma — espaços que a RNF revelou"
+        ]
+      },
+      {
+        "name": "História do Patrimônio",
+        "description": "Narrativa de um imóvel específico da carteira — sua história, seus inquilinos, sua arquitetura. Dá vida e personalidade ao que outros tratam apenas como metro quadrado.",
+        "color": "#6B6B6B",
+        "examples": [
+          "Post sobre a história de um prédio específico administrado pela RNF",
+          "A Galeria Dr. Acácio — série sobre um ícone do centro de Lages",
+          "Série: cada imóvel tem uma história — perfil de propriedades da carteira"
+        ]
+      },
+      {
+        "name": "Legado Familiar & Institucional",
+        "description": "A história da própria RNF — fotos antigas, anos 1950, bastidores da empresa. Humaniza a marca e reforça a narrativa de família que cuida de famílias.",
+        "color": "#9B9B9B",
+        "examples": [
+          "Post comemorativo de aniversário da empresa",
+          "Fotos do arquivo familiar — Lages nos anos 1950–1960",
+          "Apresentação da equipe e dos valores que guiam a gestão"
+        ]
+      },
+      {
+        "name": "Imóveis Disponíveis",
+        "description": "Existe, mas é residual — a RNF não é vitrine de catálogo. Quando aparece, vem com storytelling e contexto histórico, nunca como lista seca de características.",
+        "color": "#BEBEBE",
+        "examples": [
+          "Carrossel pontual de imóvel à locação com narrativa do espaço",
+          "Post de lançamento de imóvel disponível com render ou tour fotográfico",
+          "Destaque de imóvel com história e potencial de valorização"
         ]
       }
     ],
     "content_pillars": [
       {
-        "name": "Educar",
-        "emoji": "📚",
-        "objective": "Posicionar a Aurora como especialista em café, construindo credibilidade e gerando valor real para o seguidor.",
+        "name": "Cases e Métricas",
+        "emoji": "📊",
+        "objective": "Comprovar resultados reais de gestão com dados concretos. Construir credibilidade junto a Felipe, Roberto e proprietários que decidem por evidência.",
         "examples": [
-          "Como escolher o método de extração ideal",
-          "Diferença entre processos de café",
-          "História do grão que usamos"
+          "Apartamento vazio há 3 anos. Em 6 meses: inquilino, reforma e aluguel 18% acima.",
+          "Taxa de inadimplência zero na carteira gerida em 2024",
+          "Prazo médio de 23 dias para locação de imóveis da carteira RNF"
         ]
       },
       {
-        "name": "Inspirar",
-        "emoji": "✨",
-        "objective": "Conectar a marca a um estilo de vida intencional, minimalista e bonito, gerando desejo e identificação.",
+        "name": "Autoridade no Setor",
+        "emoji": "🏛️",
+        "objective": "Posicionar a RNF como especialista em gestão patrimonial de Lages e região. Conteúdo educativo que antecede a decisão de compra ou contratação.",
         "examples": [
-          "Fotografias de ambientes e rituais",
-          "Citações sobre pausa e presença",
-          "Momentos de beleza cotidiana"
+          "3 sinais de que seu condomínio precisa de gestão profissional pós-entrega",
+          "Por que imóveis históricos do centro valorizam mais que novos empreendimentos",
+          "O que avaliar antes de contratar uma administradora de imóveis"
         ]
       },
       {
-        "name": "Engajar",
-        "emoji": "💬",
-        "objective": "Criar conversa, gerar proximidade e fortalecer a comunidade em torno da marca.",
+        "name": "Institucional & Legado",
+        "emoji": "🕰️",
+        "objective": "Reforçar a narrativa de 15 anos de história, origem familiar e comprometimento com o legado. Humaniza a marca para todos os públicos.",
         "examples": [
-          "Perguntas sobre preferências de café",
-          "Votações entre duas opções do cardápio",
-          "Pedindo recomendações de músicas para o espaço"
+          "Apresentação da equipe e da assessoria jurídica inclusa",
+          "15 anos de gestão — o que construímos juntos",
+          "A família por trás da RNF — origem, propósito e missão"
         ]
       },
       {
-        "name": "Converter",
-        "emoji": "☕",
-        "objective": "Conteúdo com intenção direta de visita ou compra, sempre com linguagem da marca (nunca agressivo).",
+        "name": "Parcerias e Network",
+        "emoji": "🤝",
+        "objective": "Demonstrar a rede de relações profissionais da RNF — incorporadoras, arquitetos, advogados. Reforça credibilidade especialmente junto a Roberto e Felipe.",
         "examples": [
-          "Novo item do cardápio com storytelling",
-          "Horário especial do fim de semana",
-          "Evento no espaço"
+          "Post sobre parceria com escritório de arquitetura local",
+          "Participação em evento do setor imobiliário catarinense",
+          "Conexão com incorporadora parceira para gestão pós-entrega"
         ]
       }
     ],
     "references": [
       {
         "name": "Referência Visual 1",
-        "description": "Fotografia de café com luz natural e composição minimalista",
+        "description": "Fotografia editorial de espaços históricos com luz natural e composição arquitetônica",
         "image": ""
       },
       {
         "name": "Referência Visual 2",
-        "description": "Layout de feed com grid coerente de tons quentes e neutros",
+        "description": "Grid de feed com alternância entre tipografia bold em fundo escuro e fotografia de ambiente",
         "image": ""
       }
     ],
     "visual_communication": [
       {
-        "name": "Post Feed Quadrado",
-        "description": "Template principal para posts de feed. Fundo em creme, tipografia serif, elemento gráfico sutil.",
+        "name": "Post Vertical 1080 × 1350px",
+        "description": "Fundo escuro (#161616), tipografia Poppins Bold, destaque em verde lima. Foco em dados e narrativa curta.",
+        "image": "/assets/images/placeholder-social.svg",
+        "file": ""
+      },
+      {
+        "name": "Stories 1080 × 1920px",
+        "description": "Layout vertical com área de texto inferior, foto de espaço ou pessoa na parte superior. Barra na cor accent verde.",
         "image": "",
         "file": ""
       },
       {
-        "name": "Stories",
-        "description": "Template de stories com área de texto inferior e foto/imagem na parte superior.",
-        "image": "",
-        "file": ""
-      },
-      {
-        "name": "Capa de Destaque",
-        "description": "Ícone + fundo na cor primária. Tipografia pequena e elegante abaixo do ícone.",
+        "name": "Carrossel 1080 × 1350px",
+        "description": "Slides com dados destacados, tipografia grande e legível. Case documentado em formato PDF-ready para Roberto e Felipe.",
         "image": "",
         "file": ""
       }

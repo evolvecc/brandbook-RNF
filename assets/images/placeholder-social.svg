@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#2C1810"/>
+  <rect x="1" y="1" width="398" height="398" fill="none" stroke="#D4A853" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#D4A853" opacity="0.5">📱</text>
+  <text x="200" y="245" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#FAF7F2" opacity="0.7" font-weight="bold">Template Social</text>
+  <text x="200" y="267" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#D4A853" opacity="0.5">400 × 400</text>
+</svg>

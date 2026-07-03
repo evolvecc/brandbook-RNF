@@ -13,7 +13,7 @@
 
   <!-- ── TOPNAV ─────────────────────────────────────────────── -->
   <header class="topnav" id="topnav">
-    <div class="topnav-brand">
+    <div class="topnav-brand" onclick="activateHero()" role="button" tabindex="0" style="cursor:pointer" title="Início" onkeydown="if(event.key==='Enter')activateHero()">
       <div class="sidebar-logo" id="sidebar-logo">
         <span class="sidebar-logo-initials" id="sidebar-logo-initials">CA</span>
       </div>
@@ -25,7 +25,7 @@
 
     <div class="topnav-inner">
       <nav class="topnav-nav" id="topnav-nav">
-        <a class="nav-item active" data-module="research" href="#research">
+        <a class="nav-item" data-module="research" href="#research">
           <span>Pesquisa de Mercado</span>
         </a>
         <a class="nav-item" data-module="audience" href="#audience">
@@ -61,11 +61,29 @@
     Exportar PDF
   </button>
 
+  <!-- ── HERO / HOME ──────────────────────────────────────────── -->
+  <section class="brand-hero-section" id="home">
+    <div class="brand-hero-bg" id="brand-hero-bg"></div>
+    <div class="brand-hero-overlay"></div>
+    <div class="brand-hero-content">
+      <p class="brand-hero-eyebrow" id="brand-hero-eyebrow"></p>
+      <h1 class="brand-hero-headline" id="brand-hero-headline"></h1>
+      <div class="brand-hero-cta" id="brand-hero-cta">
+        <button class="hero-btn hero-btn-primary" onclick="activateModule('visual-identity')">
+          Identidade Visual <span class="hero-btn-arrow">→</span>
+        </button>
+        <button class="hero-btn hero-btn-secondary" onclick="activateModule('brand-core')">
+          Core <span class="hero-btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
-  <main class="main">
+  <main class="main main--hidden" id="main-content">
 
     <!-- ═══ MODULE 1: PESQUISA DE MERCADO ═══════════════════ -->
-    <section class="module" id="research">
+    <section class="module hidden" id="research">
       <div class="module-body">
         <aside class="module-sidenav">
           <nav class="sub-tabs-bar">
@@ -96,7 +114,7 @@
             <h2 class="section-title">Mapa de Posicionamento</h2>
             <p class="section-desc">Visualização de onde a marca se posiciona em relação aos concorrentes nos eixos estratégicos.</p>
             <div class="map-container">
-              <svg id="pos-map" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg"></svg>
+              <svg id="pos-map" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg"></svg>
             </div>
             <div id="map-legend" class="map-legend"></div>
           </div>
@@ -144,7 +162,7 @@
           <div class="subsection" id="positioning">
             <h2 class="section-title">Posicionamento</h2>
             <p class="section-desc">A declaração que define com clareza onde a marca ocupa espaço na mente e no coração do público.</p>
-            <div class="quote-block" id="positioning-text"></div>
+            <div id="positioning-text"></div>
           </div>
 
           <div class="subsection" id="tagline">
@@ -162,7 +180,7 @@
           <div class="subsection" id="archetypes">
             <h2 class="section-title">Arquétipos de Marca</h2>
             <p class="section-desc">Os perfis arquetípicos que fundamentam a personalidade e expressão da marca.</p>
-            <div class="archetypes-list" id="archetypes-list"></div>
+            <div class="archetypes-grid" id="archetypes-list"></div>
           </div>
         </div>
       </div>
@@ -195,13 +213,13 @@
           <div class="subsection" id="narrative">
             <h2 class="section-title">Narrativa de Marca</h2>
             <p class="section-desc">A história que a marca conta sobre si mesma — sua origem, sua crença e seu propósito.</p>
-            <div class="prose-block" id="narrative-text"></div>
+            <div id="narrative-text"></div>
           </div>
 
           <div class="subsection" id="manifesto">
             <h2 class="section-title">Manifesto</h2>
             <p class="section-desc">A declaração de intenção da marca — o que ela acredita e defende.</p>
-            <div class="manifesto-block" id="manifesto-text"></div>
+            <div id="manifesto-text"></div>
           </div>
         </div>
       </div>
@@ -281,7 +299,6 @@
           <nav class="sub-tabs-bar">
             <button class="sub-tab active" data-section="editorial-lines">Linhas Editoriais</button>
             <button class="sub-tab" data-section="content-pillars">Pilares de Conteúdo</button>
-            <button class="sub-tab" data-section="references">Referências</button>
             <button class="sub-tab" data-section="visual-comm">Comunicação Visual</button>
           </nav>
         </aside>
@@ -296,12 +313,6 @@
             <h2 class="section-title">Pilares de Conteúdo</h2>
             <p class="section-desc">As categorias estratégicas de conteúdo que equilibram objetivos e interesse do público.</p>
             <div class="pillars-grid" id="pillars-grid"></div>
-          </div>
-
-          <div class="subsection" id="references">
-            <h2 class="section-title">Referências</h2>
-            <p class="section-desc">Inspirações visuais e de conteúdo que orientam a estética da marca nas redes.</p>
-            <div class="ref-grid" id="ref-grid"></div>
           </div>
 
           <div class="subsection" id="visual-comm">

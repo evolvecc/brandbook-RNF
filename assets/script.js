@@ -11,7 +11,8 @@ async function init() {
   if (!data) return;
   applyTheme(data.brand);
   updateSidebarBrand(data.brand);
-  renderResearch(data.research);
+  renderHero(data.brand);
+  renderResearch(data.research, data.brand && data.brand.name);
   renderAudience(data.audience);
   renderBrandCore(data.brand_core);
   renderCommunication(data.communication);
@@ -21,6 +22,14 @@ async function init() {
   initNavigation();
   initSubTabAnchors();
   initMobileMenu();
+  // Start in hero mode
+  const topnav = document.getElementById('topnav');
+  if (topnav) topnav.classList.add('topnav--over-hero');
+  setTimeout(() => {
+    addRevealClasses();
+    initScrollAnimations();
+    initMouseParallax();
+  }, 120);
 }
 
 async function loadData() {
@@ -72,6 +81,48 @@ function updateSidebarBrand(brand) {
   }
 }
 
+// ── HERO ──────────────────────────────────────────────────────
+function renderHero(brand) {
+  const hero = brand && brand.hero;
+  const bgEl = document.getElementById('brand-hero-bg');
+  const eyebrow = document.getElementById('brand-hero-eyebrow');
+  const headlineEl = document.getElementById('brand-hero-headline');
+
+  if (eyebrow) eyebrow.textContent = brand ? brand.name : '';
+
+  if (headlineEl && hero && hero.headline) {
+    const words = hero.headline.split(' ');
+    headlineEl.innerHTML = words.map((w, i) =>
+      `<span class="hero-word" style="animation-delay:${0.55 + i * 0.11}s">${esc(w)}</span>`
+    ).join(' ');
+  }
+
+  if (bgEl && hero) {
+    if (hero.background_video) {
+      bgEl.innerHTML = `<video autoplay loop muted playsinline src="${esc(hero.background_video)}"></video>`;
+    } else if (hero.background_image) {
+      bgEl.style.backgroundImage = `url('${esc(hero.background_image)}')`;
+    }
+  }
+}
+
+function activateHero() {
+  const hero = document.getElementById('home');
+  const main = document.getElementById('main-content');
+  const topnav = document.getElementById('topnav');
+  if (hero) hero.classList.remove('hero--hidden');
+  if (main) main.classList.add('main--hidden');
+  if (topnav) topnav.classList.add('topnav--over-hero');
+  document.querySelectorAll('.nav-item').forEach(l => l.classList.remove('active'));
+  window.scrollTo(0, 0);
+  // Re-trigger hero word animations
+  document.querySelectorAll('.hero-word').forEach(w => {
+    w.classList.remove('hero-word--played');
+    void w.offsetWidth;
+    w.classList.add('hero-word--played');
+  });
+}
+
 // ── NAVIGATION ────────────────────────────────────────────────
 function initNavigation() {
   document.querySelectorAll('.nav-item').forEach(link => {
@@ -81,9 +132,19 @@ function initNavigation() {
       closeMobileMenu();
     });
   });
+  // Expose globally for hero buttons
+  window.activateModule = activateModule;
+  window.activateHero  = activateHero;
 }
 
 function activateModule(moduleId) {
+  const hero = document.getElementById('home');
+  const main = document.getElementById('main-content');
+  const topnav = document.getElementById('topnav');
+  if (hero) hero.classList.add('hero--hidden');
+  if (main) main.classList.remove('main--hidden');
+  if (topnav) topnav.classList.remove('topnav--over-hero');
+
   document.querySelectorAll('.module').forEach(m => m.classList.add('hidden'));
   document.querySelectorAll('.nav-item').forEach(l => l.classList.remove('active'));
   const mod = document.getElementById(moduleId);
@@ -91,6 +152,7 @@ function activateModule(moduleId) {
     mod.classList.remove('hidden');
     window.scrollTo(0, 0);
     if (mod._updateActiveTab) mod._updateActiveTab();
+    requestAnimationFrame(() => triggerRevealInModule(mod));
   }
   const link = document.querySelector(`.nav-item[data-module="${moduleId}"]`);
   if (link) link.classList.add('active');
@@ -159,10 +221,10 @@ const SOCIAL_ICONS = {
   pinterest: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>`
 };
 
-function renderResearch(data) {
+function renderResearch(data, brandName) {
   if (!data) return;
   renderBenchmarking(data.benchmarking);
-  renderPositioningMap(data.positioning_map, data.benchmarking);
+  renderPositioningMap(data.positioning_map, data.benchmarking, brandName);
 }
 
 function renderBenchmarking(items) {
@@ -197,61 +259,114 @@ function splitTags(text, type) {
   return text.split(',').map(t => `<span class="bench-tag-${type}">${esc(t.trim())}</span>`).join('');
 }
 
-function renderPositioningMap(mapCfg, competitors) {
+function renderPositioningMap(mapCfg, competitors, brandName) {
   const svg = document.getElementById('pos-map');
   const legend = document.getElementById('map-legend');
   if (!svg || !mapCfg) return;
 
-  const W = 600, H = 480, PAD = 60;
-  const toSvgX = x => PAD + (x / 100) * (W - PAD * 2);
-  const toSvgY = y => H - PAD - (y / 100) * (H - PAD * 2);
+  const W = 800, H = 520, PAD = 84;
+  const toX = x => PAD + (x / 100) * (W - PAD * 2);
+  const toY = y => H - PAD - (y / 100) * (H - PAD * 2);
+  const accent = getComputedStyle(document.documentElement)
+    .getPropertyValue('--brand-accent').trim() || '#9EFF3E';
+  const font = 'Poppins,sans-serif';
+  const lc = 'rgba(255,255,255,0.28)';
 
-  const axisColor = '#c8c8c8';
-  const brandColor = getComputedStyle(document.documentElement)
-    .getPropertyValue('--brand-accent').trim() || '#D4A853';
+  let h = '';
 
-  // Build SVG content
-  let html = '';
+  // Subtle dot grid (6×5)
+  for (let gx = 0; gx <= 6; gx++) {
+    for (let gy = 0; gy <= 5; gy++) {
+      h += `<circle cx="${(PAD + (gx / 6) * (W - PAD * 2)).toFixed(1)}" cy="${(PAD + (gy / 5) * (H - PAD * 2)).toFixed(1)}" r="1.2" fill="rgba(255,255,255,0.06)"/>`;
+    }
+  }
 
-  // Grid lines
-  html += `<line x1="${W/2}" y1="${PAD}" x2="${W/2}" y2="${H-PAD}" stroke="${axisColor}" stroke-width="1.5"/>`;
-  html += `<line x1="${PAD}" y1="${H/2}" x2="${W-PAD}" y2="${H/2}" stroke="${axisColor}" stroke-width="1.5"/>`;
+  // Border + axis lines
+  h += `<rect x="${PAD}" y="${PAD}" width="${W - PAD * 2}" height="${H - PAD * 2}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" rx="4"/>`;
+  h += `<line x1="${PAD}" y1="${H/2}" x2="${W-PAD}" y2="${H/2}" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3 8"/>`;
+  h += `<line x1="${W/2}" y1="${PAD}" x2="${W/2}" y2="${H-PAD}" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3 8"/>`;
 
-  // Border
-  html += `<rect x="${PAD}" y="${PAD}" width="${W-PAD*2}" height="${H-PAD*2}" fill="none" stroke="${axisColor}" stroke-width="1" rx="4"/>`;
+  // Axis labels — small, uppercase
+  const lbl = (x, y, t, anc) =>
+    `<text x="${x}" y="${y}" text-anchor="${anc}" font-size="8" fill="${lc}" font-family="${font}" font-weight="600" letter-spacing="1.8">${t.toUpperCase()}</text>`;
+  h += lbl(W/2, PAD - 14, mapCfg.axis_y_top, 'middle');
+  h += lbl(W/2, H - PAD + 20, mapCfg.axis_y_bottom, 'middle');
+  h += lbl(PAD - 10, H/2 + 4, mapCfg.axis_x_left, 'end');
+  h += lbl(W - PAD + 10, H/2 + 4, mapCfg.axis_x_right, 'start');
 
-  // Axis labels
-  html += label(W/2, PAD-16, mapCfg.axis_y_top, 13, '#555', 'middle');
-  html += label(W/2, H-PAD+22, mapCfg.axis_y_bottom, 13, '#555', 'middle');
-  html += label(PAD-10, H/2+5, mapCfg.axis_x_left, 13, '#555', 'end');
-  html += label(W-PAD+10, H/2+5, mapCfg.axis_x_right, 13, '#555', 'start');
-
-  // Competitors
-  const colors = ['#888','#aaa','#bbb','#999','#777'];
+  // Competitor dots — small, interactive, no static labels
+  const nComp = (competitors || []).length;
   (competitors || []).forEach((c, i) => {
-    const cx = toSvgX(c.x);
-    const cy = toSvgY(c.y);
-    html += `<circle cx="${cx}" cy="${cy}" r="8" fill="${colors[i % colors.length]}" opacity=".7"/>`;
-    html += label(cx, cy - 14, c.name, 11.5, '#666', 'middle');
+    const cx = toX(c.x).toFixed(1), cy = toY(c.y).toFixed(1);
+    h += `<g class="map-comp-g" data-name="${esc(c.name)}" style="cursor:pointer">
+      <circle cx="${cx}" cy="${cy}" r="14" fill="transparent"/>
+      <circle cx="${cx}" cy="${cy}" r="4" fill="rgba(255,255,255,0.42)" class="map-anim-dot" data-delay="${(0.1 + i * 0.09).toFixed(2)}"/>
+    </g>`;
   });
 
-  // Brand dot
-  const bx = toSvgX(mapCfg.brand_x);
-  const by = toSvgY(mapCfg.brand_y);
-  html += `<circle cx="${bx}" cy="${by}" r="14" fill="${brandColor}" opacity=".9"/>`;
-  html += `<circle cx="${bx}" cy="${by}" r="20" fill="${brandColor}" opacity=".2"/>`;
-  html += label(bx, by - 26, 'MARCA', 11, brandColor, 'middle', true);
+  // Brand dot — elegant, with glow
+  const bx = toX(mapCfg.brand_x).toFixed(1), by = toY(mapCfg.brand_y).toFixed(1);
+  h += `<g class="map-brand-g" data-name="${brandName || 'Marca'}" style="cursor:pointer">
+    <circle cx="${bx}" cy="${by}" r="28" fill="${accent}" opacity=".06" class="map-pulse-ring"/>
+    <circle cx="${bx}" cy="${by}" r="14" fill="${accent}" opacity=".13" class="map-anim-dot" data-delay="${(0.1 + nComp * 0.09 + 0.04).toFixed(2)}"/>
+    <circle cx="${bx}" cy="${by}" r="6" fill="${accent}" class="map-anim-dot map-brand-core" data-delay="${(0.1 + nComp * 0.09 + 0.14).toFixed(2)}"/>
+    <circle cx="${bx}" cy="${by}" r="18" fill="transparent"/>
+  </g>
+  <text x="${bx}" y="${(parseFloat(by) - 20).toFixed(1)}" text-anchor="middle" font-size="8.5" fill="${accent}" font-family="${font}" font-weight="700" letter-spacing="2.5" class="map-anim-dot" data-delay="${(0.1 + nComp * 0.09 + 0.26).toFixed(2)}">${esc(brandName || 'MARCA').toUpperCase()}</text>`;
 
-  svg.innerHTML = html;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = h;
+
+  // JS-driven entry animation (avoids CSS animation/transition conflict on hover)
+  svg.querySelectorAll('.map-anim-dot').forEach(el => {
+    const delay = parseFloat(el.dataset.delay || '0') * 1000;
+    el.style.opacity = '0';
+    el.style.transformBox = 'fill-box';
+    el.style.transformOrigin = 'center';
+    el.style.transform = 'scale(0.1)';
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+      el.style.opacity = '1';
+      el.style.transform = 'scale(1)';
+    }, 80 + delay);
+  });
+
+  _setupMapTooltip(svg);
 
   // Legend
-  const legItems = (competitors || []).map((c, i) =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${colors[i % colors.length]}"></div><span>${esc(c.name)}</span></div>`
+  const legItems = (competitors || []).map(c =>
+    `<div class="legend-item"><div class="legend-dot" style="background:rgba(0,0,0,0.28)"></div><span>${esc(c.name)}</span></div>`
   ).join('');
-  legend.innerHTML = `
-    <div class="legend-item"><div class="legend-dot" style="background:${brandColor}"></div><strong>Marca</strong></div>
-    ${legItems}
-  `;
+  if (legend) legend.innerHTML = `
+    <div class="legend-item"><div class="legend-dot" style="background:${accent}"></div><strong>${esc(brandName || 'Marca')}</strong></div>
+    ${legItems}`;
+}
+
+function _setupMapTooltip(svg) {
+  let tip = document.getElementById('map-tooltip');
+  if (!tip) {
+    tip = document.createElement('div');
+    tip.id = 'map-tooltip';
+    tip.className = 'map-tooltip';
+    document.body.appendChild(tip);
+  }
+
+  svg.querySelectorAll('.map-comp-g, .map-brand-g').forEach(g => {
+    const dot = g.querySelector('.map-anim-dot:not(.map-pulse-ring)');
+    g.addEventListener('mouseenter', () => {
+      tip.textContent = g.dataset.name || '';
+      tip.classList.add('map-tooltip--visible');
+      if (dot) dot.style.transform = 'scale(1.8)';
+    });
+    g.addEventListener('mousemove', e => {
+      tip.style.left = (e.clientX + 14) + 'px';
+      tip.style.top  = (e.clientY - 14) + 'px';
+    });
+    g.addEventListener('mouseleave', () => {
+      tip.classList.remove('map-tooltip--visible');
+      if (dot) dot.style.transform = 'scale(1)';
+    });
+  });
 }
 
 function label(x, y, text, size, color, anchor, bold = false) {
@@ -327,57 +442,109 @@ function personaSection(title, items) {
 }
 
 // ── MODULE 3: BRAND CORE ──────────────────────────────────────
+const ARCHETYPE_COLORS = [
+  { bg: '#161616', text: '#fff', accent: '#9EFF3E' },
+  { bg: '#2A2A2A', text: '#fff', accent: '#9EFF3E' },
+  { bg: '#9EFF3E', text: '#161616', accent: '#161616' },
+];
+
 function renderBrandCore(data) {
   if (!data) return;
 
+  // Positioning — animated lines + full-width pillars
   const posEl = document.getElementById('positioning-text');
-  if (posEl) posEl.textContent = data.positioning || '';
-
-  const tagsEl = document.getElementById('taglines-list');
-  if (tagsEl && data.taglines) {
-    tagsEl.innerHTML = data.taglines.map((t, i) => `
-      <div class="tagline-card">
-        ${i === 0 ? '<div class="tagline-primary-badge">✦ Principal</div>' : ''}
-        <div class="tagline-text">${esc(t.text)}</div>
-        <div class="tagline-context">${esc(t.context)}</div>
-      </div>
-    `).join('');
-  }
-
-  const vpEl = document.getElementById('value-prop-block');
-  if (vpEl && data.value_proposition) {
-    const vp = data.value_proposition;
-    vpEl.innerHTML = `
-      <div class="value-main">${esc(vp.main)}</div>
-      <div>
-        <div class="value-diffs-title">Diferenciais</div>
-        <div class="value-diffs">
-          ${toStringArray(vp.differentiators).map(d => `
-            <div class="value-diff-item">
-              <div class="value-diff-icon"></div>
-              <span>${esc(d)}</span>
+  if (posEl && data.positioning) {
+    const pillars = data.positioning_pillars || [];
+    const sentences = data.positioning.match(/[^.!?]+[.!?]+/g) || [data.positioning];
+    const linesHtml = sentences.map((line, i) =>
+      `<span class="pos-line" style="--delay:${0.15 + i * 0.28}s">${esc(line.trim())}</span>`
+    ).join(' ');
+    const pillarsHtml = pillars.length
+      ? `<div class="positioning-pillars">
+          ${pillars.map(p => `
+            <div class="positioning-pillar">
+              <div class="positioning-pillar-title">${esc(p.title)}</div>
+              <div class="positioning-pillar-desc">${esc(p.description)}</div>
             </div>
           `).join('')}
+        </div>`
+      : '';
+    posEl.innerHTML = `
+      <div class="positioning-hero">
+        <div class="positioning-hero-statement">
+          <p class="positioning-eyebrow">Declaração de Posicionamento</p>
+          <p class="positioning-statement">${linesHtml}</p>
         </div>
+        ${pillarsHtml}
       </div>
     `;
   }
 
-  const archEl = document.getElementById('archetypes-list');
-  if (archEl && data.archetypes) {
-    archEl.innerHTML = data.archetypes.map(a => `
-      <div class="archetype-card">
-        <div class="archetype-header">
-          <div class="archetype-name">${esc(a.name)}</div>
-          <div class="archetype-role">${esc(a.role)}</div>
-        </div>
-        <div class="archetype-desc">${esc(a.description)}</div>
-        <div class="archetype-traits">
-          ${toStringArray(a.traits).map(t => `<span class="trait-tag">${esc(t)}</span>`).join('')}
-        </div>
-        <div class="archetype-expression">${esc(a.expression)}</div>
+  // Tagline — only first, big animated display
+  const tagsEl = document.getElementById('taglines-list');
+  if (tagsEl && data.taglines && data.taglines.length) {
+    const t = data.taglines[0];
+    const words = esc(t.text).split(' ');
+    const wordsHtml = words.map((w, i) =>
+      `<span class="tagline-word" style="--delay:${0.1 + i * 0.07}s">${w}</span>`
+    ).join(' ');
+    tagsEl.innerHTML = `
+      <div class="tagline-hero">
+        <p class="tagline-hero-eyebrow">Tagline</p>
+        <p class="tagline-display">${wordsHtml}</p>
+        ${t.context ? `<p class="tagline-hero-context">${esc(t.context)}</p>` : ''}
+      </div>
+    `;
+  }
+
+  // Value proposition — headline quote + per-audience cards
+  const vpEl = document.getElementById('value-prop-block');
+  if (vpEl && data.value_proposition) {
+    const vp = data.value_proposition;
+    const audienceCards = (vp.audience_props || []).map(ap => `
+      <div class="vp-audience-card">
+        <div class="vp-audience-label">${esc(ap.audience)}</div>
+        <div class="vp-audience-text">${esc(ap.text)}</div>
       </div>
     `).join('');
+    vpEl.innerHTML = `
+      <div class="value-main vp-main-quote">${esc(vp.main)}</div>
+      ${audienceCards ? `<div class="vp-audience-grid">${audienceCards}</div>` : ''}
+    `;
+  }
+
+  // Archetypes — 3 equal columns, each with its brand color
+  const archEl = document.getElementById('archetypes-list');
+  if (archEl && data.archetypes) {
+    archEl.innerHTML = data.archetypes.map((a, i) => {
+      const col = ARCHETYPE_COLORS[i % ARCHETYPE_COLORS.length];
+      return `
+        <div class="archetype-flip"
+             onclick="this.classList.toggle('open')"
+             role="button"
+             tabindex="0"
+             aria-label="Ver detalhes: ${esc(a.name)}"
+             onkeydown="if(event.key==='Enter'||event.key===' ')this.classList.toggle('open')">
+          <div class="archetype-flip-inner">
+            <div class="archetype-front" style="background:${col.bg};color:${col.text}">
+              <div class="archetype-front-number" style="color:${col.accent}">0${i + 1}</div>
+              <div class="archetype-front-name">${esc(a.name)}</div>
+              <div class="archetype-front-role" style="color:${col.accent};background:transparent;border:1px solid ${col.accent}40">${esc(a.role)}</div>
+              <div class="archetype-front-hint" style="opacity:.45">↻ clique para ver mais</div>
+            </div>
+            <div class="archetype-back">
+              <div class="archetype-back-role">${esc(a.role)}</div>
+              <div class="archetype-back-name">${esc(a.name)}</div>
+              <div class="archetype-back-desc">${esc(a.description)}</div>
+              <div class="archetype-back-traits">
+                ${toStringArray(a.traits).map(t => `<span class="archetype-back-trait">${esc(t)}</span>`).join('')}
+              </div>
+              <div class="archetype-back-expression">${esc(a.expression)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
   }
 }
 
@@ -427,14 +594,72 @@ function renderCommunication(data) {
 
   const narrativeEl = document.getElementById('narrative-text');
   if (narrativeEl && data.narrative) {
-    narrativeEl.innerHTML = sanitizeHtml(data.narrative);
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = sanitizeHtml(data.narrative);
+    const paras = Array.from(tempDiv.querySelectorAll('p'));
+    if (paras.length > 1) {
+      _narrativeTotal = paras.length;
+      _narrativeIndex = 0;
+      const slidesHtml = paras.map((p, i) => `
+        <div class="narrative-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
+          <div class="narrative-chapter-num">${String(i + 1).padStart(2, '0')} / ${String(paras.length).padStart(2, '0')}</div>
+          <div class="narrative-chapter-text">${p.innerHTML}</div>
+        </div>
+      `).join('');
+      narrativeEl.innerHTML = `
+        <div class="narrative-carousel" id="narrative-carousel">
+          <div class="narrative-slides">${slidesHtml}</div>
+          <div class="narrative-controls">
+            <button class="narrative-btn" onclick="narrativeNav(-1)" aria-label="Capítulo anterior">←</button>
+            <span class="narrative-progress" id="narrative-progress">01 / ${String(paras.length).padStart(2, '0')}</span>
+            <button class="narrative-btn" onclick="narrativeNav(1)" aria-label="Próximo capítulo">→</button>
+          </div>
+        </div>
+      `;
+    } else {
+      narrativeEl.innerHTML = `<div class="prose-block">${sanitizeHtml(data.narrative)}</div>`;
+    }
   }
 
   const manifestoEl = document.getElementById('manifesto-text');
   if (manifestoEl && data.manifesto) {
-    manifestoEl.innerHTML = sanitizeHtml(data.manifesto);
+    const tempDiv2 = document.createElement('div');
+    tempDiv2.innerHTML = sanitizeHtml(data.manifesto);
+    const paras2 = Array.from(tempDiv2.querySelectorAll('p, li, blockquote'));
+    if (paras2.length > 1) {
+      const html = paras2.map((p, i) => {
+        p.classList.add('manifesto-para', 'reveal');
+        p.style.transitionDelay = `${i * 85}ms`;
+        return p.outerHTML;
+      }).join('');
+      manifestoEl.innerHTML = `
+        <div class="manifesto-quote">
+          <span class="manifesto-quote-mark" aria-hidden="true">❝</span>
+          <div class="manifesto-quote-body">${html}</div>
+        </div>
+      `;
+    } else {
+      manifestoEl.innerHTML = sanitizeHtml(data.manifesto);
+    }
   }
 }
+
+// ── NARRATIVE CAROUSEL ────────────────────────────────────────
+let _narrativeIndex = 0;
+let _narrativeTotal = 0;
+
+window.narrativeNav = function(dir) {
+  const carousel = document.getElementById('narrative-carousel');
+  if (!carousel) return;
+  const slides = carousel.querySelectorAll('.narrative-slide');
+  if (!slides.length) return;
+  const total = slides.length;
+  slides[_narrativeIndex].classList.remove('active');
+  _narrativeIndex = (_narrativeIndex + dir + total) % total;
+  slides[_narrativeIndex].classList.add('active');
+  const progress = document.getElementById('narrative-progress');
+  if (progress) progress.textContent = `${String(_narrativeIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+};
 
 // ── MODULE 5: VISUAL IDENTITY ─────────────────────────────────
 function renderVisualIdentity(data, brand) {
@@ -675,7 +900,6 @@ function renderSocialMedia(data) {
     `).join('');
   }
 
-  renderImageGrid('ref-grid', data.references, ['ref-card', 'ref-img', 'ref-placeholder', 'ref-info', 'ref-name', 'ref-desc'], false);
   renderImageGrid('viscomm-grid', data.visual_communication, ['viscomm-card', 'viscomm-img', 'viscomm-placeholder', 'viscomm-info', 'viscomm-name', 'viscomm-desc'], true);
 }
 
@@ -685,7 +909,7 @@ function renderImageGrid(gridId, items, classes, showDownload = false) {
   const [cardCls, imgCls, phCls, infoCls, nameCls, descCls] = classes;
   el.innerHTML = items.map(item => `
     <div class="${cardCls}">
-      <div class="${imgCls}" ${item.image ? `onclick="openLightbox('${esc(item.image)}','${esc(item.name)}')"` : ''}>
+      <div class="${imgCls}" ${item.image ? `onclick="openLightbox('${esc(item.image)}','${esc(item.name)}')" style="cursor:pointer"` : ''}>
         ${item.image
           ? `<img src="${esc(item.image)}" alt="${esc(item.name)}" />`
           : `<span class="${phCls}">◆</span>`
@@ -847,6 +1071,85 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   init();
 });
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────
+const REVEAL_SELECTORS = [
+  '.card', '.persona-card', '.tov-card', '.tagline-card',
+  '.pillar-card', '.editorial-card', '.logo-card', '.color-card',
+  '.font-card', '.material-card', '.ref-card', '.viscomm-card',
+  '.archetype-flip', '.moodboard-hero', '.moodboard-gallery-item',
+  '.spacing-rule', '.incorrect-card', '.prose-block', '.manifesto-block',
+  '.vocab-column', '.value-main', '.value-diff-item',
+  '.positioning-pillar', '.positioning-hero',
+  '.tagline-hero', '.vp-audience-card', '.narrative-carousel',
+].join(',');
+
+function addRevealClasses() {
+  document.querySelectorAll(REVEAL_SELECTORS).forEach(el => {
+    if (el.classList.contains('reveal')) return;
+    el.classList.add('reveal');
+    // Stagger por posição entre irmãos diretos no mesmo container
+    const parent = el.parentElement;
+    if (!parent) return;
+    const siblings = [...parent.children].filter(c => c.classList.contains('reveal'));
+    const idx = siblings.indexOf(el);
+    if (idx > 0) el.style.transitionDelay = `${Math.min(idx * 45, 180)}ms`;
+  });
+}
+
+let _revealObserver = null;
+
+function initScrollAnimations() {
+  _revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => _revealObserver.observe(el));
+}
+
+function initMouseParallax() {
+  let tX = 0, tY = 0, cX = 0, cY = 0, rafId = null;
+  const LAYERS = [
+    { sel: '.positioning-hero-statement', mx: 5,  my: 2.5 },
+    { sel: '.tagline-display',            mx: 9,  my: 4   },
+    { sel: '.narrative-slides',           mx: 4,  my: 2   },
+    { sel: '.manifesto-quote-body',       mx: 4,  my: 2   },
+  ];
+
+  function tick() {
+    cX += (tX - cX) * 0.07;
+    cY += (tY - cY) * 0.07;
+    LAYERS.forEach(({ sel, mx, my }) => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.style.transform = `translate(${(cX * mx).toFixed(2)}px,${(cY * my).toFixed(2)}px)`;
+      });
+    });
+    if (Math.abs(tX - cX) > 0.001 || Math.abs(tY - cY) > 0.001) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  document.addEventListener('mousemove', e => {
+    tX = e.clientX / window.innerWidth  - 0.5;
+    tY = e.clientY / window.innerHeight - 0.5;
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  });
+}
+
+function triggerRevealInModule(mod) {
+  if (!_revealObserver) return;
+  mod.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    _revealObserver.observe(el);
+  });
+}
 
 // ── CLIPBOARD ─────────────────────────────────────────────────
 function copyToClipboard(text, btn) {

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C1810"/>
+      <stop offset="100%" stop-color="#6B3F2A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#g)"/>
+  <rect x="2" y="2" width="1196" height="596" fill="none" stroke="#D4A853" stroke-width="3" stroke-dasharray="12,6"/>
+  <text x="600" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="80" fill="#D4A853" opacity="0.3">☕</text>
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#FAF7F2" opacity="0.6" font-weight="bold">Moodboard Principal</text>
+  <text x="600" y="395" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#D4A853" opacity="0.5">1200 × 600 — clique para abrir em lightbox</text>
+</svg>
