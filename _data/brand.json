@@ -17,6 +17,11 @@
       "heading_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap",
       "body": "Poppins",
       "body_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    },
+    "hero": {
+      "headline": "Cada imóvel tem uma história.",
+      "background_image": "/assets/images/placeholder-moodboard.svg",
+      "background_video": ""
     }
   },
   "research": {
@@ -690,19 +695,19 @@
     ],
     "visual_communication": [
       {
-        "name": "Post Feed Quadrado",
+        "name": "Post Vertical 1080 × 1350px",
         "description": "Fundo escuro (#161616), tipografia Poppins Bold, destaque em verde lima. Foco em dados e narrativa curta.",
-        "image": "",
+        "image": "/assets/images/placeholder-social.svg",
         "file": ""
       },
       {
-        "name": "Stories",
+        "name": "Stories 1080 × 1920px",
         "description": "Layout vertical com área de texto inferior, foto de espaço ou pessoa na parte superior. Barra na cor accent verde.",
         "image": "",
         "file": ""
       },
       {
-        "name": "Carrossel LinkedIn",
+        "name": "Carrossel 1080 × 1350px",
         "description": "Slides com dados destacados, tipografia grande e legível. Case documentado em formato PDF-ready para Roberto e Felipe.",
         "image": "",
         "file": ""

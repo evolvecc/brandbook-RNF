@@ -31,6 +31,16 @@ collections:
               - { label: "Logo Principal (arquivo)", name: "logo", widget: "image", required: false, hint: "Versão principal do logo — fundo claro" }
               - { label: "Logo Negativa (arquivo)", name: "logo_white", widget: "image", required: false, hint: "Versão branca do logo — fundo escuro" }
 
+              - label: "Capa / Home do Brandbook"
+                name: "hero"
+                widget: "object"
+                collapsed: false
+                hint: "Primeira tela que aparece ao abrir o brandbook"
+                fields:
+                  - { label: "Frase de Impacto", name: "headline", widget: "string", hint: "Texto grande centralizado na capa (ex: Cada imóvel tem uma história.)" }
+                  - { label: "Imagem de Fundo", name: "background_image", widget: "image", required: false, hint: "Imagem exibida como fundo da capa" }
+                  - { label: "Vídeo de Fundo (URL)", name: "background_video", widget: "string", required: false, hint: "URL de vídeo (.mp4). Se preenchido, substitui a imagem." }
+
               - label: "Cores da Identidade Visual"
                 name: "colors"
                 widget: "object"
