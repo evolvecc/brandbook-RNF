@@ -104,6 +104,18 @@ function renderHero(brand) {
       bgEl.style.backgroundImage = `url('${esc(hero.background_image)}')`;
     }
   }
+
+  const ctaEl = document.getElementById('brand-hero-cta');
+  if (ctaEl && hero) {
+    const btns = [];
+    if (hero.button_primary && hero.button_primary.label) {
+      btns.push(`<button class="hero-btn hero-btn-primary" onclick="activateModule('${esc(hero.button_primary.module || '')}')">${esc(hero.button_primary.label)} <span class="hero-btn-arrow">→</span></button>`);
+    }
+    if (hero.button_secondary && hero.button_secondary.label) {
+      btns.push(`<button class="hero-btn hero-btn-secondary" onclick="activateModule('${esc(hero.button_secondary.module || '')}')">${esc(hero.button_secondary.label)} <span class="hero-btn-arrow">→</span></button>`);
+    }
+    ctaEl.innerHTML = btns.join('');
+  }
 }
 
 function activateHero() {

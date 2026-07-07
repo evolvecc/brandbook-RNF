@@ -21,7 +21,9 @@
     "hero": {
       "headline": "Cada imóvel tem uma história.",
       "background_image": "/assets/images/placeholder-moodboard.svg",
-      "background_video": ""
+      "background_video": "",
+      "button_primary": { "label": "Identidade Visual", "module": "visual-identity" },
+      "button_secondary": { "label": "Brand Core", "module": "brand-core" }
     }
   },
   "research": {
