@@ -2,6 +2,8 @@ backend:
   name: github
   repo: evolvecc/brandbook-RNF
   branch: main
+  auth_type: pkce
+  app_id: Ov23liyAcX0wJ12cjkfu
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
