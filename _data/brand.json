@@ -6,10 +6,10 @@
     "logo": "/assets/images/logo-rnf-final-10.png",
     "logo_white": "",
     "colors": {
-      "primary": "#105b61",
+      "primary": "#00847a",
       "secondary": "#cd6032",
-      "accent": "#00847a",
-      "background": "#fdf2ec",
+      "accent": "#ffffff",
+      "background": "#ffffff",
       "text": "#001b19"
     },
     "fonts": {
@@ -27,13 +27,30 @@
   "research": {
     "benchmarking": [
       {
-        "name": "Immobile",
+        "name": "Imobille",
         "positioning": "Imobiliária premium do litoral com foco em alto padrão (R$ 3,7M–6,5M+). Vendem valorização de patrimônio e lifestyle em Camboriú.",
         "strengths": "Site moderno e design refinado, blog com conteúdo de valor, branding mais evoluído que os concorrentes locais",
         "weaknesses": "Foco exclusivo no litoral SC, ticket muito alto limita público, pouca ênfase em gestão patrimonial contínua",
         "x": 78,
         "y": 68,
-        "social_links": []
+        "social_links": [
+          {
+            "network": "website",
+            "url": "https://www.imobillenegocios.com.br/?gad_source=1&gad_campaignid=20889749017&gbraid=0AAAAADlQrNhnCPrdD9II27qAy61pDNXIc&gclid=CjwKCAjwx7LSBhB3EiwAjcodxMdMJvSVJGaYq4enxKOWp5ewKxtkHBD4KtWJP9xpD42X0pzwo3brRxoC7d4QAvD_BwE"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/imobiliariaimobille/"
+          },
+          {
+            "url": "https://www.linkedin.com/company/imobille-neg%C3%B3cios-imobili%C3%A1rios/?originalSubdomain=th",
+            "network": "linkedin"
+          },
+          {
+            "network": "youtube",
+            "url": "https://www.youtube.com/channel/UCaUUZ0NyRHUEP8vkdmHVs9Q"
+          }
+        ]
       },
       {
         "name": "Citalli",
@@ -42,7 +59,16 @@
         "weaknesses": "Atuação geográfica limitada ao litoral, menos foco em gestão patrimonial contínua",
         "x": 75,
         "y": 65,
-        "social_links": []
+        "social_links": [
+          {
+            "url": "https://www.imoveiscitalli.com.br/",
+            "network": "website"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/imoveiscitalli"
+          }
+        ]
       },
       {
         "name": "Coelho da Fonseca",
@@ -51,7 +77,24 @@
         "weaknesses": "Foco em São Paulo, ticket muito elevado, sem destaque para administração de condomínios",
         "x": 85,
         "y": 55,
-        "social_links": []
+        "social_links": [
+          {
+            "url": "https://www.coelhodafonseca.com.br/",
+            "network": "website"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/coelhodafonseca"
+          },
+          {
+            "url": "https://www.youtube.com/coelhodafonseca",
+            "network": "youtube"
+          },
+          {
+            "url": "https://www.linkedin.com/company/coelho-da-fonseca?originalSubdomain=br",
+            "network": "linkedin"
+          }
+        ]
       },
       {
         "name": "Monarim",
@@ -60,7 +103,16 @@
         "weaknesses": "Posicionamento genérico, comunicação antiquada, pouca especialização",
         "x": 48,
         "y": 42,
-        "social_links": []
+        "social_links": [
+          {
+            "url": "https://monarim.com.br/",
+            "network": "website"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/monarim_imoveis"
+          }
+        ]
       },
       {
         "name": "Re/Max",
@@ -69,7 +121,24 @@
         "weaknesses": "Posicionamento generalista, comunicação padronizada e fria, sem diferencial local",
         "x": 22,
         "y": 30,
-        "social_links": []
+        "social_links": [
+          {
+            "url": "https://www.remax.com.br/",
+            "network": "website"
+          },
+          {
+            "url": "https://www.instagram.com/remaxbr/",
+            "network": "instagram"
+          },
+          {
+            "url": "https://www.youtube.com/user/remaxbrasil",
+            "network": "youtube"
+          },
+          {
+            "network": "twitter",
+            "url": "https://x.com/remaxbr"
+          }
+        ]
       },
       {
         "name": "Center Home",
@@ -78,7 +147,16 @@
         "weaknesses": "Branding pouco desenvolvido, posicionamento e comunicação genéricos",
         "x": 18,
         "y": 20,
-        "social_links": []
+        "social_links": [
+          {
+            "url": "https://imobiliariacenterhome.com.br/",
+            "network": "website"
+          },
+          {
+            "url": "https://www.instagram.com/imobiliariacenterhome/",
+            "network": "instagram"
+          }
+        ]
       }
     ],
     "positioning_map": {
@@ -158,6 +236,7 @@
           "WhatsApp"
         ],
         "location": "Lages/SC",
+        "avatar": "/assets/images/gabriela.png",
         "frequency": "Primeiro contato por busca ativa + indicação de outros empreendedores",
         "quote": "Quer ser vista como empreendedora séria. O endereço legitima o negócio e valida publicamente a conquista.",
         "pains": [
@@ -183,6 +262,7 @@
           "Reels"
         ],
         "location": "Lages/SC",
+        "avatar": "/assets/images/ana.png",
         "frequency": "Decide visita com base em fotos bem produzidas e conteúdo visual",
         "quote": "Quer sair do aluguel com uma escolha inteligente e esteticamente bonita, não qualquer coisa dentro do orçamento.",
         "pains": [
@@ -208,6 +288,7 @@
           "Indicação"
         ],
         "location": "Lages/SC",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-14_55_07.png",
         "frequency": "Gestão de múltiplos imóveis no centro de Lages",
         "quote": "A indicação abre a porta, o digital valida. Conquiste minha confiança e fico para sempre.",
         "pains": [
@@ -233,6 +314,7 @@
           "Google"
         ],
         "location": "Lages/SC",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_17_31.png",
         "frequency": "Decisão analítica baseada em cases documentados e dados de gestão",
         "quote": "Modernize a gestão. Preserve o legado.",
         "pains": [
@@ -258,6 +340,7 @@
           "Google"
         ],
         "location": "Curitiba/PR",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_05_26.png",
         "frequency": "Pesquisa ativamente no LinkedIn antes de qualquer contato comercial",
         "quote": "Gestão que protege a reputação que você levou anos para construir.",
         "pains": [
@@ -556,12 +639,12 @@
     ],
     "moodboard": {
       "concept": "",
-      "image": "/assets/images/placeholder-moodboard.svg",
+      "image": "/assets/images/brandbook-rnf-imóveis.jpg",
       "gallery": []
     },
     "typography": {
       "heading_file": "",
-      "body_file": ""
+      "body_file": "https://fonts.google.com/specimen/Poppins?preview.lang=pt_Latn"
     }
   },
   "social_media": {
