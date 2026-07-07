@@ -40,6 +40,42 @@ collections:
                   - { label: "Frase de Impacto", name: "headline", widget: "string", hint: "Texto grande centralizado na capa (ex: Cada imóvel tem uma história.)" }
                   - { label: "Imagem de Fundo", name: "background_image", widget: "image", required: false, hint: "Imagem exibida como fundo da capa" }
                   - { label: "Vídeo de Fundo (URL)", name: "background_video", widget: "string", required: false, hint: "URL de vídeo (.mp4). Se preenchido, substitui a imagem." }
+                  - label: "Botão Principal"
+                    name: "button_primary"
+                    widget: "object"
+                    required: false
+                    hint: "Deixe o texto em branco para ocultar o botão"
+                    fields:
+                      - { label: "Texto do Botão", name: "label", widget: "string", required: false }
+                      - label: "Módulo de Destino"
+                        name: "module"
+                        widget: "select"
+                        required: false
+                        options:
+                          - { label: "Pesquisa de Mercado", value: "research" }
+                          - { label: "Público-Alvo", value: "audience" }
+                          - { label: "Core de Marca", value: "brand-core" }
+                          - { label: "Comunicação", value: "communication" }
+                          - { label: "Identidade Visual", value: "visual-identity" }
+                          - { label: "Redes Sociais", value: "social-media" }
+                  - label: "Botão Secundário"
+                    name: "button_secondary"
+                    widget: "object"
+                    required: false
+                    hint: "Deixe o texto em branco para ocultar o botão"
+                    fields:
+                      - { label: "Texto do Botão", name: "label", widget: "string", required: false }
+                      - label: "Módulo de Destino"
+                        name: "module"
+                        widget: "select"
+                        required: false
+                        options:
+                          - { label: "Pesquisa de Mercado", value: "research" }
+                          - { label: "Público-Alvo", value: "audience" }
+                          - { label: "Core de Marca", value: "brand-core" }
+                          - { label: "Comunicação", value: "communication" }
+                          - { label: "Identidade Visual", value: "visual-identity" }
+                          - { label: "Redes Sociais", value: "social-media" }
 
               - label: "Cores da Identidade Visual"
                 name: "colors"
