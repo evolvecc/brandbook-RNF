@@ -73,6 +73,8 @@ function updateSidebarBrand(brand) {
   if (nameEl) nameEl.textContent = brand.name || '';
   if (brand.logo && logoEl) {
     logoEl.innerHTML = `<img src="${brand.logo}" alt="${brand.name}" />`;
+    logoEl.style.background = 'transparent';
+    logoEl.style.borderRadius = '0';
   } else if (initEl && brand.name) {
     const words = brand.name.trim().split(' ');
     initEl.textContent = words.length > 1
@@ -455,9 +457,9 @@ function personaSection(title, items) {
 
 // ── MODULE 3: BRAND CORE ──────────────────────────────────────
 const ARCHETYPE_COLORS = [
-  { bg: '#161616', text: '#fff', accent: '#9EFF3E' },
-  { bg: '#2A2A2A', text: '#fff', accent: '#9EFF3E' },
-  { bg: '#9EFF3E', text: '#161616', accent: '#161616' },
+  { bg: 'var(--brand-primary)',    text: '#fff',                   accent: 'var(--brand-accent)' },
+  { bg: 'var(--brand-secondary)',  text: '#fff',                   accent: 'var(--brand-accent)' },
+  { bg: 'var(--brand-accent)',     text: 'var(--brand-primary)',   accent: 'var(--brand-primary)' },
 ];
 
 function renderBrandCore(data) {
@@ -885,34 +887,67 @@ function renderMaterials(items) {
 function renderSocialMedia(data) {
   if (!data) return;
 
-  const editEl = document.getElementById('editorial-list');
-  if (editEl && data.editorial_lines) {
-    editEl.innerHTML = data.editorial_lines.map(e => `
-      <div class="editorial-card" style="--editorial-color: ${esc(e.color || 'var(--brand-primary)')}">
-        <div class="editorial-name">${esc(e.name)}</div>
-        <div class="editorial-desc">${esc(e.description)}</div>
-        <div class="editorial-examples">
-          ${toStringArray(e.examples).map(ex => `<span class="editorial-example-tag">${esc(ex)}</span>`).join('')}
+  const tabsBar = document.getElementById('social-media-tabs');
+  const sectionsEl = document.getElementById('social-media-sections');
+  const networks = data.networks || [];
+
+  if (tabsBar && sectionsEl) {
+    // Generate one sub-tab per network + visual comm tab
+    tabsBar.innerHTML = networks.map((net, i) =>
+      `<button class="sub-tab${i === 0 ? ' active' : ''}" data-section="network-${i}">${esc(net.name)}</button>`
+    ).join('') + `<button class="sub-tab" data-section="visual-comm">Comunicacao Visual</button>`;
+
+    // Insert network sections before the static visual-comm section
+    const visualCommEl = document.getElementById('visual-comm');
+    networks.forEach((net, i) => {
+      const existing = document.getElementById(`network-${i}`);
+      if (existing) existing.remove();
+      const sec = document.createElement('div');
+      sec.className = 'subsection';
+      sec.id = `network-${i}`;
+      const lines = (net.editorial_lines || []).map(line => `
+        <div class="editorial-row">
+          <div class="editorial-row-header">
+            <span class="editorial-row-name">${esc(line.name)}</span>
+            ${line.percentage ? `<span class="editorial-row-pct">${esc(line.percentage)}</span>` : ''}
+          </div>
+          ${line.description ? `<p class="editorial-row-desc">${esc(line.description)}</p>` : ''}
+          ${line.example ? `<p class="editorial-row-example">${esc(line.example)}</p>` : ''}
+        </div>
+      `).join('');
+      sec.innerHTML = `
+        <div class="network-header">
+          <h2 class="section-title">${esc(net.name)}</h2>
+          <div class="network-meta">
+            ${net.archetype ? `<span class="network-meta-item"><strong>Arquetipo:</strong> ${esc(net.archetype)}</span>` : ''}
+            ${net.tone ? `<span class="network-meta-item"><strong>Tom:</strong> ${esc(net.tone)}</span>` : ''}
+            ${net.audiences ? `<span class="network-meta-item"><strong>Publicos:</strong> ${esc(net.audiences)}</span>` : ''}
+          </div>
+        </div>
+        <div class="editorial-rows">${lines}</div>
+      `;
+      sectionsEl.insertBefore(sec, visualCommEl);
+    });
+  }
+
+  // Visual communication — open list with type + image
+  const visEl = document.getElementById('viscomm-grid');
+  if (visEl && data.visual_communication && data.visual_communication.length) {
+    visEl.innerHTML = data.visual_communication.map(item => `
+      <div class="viscomm-card">
+        <div class="viscomm-img"${item.image ? ` onclick="openLightbox('${esc(item.image)}','${esc(item.type || '')}')" style="cursor:pointer"` : ''}>
+          ${item.image
+            ? `<img src="${esc(item.image)}" alt="${esc(item.type || '')}" />`
+            : `<span class="viscomm-placeholder">+</span>`}
+        </div>
+        <div class="viscomm-info">
+          <div class="viscomm-name">${esc(item.type || '')}</div>
         </div>
       </div>
     `).join('');
+  } else if (visEl) {
+    visEl.innerHTML = '<div class="placeholder-box">Adicione os cards de comunicacao visual no painel do CMS.</div>';
   }
-
-  const pillarsEl = document.getElementById('pillars-grid');
-  if (pillarsEl && data.content_pillars) {
-    pillarsEl.innerHTML = data.content_pillars.map(p => `
-      <div class="pillar-card">
-        <div class="pillar-emoji">${esc(p.emoji || '📌')}</div>
-        <div class="pillar-name">${esc(p.name)}</div>
-        <div class="pillar-objective">${esc(p.objective)}</div>
-        <div class="pillar-examples">
-          ${toStringArray(p.examples).map(ex => `<div class="pillar-example-item">${esc(ex)}</div>`).join('')}
-        </div>
-      </div>
-    `).join('');
-  }
-
-  renderImageGrid('viscomm-grid', data.visual_communication, ['viscomm-card', 'viscomm-img', 'viscomm-placeholder', 'viscomm-info', 'viscomm-name', 'viscomm-desc'], true);
 }
 
 function renderImageGrid(gridId, items, classes, showDownload = false) {
@@ -946,11 +981,19 @@ function renderTypography(data, brand) {
   const el = document.getElementById('fonts-grid');
   if (!el) return;
   const fonts = brand && brand.fonts ? brand.fonts : {};
-  const files = data || {};
-  const entries = [
-    { key: 'heading', role: 'Títulos', name: fonts.heading, file: files.heading_file },
-    { key: 'body', role: 'Corpo de Texto', name: fonts.body, file: files.body_file },
-  ];
+
+  // Support new array format and legacy object format
+  let entries;
+  if (Array.isArray(data) && data.length) {
+    entries = data.map((f, i) => ({ key: `font-${i}`, role: f.role || '', name: f.name || '', file: f.file || '' }));
+  } else {
+    const files = data || {};
+    entries = [
+      { key: 'heading', role: 'Titulos', name: fonts.heading, file: files.heading_file },
+      { key: 'body',    role: 'Corpo de Texto', name: fonts.body, file: files.body_file },
+    ];
+  }
+
   el.innerHTML = entries.map(f => `
     <div class="font-card">
       <div class="font-preview">
@@ -958,13 +1001,13 @@ function renderTypography(data, brand) {
         <div class="font-role">${esc(f.role)}</div>
       </div>
       <div class="font-info">
-        <div class="font-name" id="font-name-${f.key}">${esc(f.name || 'Não definida')}</div>
+        <div class="font-name" id="font-name-${f.key}">${esc(f.name || 'Nao definida')}</div>
         ${f.file
           ? `<a href="${esc(f.file)}" download class="btn-download">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
               Download
             </a>`
-          : '<span style="font-size:12px;color:#bbb">Arquivo não carregado</span>'
+          : '<span style="font-size:12px;color:#bbb">Arquivo nao carregado</span>'
         }
       </div>
     </div>

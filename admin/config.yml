@@ -39,7 +39,7 @@ collections:
                 fields:
                   - { label: "Frase de Impacto", name: "headline", widget: "string", hint: "Texto grande centralizado na capa (ex: Cada imóvel tem uma história.)" }
                   - { label: "Imagem de Fundo", name: "background_image", widget: "image", required: false, hint: "Imagem exibida como fundo da capa" }
-                  - { label: "Vídeo de Fundo (URL)", name: "background_video", widget: "string", required: false, hint: "URL de vídeo (.mp4). Se preenchido, substitui a imagem." }
+                  - { label: "Vídeo de Fundo", name: "background_video", widget: "file", required: false, media_folder: "assets/videos", public_folder: "/assets/videos", hint: "Arquivo .mp4. Se preenchido, substitui a imagem de fundo." }
                   - label: "Botão Principal"
                     name: "button_primary"
                     widget: "object"
@@ -212,8 +212,16 @@ collections:
                 name: "value_proposition"
                 widget: "object"
                 fields:
-                  - { label: "Proposta Principal", name: "main", widget: "text" }
-                  - { label: "Diferenciais", name: "differentiators", widget: "list", field: { label: "Diferencial", name: "item", widget: "string" } }
+                  - { label: "Proposta Principal", name: "main", widget: "text", hint: "Frase central que aparece em destaque" }
+                  - label: "Proposta por Público"
+                    name: "audience_props"
+                    widget: "list"
+                    label_singular: "Público"
+                    required: false
+                    hint: "Cada entrada aparece como um card de público específico"
+                    fields:
+                      - { label: "Público", name: "audience", widget: "string", hint: "Ex: Investidor Familiar, Incorporador" }
+                      - { label: "Proposta para este Público", name: "text", widget: "text" }
 
               - label: "Arquétipos de Marca"
                 name: "archetypes"
@@ -333,11 +341,13 @@ collections:
 
               - label: "Tipografia"
                 name: "typography"
-                widget: "object"
-                hint: "Os nomes das fontes ficam em Configurações da Marca → Tipografia; aqui é só o upload dos arquivos."
+                widget: "list"
+                label_singular: "Fonte"
+                hint: "Adicione quantas fontes quiser. Os nomes das fontes para o site ficam em Configurações da Marca → Tipografia."
                 fields:
-                  - { label: "Arquivo da Fonte de Títulos", name: "heading_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip — o nome da fonte é definido em Configurações da Marca → Tipografia" }
-                  - { label: "Arquivo da Fonte do Corpo", name: "body_file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.zip da fonte do corpo de texto" }
+                  - { label: "Nome da Fonte", name: "name", widget: "string", hint: "Ex: Poppins, Garamond" }
+                  - { label: "Papel", name: "role", widget: "string", hint: "Ex: Títulos, Corpo de Texto, Display" }
+                  - { label: "Arquivo da Fonte", name: "file", widget: "file", required: false, hint: "Upload do arquivo .otf/.ttf/.woff — será exibido como preview e disponível para download" }
 
           # ── REDES SOCIAIS ─────────────────────────
           - label: "06 — Redes Sociais"
@@ -345,41 +355,32 @@ collections:
             widget: "object"
             collapsed: true
             fields:
-              - label: "Linhas Editoriais"
-                name: "editorial_lines"
+              - label: "Redes Sociais"
+                name: "networks"
                 widget: "list"
-                label_singular: "Linha"
+                label_singular: "Rede"
+                hint: "Adicione uma entrada por rede social (Instagram, LinkedIn, etc.)"
                 fields:
-                  - { label: "Nome", name: "name", widget: "string" }
-                  - { label: "Cor da Linha", name: "color", widget: "color", required: false }
-                  - { label: "Descrição", name: "description", widget: "text" }
-                  - { label: "Exemplos de Conteúdo", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
-
-              - label: "Pilares de Conteúdo"
-                name: "content_pillars"
-                widget: "list"
-                label_singular: "Pilar"
-                fields:
-                  - { label: "Nome do Pilar", name: "name", widget: "string" }
-                  - { label: "Emoji", name: "emoji", widget: "string", default: "📌" }
-                  - { label: "Objetivo", name: "objective", widget: "text" }
-                  - { label: "Exemplos", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
-
-              - label: "Referências"
-                name: "references"
-                widget: "list"
-                label_singular: "Referência"
-                fields:
-                  - { label: "Nome", name: "name", widget: "string" }
-                  - { label: "Descrição", name: "description", widget: "string", required: false }
-                  - { label: "Imagem", name: "image", widget: "image", required: false }
+                  - { label: "Nome da Rede", name: "name", widget: "string", hint: "Ex: Instagram, LinkedIn" }
+                  - { label: "Arquétipo", name: "archetype", widget: "string", required: false, hint: "Ex: Prestativo (com sotaque de Criador)" }
+                  - { label: "Tom de Voz", name: "tone", widget: "string", required: false, hint: "Ex: Acolhedora e narrativa" }
+                  - { label: "Públicos-Alvo", name: "audiences", widget: "string", required: false, hint: "Ex: Ana, Gabriela, Marta" }
+                  - label: "Linhas Editoriais / Pilares"
+                    name: "editorial_lines"
+                    widget: "list"
+                    label_singular: "Linha"
+                    hint: "Orientações gerais de conteúdo e objetivos nessa rede"
+                    fields:
+                      - { label: "Nome", name: "name", widget: "string" }
+                      - { label: "% do Feed", name: "percentage", widget: "string", required: false, hint: "Ex: 25%" }
+                      - { label: "Descrição", name: "description", widget: "text" }
+                      - { label: "Exemplo de Post", name: "example", widget: "string", required: false }
 
               - label: "Comunicação Visual nas Redes"
                 name: "visual_communication"
                 widget: "list"
-                label_singular: "Template"
+                label_singular: "Post Exemplo"
+                hint: "Adicione quantos exemplos quiser — faça upload do card e escreva o tipo de post"
                 fields:
-                  - { label: "Nome", name: "name", widget: "string" }
-                  - { label: "Descrição", name: "description", widget: "string", required: false }
-                  - { label: "Imagem / Template", name: "image", widget: "image", required: false }
-                  - { label: "Arquivo para Download", name: "file", widget: "file", required: false }
+                  - { label: "Tipo de Post", name: "type", widget: "string", hint: "Ex: Post Vertical 1080×1350px, Stories, Carrossel" }
+                  - { label: "Imagem / Card", name: "image", widget: "image", required: false }

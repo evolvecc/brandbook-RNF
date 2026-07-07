@@ -289,28 +289,15 @@
     <section class="module hidden" id="social-media">
       <div class="module-body">
         <aside class="module-sidenav">
-          <nav class="sub-tabs-bar">
-            <button class="sub-tab active" data-section="editorial-lines">Linhas Editoriais</button>
-            <button class="sub-tab" data-section="content-pillars">Pilares de Conteúdo</button>
-            <button class="sub-tab" data-section="visual-comm">Comunicação Visual</button>
+          <nav class="sub-tabs-bar" id="social-media-tabs">
+            <!-- populado dinamicamente por JS com base nas redes cadastradas -->
           </nav>
         </aside>
-        <div class="module-sections">
-          <div class="subsection" id="editorial-lines">
-            <h2 class="section-title">Linhas Editoriais</h2>
-            <p class="section-desc">Os temas recorrentes que organizam o conteúdo da marca nas redes.</p>
-            <div class="editorial-list" id="editorial-list"></div>
-          </div>
-
-          <div class="subsection" id="content-pillars">
-            <h2 class="section-title">Pilares de Conteúdo</h2>
-            <p class="section-desc">As categorias estratégicas de conteúdo que equilibram objetivos e interesse do público.</p>
-            <div class="pillars-grid" id="pillars-grid"></div>
-          </div>
-
+        <div class="module-sections" id="social-media-sections">
+          <!-- seções por rede inseridas dinamicamente pelo JS -->
           <div class="subsection" id="visual-comm">
             <h2 class="section-title">Comunicação Visual nas Redes</h2>
-            <p class="section-desc">Templates e orientações visuais para os formatos das redes sociais.</p>
+            <p class="section-desc">Cards e formatos de posts para as redes sociais.</p>
             <div class="viscomm-grid" id="viscomm-grid"></div>
           </div>
         </div>
@@ -321,7 +308,7 @@
 
   <footer class="site-footer">
     <span>Desenvolvido por</span>
-    <span class="sidebar-agency" id="sidebar-agency-footer">Sua Agência</span>
+    <a class="sidebar-agency" href="https://evolvecreative.com.br/" target="_blank" rel="noopener noreferrer">Evolve Creative</a>
   </footer>
 
   <!-- ── LIGHTBOX ────────────────────────────────────────────── -->

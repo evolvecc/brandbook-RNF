@@ -6,11 +6,11 @@
     "logo": "/assets/images/logo-rnf-final-10.png",
     "logo_white": "",
     "colors": {
-      "primary": "#00847a",
-      "secondary": "#cd6032",
-      "accent": "#ffffff",
-      "background": "#ffffff",
-      "text": "#001b19"
+      "primary": "#001B19",
+      "secondary": "#105b61",
+      "accent": "#FF9E65",
+      "background": "#FDF2EC",
+      "text": "#001B19"
     },
     "fonts": {
       "heading": "Poppins",
@@ -21,7 +21,15 @@
     "hero": {
       "headline": "Cada imóvel tem uma história.",
       "background_image": "/assets/images/placeholder-moodboard.svg",
-      "background_video": "https://drive.google.com/file/d/1g2NK4ySqc-D-hkmyvG8AfNuAhMMnTe0C/view?usp=drive_link"
+      "background_video": "https://drive.google.com/file/d/1g2NK4ySqc-D-hkmyvG8AfNuAhMMnTe0C/view?usp=drive_link",
+      "button_primary": {
+        "label": "Identidade Visual",
+        "module": "visual-identity"
+      },
+      "button_secondary": {
+        "label": "Brand Core",
+        "module": "brand-core"
+      }
     }
   },
   "research": {
@@ -522,44 +530,52 @@
     ],
     "colors": [
       {
-        "name": "Preto RNF",
+        "name": "Verde Escuro",
         "role": "Primária",
-        "hex": "#161616",
-        "rgb": "22, 22, 22",
-        "cmyk": "0, 0, 0, 91",
+        "hex": "#001B19",
+        "rgb": "0, 27, 25",
+        "cmyk": "94%, 62%, 66%, 83%",
         "usage": "Cor principal da marca. Use para fundos de destaque, elementos âncora e textos principais em fundo claro."
       },
       {
-        "name": "Grafite",
+        "name": "Verde",
         "role": "Secundária",
-        "hex": "#2A2A2A",
-        "rgb": "42, 42, 42",
-        "cmyk": "0, 0, 0, 84",
+        "hex": "#105b61",
+        "rgb": "16, 91, 97",
+        "cmyk": "87%, 40%, 48%, 35%",
         "usage": "Cor de suporte para hierarquias visuais, backgrounds de seção e elementos gráficos secundários."
       },
       {
-        "name": "Verde Lima RNF",
+        "name": "Verde Aston Martin",
+        "role": "Terciária",
+        "hex": "#00847a",
+        "rgb": "0, 132, 122",
+        "cmyk": "84%, 25%, 54%, 9%",
+        "usage": "Variação dos verdes da marca para gradientes, hover states e elementos decorativos."
+      },
+      {
+        "name": "Laranja",
         "role": "Destaque",
-        "hex": "#9EFF3E",
-        "rgb": "158, 255, 62",
-        "cmyk": "38, 0, 76, 0",
-        "usage": "Cor de ênfase para CTAs, destaques tipográficos, ícones e elementos que precisam de destaque visual imediato."
+        "hex": "#FF9E65",
+        "rgb": "255, 158, 101",
+        "cmyk": "0%, 48%, 61%, 0%",
+        "usage": "Cor de ênfase para CTAs, destaques tipográficos e elementos que precisam de destaque visual imediato."
       },
       {
-        "name": "Off-White",
+        "name": "Terracota",
+        "role": "Destaque Secundário",
+        "hex": "#CD6032",
+        "rgb": "205, 96, 50",
+        "cmyk": "15%, 71%, 85%, 4%",
+        "usage": "Variação quente para estados de hover em CTAs, ícones e detalhes de materialidade."
+      },
+      {
+        "name": "Creme",
         "role": "Fundo",
-        "hex": "#F8F8F5",
-        "rgb": "248, 248, 245",
-        "cmyk": "0, 0, 1, 3",
-        "usage": "Fundo principal da página e de materiais impressos. Mais suave que o branco puro."
-      },
-      {
-        "name": "Quase Preto",
-        "role": "Texto",
-        "hex": "#161616",
-        "rgb": "22, 22, 22",
-        "cmyk": "0, 0, 0, 91",
-        "usage": "Cor para textos longos e body copy."
+        "hex": "#FDF2EC",
+        "rgb": "253, 242, 236",
+        "cmyk": "0%, 7%, 8%, 0%",
+        "usage": "Fundo principal da página e de materiais impressos. Tom quente que dialoga com a paleta terrosa da marca."
       }
     ],
     "icons": [
@@ -642,146 +658,110 @@
       "image": "/assets/images/brandbook-rnf-imóveis.jpg",
       "gallery": []
     },
-    "typography": {
-      "heading_file": "",
-      "body_file": "https://fonts.google.com/specimen/Poppins?preview.lang=pt_Latn"
-    }
+    "typography": [
+      {
+        "name": "Poppins",
+        "role": "Títulos",
+        "file": ""
+      },
+      {
+        "name": "Poppins",
+        "role": "Corpo de Texto",
+        "file": ""
+      }
+    ]
   },
   "social_media": {
-    "editorial_lines": [
+    "networks": [
       {
-        "name": "Prova Social & Bastidores",
-        "description": "Depoimentos, stories de visita/vistoria, cases de gestão e a dor de tempo resolvida — horas devolvidas ao proprietário. Mostra o processo real por trás da gestão profissional.",
-        "color": "#161616",
-        "examples": [
-          "Post: Quantas horas por mês o cliente deixou de perder desde que a RNF assumiu a gestão? Fizemos as contas.",
-          "Story: acompanhamento de vistoria ao vivo",
-          "Depoimento em vídeo de proprietário ou locatário satisfeito"
+        "name": "Instagram",
+        "archetype": "Prestativo (com sotaque de Criador)",
+        "tone": "Acolhedora e narrativa",
+        "audiences": "Ana, Gabriela, Marta, Felipe",
+        "editorial_lines": [
+          {
+            "name": "Prova Social & Bastidores",
+            "percentage": "25%",
+            "description": "Depoimentos, stories de visita/vistoria, cases de gestão e a dor de tempo resolvida — horas devolvidas ao proprietário.",
+            "example": "Post: Quantas horas por mês o cliente deixou de perder desde que a RNF assumiu a gestão? Fizemos as contas."
+          },
+          {
+            "name": "Educação & Arte",
+            "percentage": "25%",
+            "description": "Mercado imobiliário de SC, zonas em valorização, empreendimentos arquitetônicos notáveis, a relação entre real estate e arte/design.",
+            "example": "Post: Por que o Planalto Serrano está virando destino de investimento imobiliário."
+          },
+          {
+            "name": "Transformação",
+            "percentage": "15%",
+            "description": "Antes/depois de imóveis administrados — reformas, renders de potencial.",
+            "example": "Reel: sala vazia para render decorado com arquiteto parceiro."
+          },
+          {
+            "name": "História do Patrimônio",
+            "percentage": "15%",
+            "description": "Narrativa de um imóvel específico da carteira — sua história, seus inquilinos, sua arquitetura.",
+            "example": "Post sobre a história de um prédio específico administrado pela RNF."
+          },
+          {
+            "name": "Legado Familiar / Institucional",
+            "percentage": "10%",
+            "description": "A história da própria RNF — fotos antigas, anos 1950, bastidores da empresa.",
+            "example": "Post comemorativo de aniversário da empresa."
+          },
+          {
+            "name": "Imóveis Disponíveis",
+            "percentage": "10%",
+            "description": "Existe, mas é residual — a RNF não é vitrine de catálogo.",
+            "example": "Carrossel pontual de imóvel à venda ou locação com narrativa do espaço."
+          }
         ]
       },
       {
-        "name": "Educação & Arte",
-        "description": "Mercado imobiliário de SC, zonas em valorização, empreendimentos arquitetônicos notáveis, a relação entre real estate e arte/design. Posiciona a RNF como especialista e curadora.",
-        "color": "#2A2A2A",
-        "examples": [
-          "Post: Por que o Planalto Serrano está virando destino de investimento imobiliário",
-          "Carrossel sobre um edifício histórico restaurado em outra cidade",
-          "Série: arquitetura que permanece — imóveis históricos de Lages"
+        "name": "LinkedIn",
+        "archetype": "Governante",
+        "tone": "Segura e estruturada, dados antes de emoção",
+        "audiences": "Roberto, Felipe",
+        "editorial_lines": [
+          {
+            "name": "Cases e Métricas",
+            "percentage": "35%",
+            "description": "Resultados reais de gestão: ocupação, prazo de resolução, retenção de inquilino.",
+            "example": "Apartamento vazio há 3 anos. Em 6 meses: inquilino, reforma, aluguel 18% acima."
+          },
+          {
+            "name": "Autoridade no Setor",
+            "percentage": "25%",
+            "description": "Conteúdo educativo sobre gestão patrimonial, condomínios, mercado de Lages.",
+            "example": "3 sinais de que seu condomínio precisa de gestão profissional pós-entrega."
+          },
+          {
+            "name": "Institucional / Legado",
+            "percentage": "20%",
+            "description": "15 anos de história, processo, equipe, certificações jurídicas.",
+            "example": "Apresentação da equipe e da assessoria jurídica inclusa."
+          },
+          {
+            "name": "Parcerias e Network",
+            "percentage": "20%",
+            "description": "Conexão com incorporadoras, arquitetos, escritórios de advocacia.",
+            "example": "Post sobre parceria ou evento do setor imobiliário catarinense."
+          }
         ]
-      },
-      {
-        "name": "Transformação",
-        "description": "Antes e depois de imóveis administrados — reformas, renders de potencial. Materializa o diferencial de revelar o que outros não enxergam em cada espaço.",
-        "color": "#4A4A4A",
-        "examples": [
-          "Reel: sala vazia → render decorado com arquiteto parceiro",
-          "Carrossel: apartamento antes da gestão RNF vs. 6 meses depois",
-          "Post: o olhar que transforma — espaços que a RNF revelou"
-        ]
-      },
-      {
-        "name": "História do Patrimônio",
-        "description": "Narrativa de um imóvel específico da carteira — sua história, seus inquilinos, sua arquitetura. Dá vida e personalidade ao que outros tratam apenas como metro quadrado.",
-        "color": "#6B6B6B",
-        "examples": [
-          "Post sobre a história de um prédio específico administrado pela RNF",
-          "A Galeria Dr. Acácio — série sobre um ícone do centro de Lages",
-          "Série: cada imóvel tem uma história — perfil de propriedades da carteira"
-        ]
-      },
-      {
-        "name": "Legado Familiar & Institucional",
-        "description": "A história da própria RNF — fotos antigas, anos 1950, bastidores da empresa. Humaniza a marca e reforça a narrativa de família que cuida de famílias.",
-        "color": "#9B9B9B",
-        "examples": [
-          "Post comemorativo de aniversário da empresa",
-          "Fotos do arquivo familiar — Lages nos anos 1950–1960",
-          "Apresentação da equipe e dos valores que guiam a gestão"
-        ]
-      },
-      {
-        "name": "Imóveis Disponíveis",
-        "description": "Existe, mas é residual — a RNF não é vitrine de catálogo. Quando aparece, vem com storytelling e contexto histórico, nunca como lista seca de características.",
-        "color": "#BEBEBE",
-        "examples": [
-          "Carrossel pontual de imóvel à locação com narrativa do espaço",
-          "Post de lançamento de imóvel disponível com render ou tour fotográfico",
-          "Destaque de imóvel com história e potencial de valorização"
-        ]
-      }
-    ],
-    "content_pillars": [
-      {
-        "name": "Cases e Métricas",
-        "emoji": "📊",
-        "objective": "Comprovar resultados reais de gestão com dados concretos. Construir credibilidade junto a Felipe, Roberto e proprietários que decidem por evidência.",
-        "examples": [
-          "Apartamento vazio há 3 anos. Em 6 meses: inquilino, reforma e aluguel 18% acima.",
-          "Taxa de inadimplência zero na carteira gerida em 2024",
-          "Prazo médio de 23 dias para locação de imóveis da carteira RNF"
-        ]
-      },
-      {
-        "name": "Autoridade no Setor",
-        "emoji": "🏛️",
-        "objective": "Posicionar a RNF como especialista em gestão patrimonial de Lages e região. Conteúdo educativo que antecede a decisão de compra ou contratação.",
-        "examples": [
-          "3 sinais de que seu condomínio precisa de gestão profissional pós-entrega",
-          "Por que imóveis históricos do centro valorizam mais que novos empreendimentos",
-          "O que avaliar antes de contratar uma administradora de imóveis"
-        ]
-      },
-      {
-        "name": "Institucional & Legado",
-        "emoji": "🕰️",
-        "objective": "Reforçar a narrativa de 15 anos de história, origem familiar e comprometimento com o legado. Humaniza a marca para todos os públicos.",
-        "examples": [
-          "Apresentação da equipe e da assessoria jurídica inclusa",
-          "15 anos de gestão — o que construímos juntos",
-          "A família por trás da RNF — origem, propósito e missão"
-        ]
-      },
-      {
-        "name": "Parcerias e Network",
-        "emoji": "🤝",
-        "objective": "Demonstrar a rede de relações profissionais da RNF — incorporadoras, arquitetos, advogados. Reforça credibilidade especialmente junto a Roberto e Felipe.",
-        "examples": [
-          "Post sobre parceria com escritório de arquitetura local",
-          "Participação em evento do setor imobiliário catarinense",
-          "Conexão com incorporadora parceira para gestão pós-entrega"
-        ]
-      }
-    ],
-    "references": [
-      {
-        "name": "Referência Visual 1",
-        "description": "Fotografia editorial de espaços históricos com luz natural e composição arquitetônica",
-        "image": ""
-      },
-      {
-        "name": "Referência Visual 2",
-        "description": "Grid de feed com alternância entre tipografia bold em fundo escuro e fotografia de ambiente",
-        "image": ""
       }
     ],
     "visual_communication": [
       {
-        "name": "Post Vertical 1080 × 1350px",
-        "description": "Fundo escuro (#161616), tipografia Poppins Bold, destaque em verde lima. Foco em dados e narrativa curta.",
-        "image": "/assets/images/placeholder-social.svg",
-        "file": ""
+        "type": "Post Vertical 1080 × 1350px",
+        "image": "/assets/images/placeholder-social.svg"
       },
       {
-        "name": "Stories 1080 × 1920px",
-        "description": "Layout vertical com área de texto inferior, foto de espaço ou pessoa na parte superior. Barra na cor accent verde.",
-        "image": "",
-        "file": ""
+        "type": "Stories 1080 × 1920px",
+        "image": "/assets/images/placeholder-social.svg"
       },
       {
-        "name": "Carrossel 1080 × 1350px",
-        "description": "Slides com dados destacados, tipografia grande e legível. Case documentado em formato PDF-ready para Roberto e Felipe.",
-        "image": "",
-        "file": ""
+        "type": "Carrossel 1080 × 1350px",
+        "image": "/assets/images/placeholder-social.svg"
       }
     ]
   }
