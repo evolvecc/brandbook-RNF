@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: evolvecc/brandbook-RNF
   branch: main
 
 media_folder: "assets/images"

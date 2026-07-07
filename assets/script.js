@@ -1105,17 +1105,6 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// Netlify Identity redirect handler
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on('init', user => {
-    if (!user) {
-      window.netlifyIdentity.on('login', () => {
-        document.location.href = '/admin/';
-      });
-    }
-  });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox')?.addEventListener('click', e => {
