@@ -3,14 +3,14 @@
     "name": "RNF Imóveis",
     "tagline": "Cada imóvel tem uma história. Nós cuidamos para que ela continue.",
     "cover_color": "#161616",
-    "logo": "",
+    "logo": "/assets/images/logo-rnf-final-10.png",
     "logo_white": "",
     "colors": {
-      "primary": "#161616",
-      "secondary": "#2A2A2A",
-      "accent": "#9EFF3E",
-      "background": "#F8F8F5",
-      "text": "#161616"
+      "primary": "#105b61",
+      "secondary": "#cd6032",
+      "accent": "#00847a",
+      "background": "#fdf2ec",
+      "text": "#001b19"
     },
     "fonts": {
       "heading": "Poppins",
@@ -289,18 +289,6 @@
       {
         "text": "Cada imóvel tem uma história. Nós cuidamos para que ela continue.",
         "context": "Tagline principal — usada em campanhas, assinatura da marca e materiais institucionais"
-      },
-      {
-        "text": "Cuidamos como se fosse nosso.",
-        "context": "Variação curta para social media e comunicação cotidiana"
-      },
-      {
-        "text": "Patrimônio é história. Nós sabemos guardar as duas.",
-        "context": "Variação para conteúdo institucional e LinkedIn"
-      },
-      {
-        "text": "Não administramos imóveis. Administramos o que você construiu.",
-        "context": "Variação de impacto para apresentações e materiais de venda"
       }
     ],
     "value_proposition": {
