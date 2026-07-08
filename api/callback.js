@@ -22,14 +22,23 @@ export default async function handler(req, res) {
     return;
   }
 
+  const tokenJSON = JSON.stringify(access_token);
+
   res.setHeader('Content-Type', 'text/html');
-  res.send(`<!DOCTYPE html><html><body><script>
-    (function() {
-      var msg = JSON.stringify({ token: "${access_token}", provider: "github" });
-      window.opener && window.opener.postMessage(
-        "authorization:github:success:" + msg, "*"
-      );
-      window.close();
-    })();
-  </script></body></html>`);
+  res.send(`<!DOCTYPE html>
+<html>
+<body>
+<script>
+(function() {
+  var token = ${tokenJSON};
+  var message = 'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' });
+  if (window.opener) {
+    window.opener.postMessage(message, '*');
+  }
+  setTimeout(function() { window.close(); }, 1000);
+})();
+</script>
+<p style="font-family:sans-serif;text-align:center;margin-top:40px">Autenticado. Esta janela fechará em breve.</p>
+</body>
+</html>`);
 }
