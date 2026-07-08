@@ -165,6 +165,86 @@
             "url": "https://www.instagram.com/imobiliariacenterhome/"
           }
         ]
+      },
+      {
+        "name": "Daisy",
+        "positioning": "\"Property management is broken.\"",
+        "strengths": "Gestão full-service de condomínios em NY/NJ. Missão e posicionamento claros: \"improve the way people live by transforming the way buildings run\". Tom humano e direto. Blog, podcast e guias educativos. Prova social em destaque no site e instagram.",
+        "weaknesses": "*",
+        "x": 50,
+        "y": 50,
+        "social_links": [
+          {
+            "network": "website",
+            "url": "https://www.joindaisy.com/"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/joindaisy"
+          },
+          {
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/joindaisy/"
+          }
+        ]
+      },
+      {
+        "name": "XL-RPM",
+        "positioning": "\"Defining a New Standard of Property Management.\"",
+        "strengths": "Gestão premium de apartamentos e edifícios em Manhattan e Brooklyn. Promessa central: \"hassle-free\": liberdade e tranquilidade para quem tem o imóvel.. Serviços segmentados por tipo. Citados por Forbes, NYT e Bloomberg.",
+        "weaknesses": "*",
+        "x": 50,
+        "y": 50,
+        "social_links": [
+          {
+            "network": "website",
+            "url": "https://www.xl-rpm.com/"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/xl_rpm/"
+          }
+        ]
+      },
+      {
+        "name": "Fort Real Estate",
+        "positioning": "\"Feita para quem busca segurança, privacidade e eficiência.\"",
+        "strengths": "Gestão patrimonial de altíssimo padrão em SP. Portfólio inclui Hotel Unique. Site com vídeo cinematográfico. Portfólio por projeto assinado com arquiteto, endereço e ano. Contato apenas via WhatsApp.",
+        "weaknesses": "*",
+        "x": 50,
+        "y": 50,
+        "social_links": [
+          {
+            "network": "website",
+            "url": "https://fortrealestate.com.br/"
+          },
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/fortrealestate/"
+          },
+          {
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/fortrealestatemanagement/"
+          }
+        ]
+      },
+      {
+        "name": "REM Residential",
+        "positioning": "\"Reliable. Exemplary. Meticulous.\"",
+        "strengths": "Soluções personalizadas de administração de imóveis, pensadas para maximizar o valor do patrimônio e satisfazer os residentes. Trazem o \"family owned business\" como um pilar de posicionamento, gera confiança e conexão, uma empresa grande mas com viés familiar e humanizado.",
+        "weaknesses": "*",
+        "x": 50,
+        "y": 50,
+        "social_links": [
+          {
+            "network": "website",
+            "url": "https://remny.com/"
+          },
+          {
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/r-e-m-residential/"
+          }
+        ]
       }
     ],
     "positioning_map": {
