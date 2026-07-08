@@ -79,32 +79,6 @@
         ]
       },
       {
-        "name": "Coelho da Fonseca",
-        "positioning": "Ecossistema imobiliário de alto luxo há mais de 50 anos. Patrocinadora da SP-Arte, associa imóveis com arte, arquitetura e memória cultural.",
-        "strengths": "50 anos de história, referência nacional no luxo, associação com arte e cultura, conteúdo que vai além do imobiliário",
-        "weaknesses": "Foco em São Paulo, ticket muito elevado, sem destaque para administração de condomínios",
-        "x": 85,
-        "y": 55,
-        "social_links": [
-          {
-            "network": "website",
-            "url": "https://www.coelhodafonseca.com.br/"
-          },
-          {
-            "network": "instagram",
-            "url": "https://www.instagram.com/coelhodafonseca"
-          },
-          {
-            "network": "youtube",
-            "url": "https://www.youtube.com/coelhodafonseca"
-          },
-          {
-            "network": "linkedin",
-            "url": "https://www.linkedin.com/company/coelho-da-fonseca?originalSubdomain=br"
-          }
-        ]
-      },
-      {
         "name": "Monarim",
         "positioning": "Imobiliária local de Lages com portfólio diversificado e presença consolidada no mercado serrano.",
         "strengths": "Cartela ampla de produtos, plataforma estruturada para pesquisa de imóveis",
@@ -167,10 +141,36 @@
         ]
       },
       {
+        "name": "Coelho da Fonseca",
+        "positioning": "Ecossistema imobiliário de alto luxo há mais de 50 anos. Patrocinadora da SP-Arte, associa imóveis com arte, arquitetura e memória cultural.",
+        "strengths": "50 anos de história, referência nacional no luxo, associação com arte e cultura, conteúdo que vai além do imobiliário",
+        "weaknesses": "Foco em São Paulo, Ticket muito elevado, Sem destaque para administração de condomínios",
+        "x": 85,
+        "y": 55,
+        "social_links": [
+          {
+            "network": "instagram",
+            "url": "https://www.instagram.com/coelhodafonseca"
+          },
+          {
+            "network": "website",
+            "url": "https://www.coelhodafonseca.com.br/"
+          },
+          {
+            "network": "youtube",
+            "url": "https://www.youtube.com/coelhodafonseca"
+          },
+          {
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/coelho-da-fonseca?originalSubdomain=br"
+          }
+        ]
+      },
+      {
         "name": "Daisy",
         "positioning": "\"Property management is broken.\"",
-        "strengths": "Gestão full-service de condomínios em NY/NJ. Missão e posicionamento claros: \"improve the way people live by transforming the way buildings run\". Tom humano e direto. Blog, podcast e guias educativos. Prova social em destaque no site e instagram.",
-        "weaknesses": "*",
+        "strengths": "Gestão full-service de condomínios em NY/NJ. Missão e posicionamento claros: \"improve the way people live by transforming the way buildings run\". Tom humano e direto. \nBlog, podcast e guias educativos. Prova social em destaque no site e instagram.",
+        "weaknesses": "*Referência externa (NY)*",
         "x": 50,
         "y": 50,
         "social_links": [
@@ -191,8 +191,8 @@
       {
         "name": "XL-RPM",
         "positioning": "\"Defining a New Standard of Property Management.\"",
-        "strengths": "Gestão premium de apartamentos e edifícios em Manhattan e Brooklyn. Promessa central: \"hassle-free\": liberdade e tranquilidade para quem tem o imóvel.. Serviços segmentados por tipo. Citados por Forbes, NYT e Bloomberg.",
-        "weaknesses": "*",
+        "strengths": "Gestão premium de apartamentos e edifícios em Manhattan e Brooklyn. Promessa central: \"hassle-free\": liberdade e tranquilidade para quem tem o imóvel.. Serviços segmentados por tipo. \n\nCitados por Forbes, NYT e Bloomberg.",
+        "weaknesses": "*Referência externa (NY)*",
         "x": 50,
         "y": 50,
         "social_links": [
@@ -209,8 +209,8 @@
       {
         "name": "Fort Real Estate",
         "positioning": "\"Feita para quem busca segurança, privacidade e eficiência.\"",
-        "strengths": "Gestão patrimonial de altíssimo padrão em SP. Portfólio inclui Hotel Unique. Site com vídeo cinematográfico. Portfólio por projeto assinado com arquiteto, endereço e ano. Contato apenas via WhatsApp.",
-        "weaknesses": "*",
+        "strengths": "Gestão patrimonial de altíssimo padrão em SP. Portfólio inclui Hotel Unique. Site com vídeo cinematográfico. Portfólio por projeto assinado com arquiteto, endereço e ano.",
+        "weaknesses": "Foco em São Paulo, Ticket elevado, Contato apenas via WhatsApp.",
         "x": 50,
         "y": 50,
         "social_links": [
@@ -232,7 +232,7 @@
         "name": "REM Residential",
         "positioning": "\"Reliable. Exemplary. Meticulous.\"",
         "strengths": "Soluções personalizadas de administração de imóveis, pensadas para maximizar o valor do patrimônio e satisfazer os residentes. Trazem o \"family owned business\" como um pilar de posicionamento, gera confiança e conexão, uma empresa grande mas com viés familiar e humanizado.",
-        "weaknesses": "*",
+        "weaknesses": "Foco em São Paulo, Ticket muito elevado, Sem destaque para administração de condomínios",
         "x": 50,
         "y": 50,
         "social_links": [
