@@ -504,28 +504,40 @@
   "visual_identity": {
     "logos": [
       {
-        "name": "Logo Principal — Versão Positiva",
+        "name": "Logo Horizontal Principal — Versão Positiva",
         "description": "Uso principal em fundos claros. Versão completa com símbolo + logotipo.",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "file": "/assets/images/logo-rnf-final-11.png",
+        "thumbnail": "/assets/images/logo-rnf-final-11.png"
       },
       {
-        "name": "Logo Negativa — Fundo Escuro",
+        "name": "Logo Horizontal Negativa — Fundo Escuro",
         "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "file": "/assets/images/logo-rnf-final-10.png",
+        "thumbnail": "/assets/images/logo-rnf-final-10.png"
       },
       {
-        "name": "Símbolo Isolado",
-        "description": "Para uso em ícone de app, favicon e situações onde o espaço é reduzido.",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "name": "Logo Horizontal Negativa (2) - Fundo Escuro",
+        "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
+        "file": "/assets/images/Logo RNF Final-12.png",
+        "thumbnail": "/assets/images/Logo RNF Final-12.png"
       },
       {
-        "name": "Logo Horizontal",
-        "description": "Variação para uso em headers, assinaturas de email e banners horizontais.",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "name": "Símbolo Negativo — Fundo Escuro",
+        "description": "Para uso em espaços reduzidos, apps, favicon... com fundos escuros",
+        "file": "/assets/images/Logo RNF Final-18.png",
+        "thumbnail": "/assets/images/Logo RNF Final-18.png"
+      },
+      {
+        "name": "Logo Vertical Negativa (2) - Fundo Escuro",
+        "description": "Uso em espaços reduzidos horizontalmente, com fundo escuro",
+        "file": "/assets/images/Logo RNF Final-13.png",
+        "thumbnail": "/assets/images/Logo RNF Final-13.png"
+      },
+      {
+        "name": "Logo Vertical Positiva - Fundo Claro",
+        "description": "Uso em espaços reduzidos horizontalmente, com fundo claro",
+        "file": "/assets/images/Logo RNF Final-14.png",
+        "thumbnail": "/assets/images/Logo RNF Final-14.png"
       }
     ],
     "colors": [
@@ -580,14 +592,44 @@
     ],
     "icons": [
       {
-        "name": "Ícone Principal",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "name": "Ícone 1",
+        "file": "/assets/images/Icones RNF-01.png",
+        "thumbnail": "/assets/images/Icones RNF-01.png"
       },
       {
-        "name": "Ícone Secundário",
-        "file": "/assets/images/placeholder-logo.svg",
-        "thumbnail": "/assets/images/placeholder-logo.svg"
+        "name": "Ícone 2",
+        "file": "/assets/images/Icones RNF-02.png",
+        "thumbnail": "/assets/images/Icones RNF-02.png"
+      },
+      {
+        "name": "Ícone 3",
+        "file": "/assets/images/Icones RNF-03.png",
+        "thumbnail": "/assets/images/Icones RNF-03.png"
+      },
+      {
+        "name": "Ícone 4",
+        "file": "/assets/images/Icones RNF-04.png",
+        "thumbnail": "/assets/images/Icones RNF-04.png"
+      },
+      {
+        "name": "Ícone 5",
+        "file": "/assets/images/Icones RNF-05.png",
+        "thumbnail": "/assets/images/Icones RNF-05.png"
+      },
+      {
+        "name": "Ícone 6",
+        "file": "/assets/images/Icones RNF-06.png",
+        "thumbnail": "/assets/images/Icones RNF-06.png"
+      },
+      {
+        "name": "Ícone 7",
+        "file": "/assets/images/Icones RNF-07.png",
+        "thumbnail": "/assets/images/Icones RNF-07.png"
+      },
+      {
+        "name": "Ícone 8",
+        "file": "/assets/images/Icones RNF-08.png",
+        "thumbnail": "/assets/images/Icones RNF-08.png"
       }
     ],
     "spacing": {
