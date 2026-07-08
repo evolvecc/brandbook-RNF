@@ -851,9 +851,6 @@ function renderIncorrectUse(items, brand) {
           ? `<img src="${esc(item.image)}" alt="" />`
           : `<div class="incorrect-placeholder">${brand && brand.name ? brand.name.slice(0, 2) : 'AB'}</div>`
         }
-        <div class="incorrect-x">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 5l14 14M19 5L5 19"/></svg>
-        </div>
       </div>
       <div class="incorrect-desc">${esc(item.description)}</div>
     </div>
