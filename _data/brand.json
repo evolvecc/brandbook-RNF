@@ -670,33 +670,28 @@
     ],
     "graphic_materials": [
       {
-        "name": "Pasta Institucional",
-        "image": "/assets/images/placeholder-material.svg",
+        "name": "Fachada da loja dia",
+        "image": "/assets/images/29.jpg",
         "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Cartão de Visita",
-        "image": "/assets/images/placeholder-material.svg",
+        "name": "Fachada da loja noite (LEDs)",
+        "image": "/assets/images/30.jpg",
         "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Placa de Imóvel",
-        "image": "/assets/images/placeholder-material.svg",
+        "name": "Pasta de documentos",
+        "image": "/assets/images/38.jpg",
         "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Envelope Timbrado",
-        "image": "/assets/images/placeholder-material.svg",
+        "name": "Papel Timbrado",
+        "image": "/assets/images/37.jpg",
         "file": "/assets/images/placeholder-material.svg"
       },
       {
-        "name": "Proposta Comercial",
-        "image": "/assets/images/placeholder-material.svg",
-        "file": "/assets/images/placeholder-material.svg"
-      },
-      {
-        "name": "Banner / Outdoor",
-        "image": "/assets/images/placeholder-material.svg",
+        "name": "Placa Vende-se",
+        "image": "/assets/images/39.jpg",
         "file": "/assets/images/placeholder-material.svg"
       }
     ],
@@ -854,16 +849,12 @@
     ],
     "visual_communication": [
       {
-        "type": "Post Vertical 1080 × 1350px",
-        "image": "/assets/images/placeholder-social.svg"
+        "type": "Post Vertical Feed (1) 1080 × 1350px",
+        "image": "/assets/images/ID Redes RNF-03.jpg"
       },
       {
-        "type": "Stories 1080 × 1920px",
-        "image": "/assets/images/placeholder-social.svg"
-      },
-      {
-        "type": "Carrossel 1080 × 1350px",
-        "image": "/assets/images/placeholder-social.svg"
+        "type": "Post Vertical Feed (2) 1080 × 1350px",
+        "image": "/assets/images/ID Redes RNF-06.jpg"
       }
     ]
   }
