@@ -2,9 +2,21 @@
   "brand": {
     "name": "RNF Imóveis",
     "tagline": "Cada imóvel tem uma história. Nós cuidamos para que ela continue.",
-    "cover_color": "#161616",
     "logo": "/assets/images/logo-rnf-final-10.png",
     "logo_white": "",
+    "hero": {
+      "headline": "Cada imóvel tem uma história.",
+      "background_image": "/assets/images/placeholder-moodboard.svg",
+      "background_video": "assets/videos/022a589a-f8ea-4b5f-94cc-68dc24859a88-2026-07-03 (1).mp4",
+      "button_primary": {
+        "label": "Identidade Visual",
+        "module": "visual-identity"
+      },
+      "button_secondary": {
+        "label": "Brand Core",
+        "module": "brand-core"
+      }
+    },
     "colors": {
       "primary": "#001B19",
       "secondary": "#105b61",
@@ -18,19 +30,7 @@
       "body": "Poppins",
       "body_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
     },
-    "hero": {
-      "headline": "Cada imóvel tem uma história.",
-      "background_image": "/assets/images/placeholder-moodboard.svg",
-      "background_video": "https://drive.google.com/file/d/1g2NK4ySqc-D-hkmyvG8AfNuAhMMnTe0C/view?usp=drive_link",
-      "button_primary": {
-        "label": "Identidade Visual",
-        "module": "visual-identity"
-      },
-      "button_secondary": {
-        "label": "Brand Core",
-        "module": "brand-core"
-      }
-    }
+    "cover_color": "#161616"
   },
   "research": {
     "benchmarking": [
@@ -51,8 +51,8 @@
             "url": "https://www.instagram.com/imobiliariaimobille/"
           },
           {
-            "url": "https://www.linkedin.com/company/imobille-neg%C3%B3cios-imobili%C3%A1rios/?originalSubdomain=th",
-            "network": "linkedin"
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/imobille-neg%C3%B3cios-imobili%C3%A1rios/?originalSubdomain=th"
           },
           {
             "network": "youtube",
@@ -69,8 +69,8 @@
         "y": 65,
         "social_links": [
           {
-            "url": "https://www.imoveiscitalli.com.br/",
-            "network": "website"
+            "network": "website",
+            "url": "https://www.imoveiscitalli.com.br/"
           },
           {
             "network": "instagram",
@@ -87,20 +87,20 @@
         "y": 55,
         "social_links": [
           {
-            "url": "https://www.coelhodafonseca.com.br/",
-            "network": "website"
+            "network": "website",
+            "url": "https://www.coelhodafonseca.com.br/"
           },
           {
             "network": "instagram",
             "url": "https://www.instagram.com/coelhodafonseca"
           },
           {
-            "url": "https://www.youtube.com/coelhodafonseca",
-            "network": "youtube"
+            "network": "youtube",
+            "url": "https://www.youtube.com/coelhodafonseca"
           },
           {
-            "url": "https://www.linkedin.com/company/coelho-da-fonseca?originalSubdomain=br",
-            "network": "linkedin"
+            "network": "linkedin",
+            "url": "https://www.linkedin.com/company/coelho-da-fonseca?originalSubdomain=br"
           }
         ]
       },
@@ -113,8 +113,8 @@
         "y": 42,
         "social_links": [
           {
-            "url": "https://monarim.com.br/",
-            "network": "website"
+            "network": "website",
+            "url": "https://monarim.com.br/"
           },
           {
             "network": "instagram",
@@ -131,16 +131,16 @@
         "y": 30,
         "social_links": [
           {
-            "url": "https://www.remax.com.br/",
-            "network": "website"
+            "network": "website",
+            "url": "https://www.remax.com.br/"
           },
           {
-            "url": "https://www.instagram.com/remaxbr/",
-            "network": "instagram"
+            "network": "instagram",
+            "url": "https://www.instagram.com/remaxbr/"
           },
           {
-            "url": "https://www.youtube.com/user/remaxbrasil",
-            "network": "youtube"
+            "network": "youtube",
+            "url": "https://www.youtube.com/user/remaxbrasil"
           },
           {
             "network": "twitter",
@@ -157,12 +157,12 @@
         "y": 20,
         "social_links": [
           {
-            "url": "https://imobiliariacenterhome.com.br/",
-            "network": "website"
+            "network": "website",
+            "url": "https://imobiliariacenterhome.com.br/"
           },
           {
-            "url": "https://www.instagram.com/imobiliariacenterhome/",
-            "network": "instagram"
+            "network": "instagram",
+            "url": "https://www.instagram.com/imobiliariacenterhome/"
           }
         ]
       }
@@ -229,134 +229,134 @@
     ],
     "personas": [
       {
+        "name": "Gabriela",
+        "emoji": "💼",
+        "avatar": "/assets/images/gabriela.png",
+        "age": "29 anos",
+        "occupation": "Proprietária de Clínica de Estética",
+        "location": "Lages/SC",
+        "quote": "Quer ser vista como empreendedora séria. O endereço legitima o negócio e valida publicamente a conquista.",
+        "bio": "Empreendedora local em crescimento. Negócio em casa adaptada em bairro periférico — perde clientes por causa da localização. Sabe que o centro vai mudar o status do negócio. Descobriu que salas em galerias entregam endereço nobre com custo menor. Maior medo: fechar contrato com cláusulas que não entende.",
         "goals": [
           "Encontrar ponto comercial nobre com custo acessível",
           "Ter segurança jurídica no contrato, entendendo cada cláusula",
           "Usar o endereço como ferramenta de posicionamento do negócio"
         ],
-        "emoji": "💼",
-        "bio": "Empreendedora local em crescimento. Negócio em casa adaptada em bairro periférico — perde clientes por causa da localização. Sabe que o centro vai mudar o status do negócio. Descobriu que salas em galerias entregam endereço nobre com custo menor. Maior medo: fechar contrato com cláusulas que não entende.",
-        "occupation": "Proprietária de Clínica de Estética",
-        "name": "Gabriela",
-        "channels": [
-          "Instagram",
-          "Reels",
-          "WhatsApp"
-        ],
-        "location": "Lages/SC",
-        "avatar": "/assets/images/gabriela.png",
-        "frequency": "Primeiro contato por busca ativa + indicação de outros empreendedores",
-        "quote": "Quer ser vista como empreendedora séria. O endereço legitima o negócio e valida publicamente a conquista.",
         "pains": [
           "Contrato inseguro com cláusulas que não compreende",
           "Gestora que some após a assinatura, sem suporte quando surge problema",
           "Lojas de rua fora do orçamento disponível"
         ],
-        "age": "29 anos"
+        "channels": [
+          "Instagram",
+          "Reels",
+          "WhatsApp"
+        ],
+        "frequency": "Primeiro contato por busca ativa + indicação de outros empreendedores"
       },
       {
+        "name": "Ana",
+        "emoji": "🏠",
+        "avatar": "/assets/images/ana.png",
+        "age": "31 anos",
+        "occupation": "Psicóloga",
+        "location": "Lages/SC",
+        "quote": "Quer sair do aluguel com uma escolha inteligente e esteticamente bonita, não qualquer coisa dentro do orçamento.",
+        "bio": "Compradora do primeiro lar. Tem capacidade real de compra mas imóveis novos na faixa dela entregam pouco: metragem pequena, sem personalidade. Descobriu no Instagram apartamentos antigos reformados com pé-direito alto, tijolo à vista. Ao visitar imóveis vazios, não consegue imaginar o potencial. Teme comprar um problema.",
         "goals": [
           "Encontrar imóvel com personalidade arquitetônica e charme único",
           "Ter orientação técnica sobre o estado real e potencial do espaço",
           "Fazer a compra certa dentro do orçamento disponível"
         ],
-        "emoji": "🏠",
-        "bio": "Compradora do primeiro lar. Tem capacidade real de compra mas imóveis novos na faixa dela entregam pouco: metragem pequena, sem personalidade. Descobriu no Instagram apartamentos antigos reformados com pé-direito alto, tijolo à vista. Ao visitar imóveis vazios, não consegue imaginar o potencial. Teme comprar um problema.",
-        "occupation": "Psicóloga",
-        "name": "Ana",
-        "channels": [
-          "Instagram",
-          "Pinterest",
-          "Reels"
-        ],
-        "location": "Lages/SC",
-        "avatar": "/assets/images/ana.png",
-        "frequency": "Decide visita com base em fotos bem produzidas e conteúdo visual",
-        "quote": "Quer sair do aluguel com uma escolha inteligente e esteticamente bonita, não qualquer coisa dentro do orçamento.",
         "pains": [
           "Não consegue visualizar o potencial de imóveis vazios",
           "Falta de orientação técnica sobre o estado real do imóvel",
           "Imóveis novos caros, pequenos e sem personalidade"
         ],
-        "age": "31 anos"
+        "channels": [
+          "Instagram",
+          "Pinterest",
+          "Reels"
+        ],
+        "frequency": "Decide visita com base em fotos bem produzidas e conteúdo visual"
       },
       {
+        "name": "Marta",
+        "emoji": "🏛️",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-14_55_07.png",
+        "age": "62 anos",
+        "occupation": "Servidora Aposentada",
+        "location": "Lages/SC",
+        "quote": "A indicação abre a porta, o digital valida. Conquiste minha confiança e fico para sempre.",
+        "bio": "Guardiã do patrimônio familiar. Co-gestiona apartamentos e salas no centro de Lages, quer profissionalizar sem perder o controle. Mulher antenada, ativa nas redes sociais e com agenda social. Pesquisa antes de confiar: olha o Instagram da empresa, vê quem são as pessoas. A indicação abre a porta; o digital valida.",
         "goals": [
           "Profissionalizar a gestão do patrimônio familiar sem perder o controle",
           "Garantir que os imóveis sejam valorizados para a próxima geração",
           "Ter relação humana e contato direto com a equipe gestora"
         ],
-        "emoji": "🏛️",
-        "bio": "Guardiã do patrimônio familiar. Co-gestiona apartamentos e salas no centro de Lages, quer profissionalizar sem perder o controle. Mulher antenada, ativa nas redes sociais e com agenda social. Pesquisa antes de confiar: olha o Instagram da empresa, vê quem são as pessoas. A indicação abre a porta; o digital valida.",
-        "occupation": "Servidora Aposentada",
-        "name": "Marta",
-        "channels": [
-          "Instagram",
-          "Facebook",
-          "Indicação"
-        ],
-        "location": "Lages/SC",
-        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-14_55_07.png",
-        "frequency": "Gestão de múltiplos imóveis no centro de Lages",
-        "quote": "A indicação abre a porta, o digital valida. Conquiste minha confiança e fico para sempre.",
         "pains": [
           "Inadimplência, conflito com inquilinos e burocracia jurídica sem suporte",
           "Problemas que consomem tempo e energia desnecessários",
           "Gestoras impessoais que desaparecem após a contratação"
         ],
-        "age": "62 anos"
+        "channels": [
+          "Instagram",
+          "Facebook",
+          "Indicação"
+        ],
+        "frequency": "Gestão de múltiplos imóveis no centro de Lages"
       },
       {
+        "name": "Felipe",
+        "emoji": "⚖️",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_17_31.png",
+        "age": "34 anos",
+        "occupation": "Advogado",
+        "location": "Lages/SC",
+        "quote": "Modernize a gestão. Preserve o legado.",
+        "bio": "Herdeiro moderno, assumindo gradualmente a gestão do patrimônio familiar — prédios e salas no centro de Lages. Decisão analítica: quer cases, números e processo antes de confiar. Conquistar Felipe é conquistar a família: é ele quem convence os pais a modernizarem a gestão.",
         "goals": [
           "Modernizar a gestão patrimonial familiar com processos e relatórios claros",
           "Obter transparência financeira e segurança jurídica estruturada",
           "Convencer os pais a profissionalizarem a gestão do patrimônio"
         ],
-        "emoji": "⚖️",
-        "bio": "Herdeiro moderno, assumindo gradualmente a gestão do patrimônio familiar — prédios e salas no centro de Lages. Decisão analítica: quer cases, números e processo antes de confiar. Conquistar Felipe é conquistar a família: é ele quem convence os pais a modernizarem a gestão.",
-        "occupation": "Advogado",
-        "name": "Felipe",
-        "channels": [
-          "LinkedIn",
-          "Instagram",
-          "Google"
-        ],
-        "location": "Lages/SC",
-        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_17_31.png",
-        "frequency": "Decisão analítica baseada em cases documentados e dados de gestão",
-        "quote": "Modernize a gestão. Preserve o legado.",
         "pains": [
           "Gestão informal, sem relatórios, sem segurança jurídica estruturada",
           "Peso da responsabilidade de não dilapidar o patrimônio da família",
           "Necessidade de convencer a geração mais velha a mudar"
         ],
-        "age": "34 anos"
+        "channels": [
+          "LinkedIn",
+          "Instagram",
+          "Google"
+        ],
+        "frequency": "Decisão analítica baseada em cases documentados e dados de gestão"
       },
       {
+        "name": "Roberto",
+        "emoji": "🏗️",
+        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_05_26.png",
+        "age": "48 anos",
+        "occupation": "Sócio de Construtora",
+        "location": "Curitiba/PR",
+        "quote": "Gestão que protege a reputação que você levou anos para construir.",
+        "bio": "Incorporador pragmático com projetos em expansão para litoral SC e Planalto Serrano. Decide por reputação, indicação de pares e dados concretos. LinkedIn é o canal principal — precisa encontrar a RNF com perfil sólido antes de qualquer abordagem comercial. Uma reunião mal preparada encerra a conversa.",
         "goals": [
           "Ter parceiro de gestão confiável para o pós-entrega de empreendimentos",
           "Proteger a reputação do empreendimento após a entrega",
           "Processos claros e escaláveis para acompanhar a expansão dos projetos"
         ],
-        "emoji": "🏗️",
-        "bio": "Incorporador pragmático com projetos em expansão para litoral SC e Planalto Serrano. Decide por reputação, indicação de pares e dados concretos. LinkedIn é o canal principal — precisa encontrar a RNF com perfil sólido antes de qualquer abordagem comercial. Uma reunião mal preparada encerra a conversa.",
-        "occupation": "Sócio de Construtora",
-        "name": "Roberto",
-        "channels": [
-          "LinkedIn",
-          "E-mail e PDF",
-          "Google"
-        ],
-        "location": "Curitiba/PR",
-        "avatar": "/assets/images/chatgpt-image-7-de-jul.-de-2026-15_05_26.png",
-        "frequency": "Pesquisa ativamente no LinkedIn antes de qualquer contato comercial",
-        "quote": "Gestão que protege a reputação que você levou anos para construir.",
         "pains": [
           "Gestoras amadoras que mancham o empreendimento com má gestão",
           "Problemas pós-entrega que voltam para sua mesa e prejudicam a reputação",
           "Ser visto como incorporador que entregou e sumiu"
         ],
-        "age": "48 anos"
+        "channels": [
+          "LinkedIn",
+          "E-mail e PDF",
+          "Google"
+        ],
+        "frequency": "Pesquisa ativamente no LinkedIn antes de qualquer contato comercial"
       }
     ]
   },
