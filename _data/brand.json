@@ -702,14 +702,54 @@
     },
     "typography": [
       {
-        "name": "Poppins",
+        "name": "Franie Condensed",
         "role": "Títulos",
-        "file": ""
+        "file": "/assets/images/Franie-Condensed.otf"
       },
       {
-        "name": "Poppins",
-        "role": "Corpo de Texto",
-        "file": ""
+        "name": "Franie Condensed Italic",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-CondensedItalic.otf"
+      },
+      {
+        "name": "Franie SCondensed",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-SCondensed.otf"
+      },
+      {
+        "name": "Franie SCondensed Italic",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-SCondensedItalic.otf"
+      },
+      {
+        "name": "Franie SCondensed Light",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-SCondensedLight.otf"
+      },
+      {
+        "name": "Franie SCondensed Light Italic",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-SCondensedLightItalic.otf"
+      },
+      {
+        "name": "Franie Condensed Light",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-CondensedSLight.otf"
+      },
+      {
+        "name": "Franie Condensed Light Italic",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-CondensedLightItalic.otf"
+      },
+      {
+        "name": "Franie CondensedSLight",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-CondensedSLight.otf"
+      },
+      {
+        "name": "Franie CondensedSLight",
+        "role": "Títulos",
+        "file": "/assets/images/Franie-CondensedSLightItalic.otf"
       }
     ]
   },
