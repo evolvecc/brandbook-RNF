@@ -586,38 +586,44 @@
       {
         "name": "Logo Horizontal Principal — Versão Positiva",
         "description": "Uso principal em fundos claros. Versão completa com símbolo + logotipo.",
-        "file": "/assets/images/logo-rnf-final-11.png",
+        "file": "/assets/images/Logo RNF Final-11.svg",
         "thumbnail": "/assets/images/logo-rnf-final-11.png"
       },
       {
         "name": "Logo Horizontal Negativa — Fundo Escuro",
         "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
-        "file": "/assets/images/logo-rnf-final-10.png",
+        "file": "/assets/images/Logo RNF Final-10.svg",
         "thumbnail": "/assets/images/logo-rnf-final-10.png"
       },
       {
         "name": "Logo Horizontal Negativa (2) - Fundo Escuro",
         "description": "Para uso em fundos na cor primária da marca ou fotográficos escuros.",
-        "file": "/assets/images/Logo RNF Final-12.png",
+        "file": "/assets/images/Logo RNF Final-12.svg",
         "thumbnail": "/assets/images/Logo RNF Final-12.png"
-      },
-      {
-        "name": "Símbolo Negativo — Fundo Escuro",
-        "description": "Para uso em espaços reduzidos, apps, favicon... com fundos escuros",
-        "file": "/assets/images/Logo RNF Final-18.png",
-        "thumbnail": "/assets/images/Logo RNF Final-18.png"
       },
       {
         "name": "Logo Vertical Negativa (2) - Fundo Escuro",
         "description": "Uso em espaços reduzidos horizontalmente, com fundo escuro",
-        "file": "/assets/images/Logo RNF Final-13.png",
+        "file": "/assets/images/Logo RNF Final-13.svg",
         "thumbnail": "/assets/images/Logo RNF Final-13.png"
       },
       {
         "name": "Logo Vertical Positiva - Fundo Claro",
         "description": "Uso em espaços reduzidos horizontalmente, com fundo claro",
-        "file": "/assets/images/Logo RNF Final-14.png",
+        "file": "/assets/images/Logo RNF Final-15.svg",
         "thumbnail": "/assets/images/Logo RNF Final-14.png"
+      },
+      {
+        "name": "Símbolo Negativo — Fundo Escuro",
+        "description": "Para uso em espaços reduzidos, apps, favicon... com fundos escuros",
+        "file": "/assets/images/Logo RNF Final-16.svg",
+        "thumbnail": "/assets/images/Logo RNF Final-18.png"
+      },
+      {
+        "name": "Símbolo Positivo — Fundo Claro",
+        "description": "Para uso em espaços reduzidos, apps, favicon... com fundos claros",
+        "file": "/assets/images/Logo RNF Final-17.svg",
+        "thumbnail": "/assets/images/Logo RNF Final-19.png"
       }
     ],
     "colors": [
