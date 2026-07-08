@@ -634,8 +634,8 @@
     ],
     "spacing": {
       "min_size_print": "20mm",
-      "min_size_digital": "60px",
-      "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da letra 'R' do logotipo em todos os quatro lados.",
+      "min_size_digital": "70px",
+      "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da linha horizontal superior do símbolo",
       "examples": [
         "Nunca posicione o logo a menos de 1x sua altura de qualquer borda de página ou elemento",
         "Em materiais impressos, mantenha uma margem mínima de 5mm em todos os lados"
