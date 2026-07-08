@@ -2,8 +2,7 @@ backend:
   name: github
   repo: evolvecc/brandbook-RNF
   branch: main
-  base_url: https://brandbook-rnf.vercel.app
-  auth_endpoint: api/auth
+  auth_endpoint: https://sveltia-cms-auth.pages.dev/auth
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
