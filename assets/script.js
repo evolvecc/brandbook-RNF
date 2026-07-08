@@ -795,6 +795,33 @@ function colorValueRow(label, value) {
   `;
 }
 
+function downloadIconAsPng(src, name) {
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function() {
+    const size = 512;
+    const w = img.naturalWidth  || size;
+    const h = img.naturalHeight || size;
+    const canvas = document.createElement('canvas');
+    canvas.width  = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(img, 0, 0, w, h);
+    canvas.toBlob(function(blob) {
+      const url = URL.createObjectURL(blob);
+      const a   = document.createElement('a');
+      a.href     = url;
+      a.download = (name || 'icone') + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 'image/png');
+  };
+  img.src = src;
+}
+
 function renderIcons(icons) {
   const el = document.getElementById('icons-grid');
   if (!el || !icons) return;
@@ -812,7 +839,7 @@ function renderIcons(icons) {
         }
       </div>
       <div class="icon-name">${esc(icon.name)}</div>
-      ${icon.file ? `<div class="icon-download" onclick="window.open('${esc(icon.file)}')">⬇ Download</div>` : ''}
+      ${icon.file ? `<div class="icon-download" onclick="downloadIconAsPng('${esc(icon.file)}','${esc(icon.name)}')">⬇ Download PNG</div>` : ''}
     </div>
   `).join('');
 }
