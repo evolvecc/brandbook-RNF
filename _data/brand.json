@@ -637,30 +637,35 @@
       "min_size_digital": "70px",
       "clear_space_rule": "A área de proteção do logotipo deve corresponder à altura da linha horizontal superior do símbolo",
       "examples": [
-        "Nunca posicione o logo a menos de 1x sua altura de qualquer borda de página ou elemento",
-        "Em materiais impressos, mantenha uma margem mínima de 5mm em todos os lados"
-      ]
+        "Nunca posicione o logo a menos de 1/2 da sua altura de qualquer borda de página ou elemento",
+        "Em materiais impressos, mantenha uma margem mínima de 1cm em todos os lados"
+      ],
+      "protection_image": "/assets/images/Brandbook RNF Imóveis (8).png"
     },
     "incorrect_use": [
       {
-        "description": "Não distorça ou estique o logo em nenhuma direção",
-        "image": "/assets/images/placeholder-logo.svg"
+        "description": "Não girar",
+        "image": "/assets/images/Brandbook RNF Imóveis (2).png"
       },
       {
-        "description": "Não use o logo em fundos que criem conflito visual ou baixo contraste",
-        "image": "/assets/images/placeholder-logo.svg"
+        "description": "Não achatar",
+        "image": "/assets/images/Brandbook RNF Imóveis (1).png"
       },
       {
-        "description": "Não altere as cores do logo para cores fora da paleta aprovada",
-        "image": "/assets/images/placeholder-logo.svg"
+        "description": "Não mudar a tipografia",
+        "image": "/assets/images/Brandbook RNF Imóveis (3).png"
       },
       {
-        "description": "Não adicione sombras, contornos ou efeitos ao logo",
-        "image": "/assets/images/placeholder-logo.svg"
+        "description": "Não mudar a paleta de cores",
+        "image": "/assets/images/Brandbook RNF Imóveis (4).png"
       },
       {
-        "description": "Não use o logo em tamanho menor que o mínimo permitido",
-        "image": "/assets/images/placeholder-logo.svg"
+        "description": "Não usar opacidade",
+        "image": "/assets/images/Brandbook RNF Imóveis (5).png"
+      },
+      {
+        "description": "Respeitar a área de restrição",
+        "image": "/assets/images/Brandbook RNF Imóveis (6).png"
       }
     ],
     "graphic_materials": [
