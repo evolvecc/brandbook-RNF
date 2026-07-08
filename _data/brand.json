@@ -639,7 +639,8 @@
       "examples": [
         "Nunca posicione o logo a menos de 1x sua altura de qualquer borda de página ou elemento",
         "Em materiais impressos, mantenha uma margem mínima de 5mm em todos os lados"
-      ]
+      ],
+      "protection_image": ""
     },
     "incorrect_use": [
       {

@@ -835,6 +835,7 @@ function renderSpacing(spacing) {
       <div class="spacing-examples">
         ${toStringArray(spacing.examples).map(e => `<div class="spacing-example-item">${esc(e)}</div>`).join('')}
       </div>
+      ${spacing.protection_image ? `<img class="spacing-protection-img" src="${esc(spacing.protection_image)}" alt="Área de proteção do logotipo" />` : ''}
     </div>
   `;
 }

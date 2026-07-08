@@ -308,6 +308,7 @@ collections:
                   - { label: "Tamanho Mínimo Digital", name: "min_size_digital", widget: "string", hint: "Ex: 80px" }
                   - { label: "Regra de Área de Proteção", name: "clear_space_rule", widget: "text" }
                   - { label: "Exemplos", name: "examples", widget: "list", field: { label: "Exemplo", name: "item", widget: "string" } }
+                  - { label: "Imagem de Área de Proteção", name: "protection_image", widget: "image", required: false, hint: "Diagrama ou exemplo visual da área de proteção do logotipo" }
 
               - label: "Uso Incorreto"
                 name: "incorrect_use"
