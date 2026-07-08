@@ -733,15 +733,15 @@ function renderLogos(logos, brand) {
         <div class="logo-name">${esc(l.name)}</div>
         <div class="logo-desc">${esc(l.description)}</div>
         <div class="logo-downloads">
-          ${l.file
-            ? `<a href="${esc(l.file)}" download class="btn-download">
+          ${l.file || l.thumbnail
+            ? `${l.file ? `<a href="${esc(l.file)}" download class="btn-download">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
                 SVG
-              </a>
-              <a href="${esc(l.file)}" download class="btn-download">
+              </a>` : ''}
+              ${l.thumbnail ? `<button onclick="downloadIconAsPng('${esc(l.thumbnail)}','${esc(l.name)}')" class="btn-download">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M3 13h10"/></svg>
                 PNG
-              </a>`
+              </button>` : ''}`
             : '<span style="font-size:12px;color:#bbb">Arquivo não carregado</span>'
           }
         </div>
