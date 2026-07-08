@@ -750,6 +750,21 @@
         "name": "Franie CondensedSLight",
         "role": "Títulos",
         "file": "/assets/images/Franie-CondensedSLightItalic.otf"
+      },
+      {
+        "name": "Poppins Bold",
+        "role": "Títulos e destaques no texto",
+        "file": "/assets/images/Poppins-Bold.ttf"
+      },
+      {
+        "name": "Poppins Medium",
+        "role": "Textos",
+        "file": "/assets/images/Poppins-Medium.ttf"
+      },
+      {
+        "name": "Poppins Loght",
+        "role": "Textos",
+        "file": "/assets/images/Poppins-Light.ttf"
       }
     ]
   },
