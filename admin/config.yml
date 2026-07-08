@@ -2,7 +2,8 @@ backend:
   name: github
   repo: evolvecc/brandbook-RNF
   branch: main
-  auth_endpoint: https://sveltia-cms-auth.pages.dev/auth
+  base_url: https://sveltia-cms-auth.pages.dev
+  auth_endpoint: auth
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
